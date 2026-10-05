@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="es-CL">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Gracias | SafetyCoach</title>
+  <meta name="robots" content="noindex">
+  <link rel="icon" href="/assets/img/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/assets/css/styles.css">
+</head>
+<body>
+  <main class="simple">
+    <div>
+      <img src="/assets/img/logo-safetycoach.png" alt="SafetyCoach" width="200" height="119" style="margin:0 auto 28px">
+      <h1>Gracias, recibí tu solicitud</h1>
+      <p id="msg">Te contactaré personalmente dentro de las próximas 24 horas hábiles para coordinar una conversación.</p>
+      <p>Si es urgente, escríbeme ahora por WhatsApp.</p>
+      <div class="cta-row center">
+        <a class="btn btn-primary" href="https://wa.me/56932304800?text=Hola%20Hans%2C%20acabo%20de%20enviar%20el%20formulario%20en%20SafetyCoach." target="_blank" rel="noopener">Escribir por WhatsApp</a>
+        <a class="btn btn-ghost" href="/">Volver al inicio</a>
+      </div>
+    </div>
+  </main>
+  <script>
+    // Evento de conversión para GTM/GA4 en la página de agradecimiento.
+    window.dataLayer = window.dataLayer || [];
+    var isRes = location.search.indexOf('recurso') > -1;
+    window.dataLayer.push({ event: isRes ? 'lead_magnet_thanks' : 'lead_thanks' });
+    if (isRes) document.getElementById('msg').textContent = 'Te enviaré el recurso a tu correo apenas esté disponible.';
+  </script>
+</body>
+</html>
