@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="520" height="420" viewBox="0 0 520 420" role="img" aria-label="Faro SafetyCoach iluminando el camino">
+  <defs>
+    <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#0B1F3A"/><stop offset="1" stop-color="#13325C"/></linearGradient>
+    <linearGradient id="beam" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#F5CD30" stop-opacity=".95"/><stop offset="1" stop-color="#F5CD30" stop-opacity="0"/></linearGradient>
+    <linearGradient id="sea" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#1F6FB2"/><stop offset="1" stop-color="#0B1F3A"/></linearGradient>
+    <clipPath id="c"><rect width="520" height="420" rx="26"/></clipPath>
+  </defs>
+  <g clip-path="url(#c)">
+    <rect width="520" height="420" fill="url(#sky)"/>
+    <g fill="#fff" opacity=".55">
+      <circle cx="60" cy="50" r="1.6"/><circle cx="140" cy="90" r="1.2"/><circle cx="430" cy="40" r="1.4"/><circle cx="480" cy="120" r="1.1"/><circle cx="300" cy="30" r="1.2"/><circle cx="380" cy="190" r="1"/><circle cx="40" cy="160" r="1.1"/>
+    </g>
+    <path d="M168 128 L520 70 L520 186 Z" fill="url(#beam)" opacity=".55"/>
+    <path d="M168 128 L520 104 L520 152 Z" fill="url(#beam)"/>
+    <rect y="300" width="520" height="120" fill="url(#sea)"/>
+    <g stroke="#2FA8E0" stroke-width="2" stroke-linecap="round" fill="none" opacity=".6">
+      <path d="M230 330 q15 -8 30 0 t30 0"/><path d="M340 352 q15 -8 30 0 t30 0"/><path d="M420 322 q15 -8 30 0 t30 0"/><path d="M260 380 q15 -8 30 0 t30 0"/>
+    </g>
+    <path d="M40 320 Q90 270 170 282 Q240 290 262 324 L262 420 L40 420 Z" fill="#0A1A30"/>
+    <!-- faro -->
+    <path d="M138 70 L160 104 H116 Z" fill="#2FA8E0"/>
+    <rect x="110" y="104" width="56" height="10" rx="4" fill="#fff"/>
+    <rect x="122" y="114" width="32" height="24" fill="#F5CD30"/>
+    <rect x="116" y="138" width="44" height="9" rx="4" fill="#fff"/>
+    <path d="M122 147 H154 L166 300 H110 Z" fill="#2FA8E0"/>
+    <path d="M122 147 H132 L124 300 H110 Z" fill="#fff" opacity=".9"/>
+    <rect x="114" y="200" width="48" height="8" fill="#0B1F3A" opacity=".55"/>
+    <rect x="112" y="252" width="52" height="8" fill="#0B1F3A" opacity=".55"/>
+    <!-- etiquetas -->
+    <g font-family="Manrope, Inter, sans-serif" font-weight="700" font-size="15">
+      <g transform="translate(300 214)"><rect width="150" height="34" rx="17" fill="#fff"/><circle cx="18" cy="17" r="6" fill="#3BA54A"/><text x="32" y="22" fill="#0B1F3A">Diagnóstico</text></g>
+      <g transform="translate(250 256)"><rect width="168" height="34" rx="17" fill="#fff"/><circle cx="18" cy="17" r="6" fill="#2FA8E0"/><text x="32" y="22" fill="#0B1F3A">Acompañamiento</text></g>
+      <g transform="translate(330 172)"><rect width="122" height="34" rx="17" fill="#3BA54A"/><circle cx="18" cy="17" r="6" fill="#fff"/><text x="32" y="22" fill="#fff">Cultura</text></g>
+    </g>
+  </g>
+</svg>

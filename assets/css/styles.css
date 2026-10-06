@@ -107,9 +107,6 @@ ul, ol { margin: 0; padding: 0; list-style: none; }
 .qc-mark { width: 52px; height: 52px; margin-bottom: 16px; }
 .quote-card p { font: 600 1.25rem/1.45 var(--font-h); margin-bottom: 16px; }
 .quote-card span { color: var(--yellow); font-weight: 600; font-size: .95rem; }
-.chip-stack { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 18px; }
-.chip { font-size: .85rem; font-weight: 600; padding: 8px 14px; border-radius: 999px; background: #fff; border: 1px solid var(--line); color: var(--navy); }
-.chip.c4 { background: var(--green); color: #fff; border-color: var(--green); }
 
 /* ---------- Flujo ---------- */
 .flow { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; margin-top: 28px; counter-reset: f; }
@@ -361,7 +358,6 @@ details p { padding: 0 22px 18px; margin: 0; color: var(--muted); }
   .wa-float { padding: 14px; }
   .hero-proof { grid-template-columns: 1fr; gap: 12px; }
   .hero-proof li { flex-direction: row; gap: 8px; align-items: baseline; flex-wrap: wrap; }
-  .chip-stack { display: none; }
   .foot-grid { grid-template-columns: 1fr; }
   .path { min-height: 0; }
 }
@@ -369,4 +365,60 @@ details p { padding: 0 22px 18px; margin: 0; color: var(--muted); }
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
   * { transition: none !important; }
+}
+
+/* ==========================================================
+   Imágenes e ilustraciones
+   ========================================================== */
+.brand-logo { height: 54px; width: auto; }
+.foot-logo { display: inline-block; background: #fff; border-radius: 12px; padding: 8px 12px; }
+.foot-logo img { height: 40px; width: auto; }
+
+.hero-visual { display: grid; }
+.hero-ill { width: 100%; height: auto; border-radius: 26px; box-shadow: var(--shadow); }
+.hero-visual .quote-card { margin: -64px 18px 0 auto; max-width: 400px; padding: 24px 26px; position: relative; z-index: 1; background: #fff; color: var(--navy); border: 1px solid var(--line); }
+.hero-visual .quote-card::after { display: none; }
+.hero-visual .quote-card p { font-size: 1.02rem; color: var(--navy); margin-bottom: 8px; }
+.hero-visual .quote-card span { color: var(--green-d); }
+
+.intro-media { display: grid; grid-template-columns: 1.4fr 1fr; gap: 40px; align-items: center; margin-bottom: 2rem; }
+.intro-media .sub { margin-bottom: 0; }
+.media-img { width: 100%; height: auto; max-height: 320px; object-fit: cover; border-radius: 18px; box-shadow: var(--shadow); }
+.media-img.sq { max-width: 320px; justify-self: end; aspect-ratio: 1; }
+.dark .media-img { box-shadow: 0 20px 40px -20px rgba(0,0,0,.6); }
+.photo-pair { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+.photo-pair img { width: 100%; height: 190px; object-fit: cover; border-radius: 14px; box-shadow: var(--shadow); }
+.photo-pair img:last-child { margin-top: 28px; }
+
+.external { justify-content: flex-start; }
+.ext-img { width: 180px; height: 120px; object-fit: cover; border-radius: 12px; flex-shrink: 0; }
+.external > div { flex: 1; }
+
+.panel { position: relative; }
+.panel-ill { position: absolute; right: 24px; top: 22px; width: 92px; height: auto; mix-blend-mode: multiply; }
+#pymes .eyebrow, #pymes h2 { padding-right: 104px; }
+
+.banner { margin: 32px 0 0; position: relative; border-radius: 20px; overflow: hidden; }
+.banner img { width: 100%; height: 260px; object-fit: cover; object-position: center; display: block; }
+.banner figcaption { position: absolute; left: 0; bottom: 0; right: 0; padding: 40px 28px 20px; background: linear-gradient(transparent, rgba(11,31,58,.85)); color: #fff; font: 700 1.25rem/1.3 var(--font-h); }
+
+.cert-row { display: flex; gap: 14px; align-items: center; margin-top: 18px; }
+.cert-row img { height: 110px; width: auto; border-radius: 8px; border: 1px solid var(--line); background: #fff; }
+.cert-row img + img { height: 84px; border: 0; }
+
+@media (max-width: 900px) {
+  .intro-media { grid-template-columns: 1fr; gap: 24px; }
+  .media-img.sq { justify-self: start; max-width: 240px; }
+  .hero-visual .quote-card { margin: -48px 12px 0; }
+  .ext-img { width: 100%; height: 160px; }
+}
+@media (max-width: 620px) {
+  .photo-pair img { height: 140px; }
+  .photo-pair img:last-child { margin-top: 18px; }
+  .panel-ill { width: 64px; right: 16px; top: 16px; }
+  #pymes .eyebrow, #pymes h2 { padding-right: 70px; }
+  .banner img { height: 200px; }
+  .banner figcaption { font-size: 1.05rem; padding: 30px 18px 14px; }
+  .cert-row img { height: 90px; }
+  .cert-row img + img { height: 70px; }
 }

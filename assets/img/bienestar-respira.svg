@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="360" height="300" viewBox="0 0 360 300" role="img" aria-label="Pausa consciente y respiración">
+  <defs><radialGradient id="g" cx=".5" cy=".5" r=".5"><stop offset="0" stop-color="#3BA54A" stop-opacity=".35"/><stop offset="1" stop-color="#3BA54A" stop-opacity="0"/></radialGradient></defs>
+  <rect width="360" height="300" rx="24" fill="#EAF6EC"/>
+  <circle cx="180" cy="150" r="130" fill="url(#g)"/>
+  <g fill="none" stroke="#3BA54A" stroke-width="2">
+    <circle cx="180" cy="150" r="100" opacity=".25"/><circle cx="180" cy="150" r="78" opacity=".4"/><circle cx="180" cy="150" r="56" opacity=".6"/>
+  </g>
+  <!-- persona meditando -->
+  <g fill="#0B1F3A">
+    <circle cx="180" cy="102" r="15"/>
+    <path d="M160 122 Q180 114 200 122 L206 168 H154 Z"/>
+    <path d="M128 182 Q180 156 232 182 Q232 196 214 196 H146 Q128 196 128 182 Z"/>
+    <path d="M160 132 Q140 152 150 172 L158 170 Q152 154 166 140 Z"/><path d="M200 132 Q220 152 210 172 L202 170 Q208 154 194 140 Z"/>
+  </g>
+  <g font-family="Manrope, Inter, sans-serif" font-weight="700" font-size="14" fill="#2A8238" text-anchor="middle">
+    <text x="180" y="236">Inhala · Pausa · Exhala</text>
+  </g>
+  <path d="M110 262 q17 -10 35 0 t35 0 t35 0 t35 0" fill="none" stroke="#2FA8E0" stroke-width="3" stroke-linecap="round"/>
+</svg>

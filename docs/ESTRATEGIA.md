@@ -106,7 +106,9 @@ Cada CTA **preselecciona la necesidad** en el formulario, así el lead llega ya 
 - [ ] ¿Mostrar precios “desde”? (Recomendación: no en la web; sí después del diagnóstico).
 - [ ] Contenido de los 7 recursos descargables (PDF).
 - [ ] Nombres definitivos de los programas de Bienestar.
-- [ ] Logo en alta resolución o vectorial (SVG/AI/PDF). El actual es de 397 px.
+- [ ] Logo vectorial (SVG/AI/PDF). El actual (643 px) sirve para la web, pero el vectorial asegura nitidez en todo tamaño.
+- [ ] **Derechos de las fotos:** las fotos de personas (coaching, reunión, diagnóstico, muro, ejecutivo con flechas, figura 3D) y la ilustración de la ampolleta vienen de tus presentaciones y parecen de bancos de imágenes. Confirma que tienes licencia para usarlas en la web, o reemplázalas por fotos propias o compradas (por ejemplo, en Shutterstock, Adobe Stock, o gratuitas de Unsplash/Pexels).
+- [ ] Fotos propias en terreno y en talleres: son más creíbles que cualquier foto de banco y reemplazarían a las actuales.
 
 ## 7. Recomendaciones de conversión
 
