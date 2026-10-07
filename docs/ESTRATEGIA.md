@@ -94,13 +94,13 @@ Cada CTA **preselecciona la necesidad** en el formulario, así el lead llega ya 
 
 ## 6. Contenidos que debes aportar
 
-- [ ] **[FOTOGRAFÍA DE HANS]**: 3 a 6 fotos profesionales (retrato, terreno, facilitando).
-- [ ] **[LINK LINKEDIN]**
+- [x] Fotos de Hans y de terreno (incluidas). Ideal: un retrato profesional con buena luz para reemplazar el actual.
+- [x] LinkedIn (incluido).
 - [ ] Confirmar **WhatsApp** (+56 9 3230 4800) y correo (hans@safetycoach.cl), tomados de tu firma.
 - [ ] Confirmar la **redacción exacta de títulos** (institución y nombre del título) y si quieres mostrar logos de las certificaciones.
 - [ ] Confirmar cifras para el hero: “+20 años”. Tu presentación menciona “+300 pymes asesoradas” y “+100 empresas”: solo los publico si los confirmas.
 - [ ] 2 o 3 **[TESTIMONIO REAL]** con nombre, cargo y empresa (con autorización).
-- [ ] **[LOGO CLIENTE]** que tengas autorización para mostrar.
+- [x] Logos de empresas incluidos (BASF, Aislapol, Mutual de Seguridad, Rossier). Recomendado: confirmar con cada empresa que autoriza mostrar su logo.
 - [ ] 1 o 2 **[CASO DE ÉXITO]**: situación → qué hiciste → resultado (puede ser anónimo).
 - [ ] Zonas de atención presencial (¿Santiago? ¿La Serena? ¿Coquimbo?).
 - [ ] ¿Mostrar precios “desde”? (Recomendación: no en la web; sí después del diagnóstico).

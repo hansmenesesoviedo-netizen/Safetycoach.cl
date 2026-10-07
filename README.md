@@ -47,4 +47,4 @@ Pega tu etiqueta de Google Tag Manager en `<head>` (hay un comentario marcando e
 
 ## Placeholders a reemplazar
 
-Busca en `index.html`: `[FOTOGRAFÍA DE HANS]`, `[LINK LINKEDIN]`, `[TESTIMONIO REAL]`, `[CASO DE ÉXITO]`, `[LOGO CLIENTE]`. Los comentarios `<!-- Confirmar ... -->` marcan datos que debes verificar.
+Busca en `index.html`: `[TESTIMONIO REAL]` y `[CASO DE ÉXITO]`. Los comentarios `<!-- Confirmar ... -->` marcan datos que debes verificar.
