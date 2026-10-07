@@ -24,7 +24,7 @@
 
 ```
 /                         Home
-/sobre-safetycoach/       Hans Meneses + método
+/sobre-safetycoach/       Hans + método
 /ds-44/                   Diagnóstico e implementación DS 44
 /servicios/               Especialidades (y subpáginas por protocolo)
   /servicios/protocolos-minsal/

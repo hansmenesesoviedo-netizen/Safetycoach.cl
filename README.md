@@ -1,6 +1,6 @@
 # SafetyCoach — sitio web
 
-Sitio de **SafetyCoach · Hans Meneses**: prevención de riesgos, DS 44, protocolos MINSAL, riesgo psicosocial, coaching de seguridad y bienestar laboral.
+Sitio de **SafetyCoach · Hans**: prevención de riesgos, DS 44, protocolos MINSAL, riesgo psicosocial, coaching de seguridad y bienestar laboral.
 
 Estado: **bosquejo v1** (página principal completa y funcional). La estrategia, la arquitectura y los contenidos pendientes están en [`docs/ESTRATEGIA.md`](docs/ESTRATEGIA.md).
 
