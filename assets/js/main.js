@@ -127,7 +127,7 @@
         body: JSON.stringify(data)
       }).then(function (r) {
         if (!r.ok) throw new Error(r.status);
-        location.href = form.getAttribute('action') || '/gracias.html';
+        location.href = form.getAttribute('action') || 'gracias.html';
       }).catch(function () {
         msg.textContent = 'No pudimos enviar el formulario. Escríbeme directo a hans@safetycoach.cl o por WhatsApp.';
       });

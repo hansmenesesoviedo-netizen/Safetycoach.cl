@@ -23,6 +23,10 @@ HTML, CSS y JS puros: sin compilación ni dependencias.
 
 ## Ver en tu computador
 
+**Lo más simple:** descomprime la carpeta y haz doble clic en `index.html`. Se abre en tu navegador con todas las imágenes.
+
+**Con servidor local (para probar como en internet):**
+
 ```bash
 npx http-server -p 8080
 # abrir http://localhost:8080
