@@ -73,6 +73,29 @@
     });
   });
 
+
+  // ---------- Perfiles de cliente (pestañas) ----------
+  var audTabs = document.querySelectorAll('.aud-tabs [role="tab"]');
+  audTabs.forEach(function (tab) {
+    tab.addEventListener('click', function () {
+      audTabs.forEach(function (t) {
+        var on = t === tab;
+        t.setAttribute('aria-selected', String(on));
+        document.getElementById(t.getAttribute('aria-controls')).hidden = !on;
+      });
+      track('perfil_tab', { perfil: tab.textContent });
+    });
+  });
+
+  // ---------- Bloque opcional psicosocial/bienestar: abrir al navegar hacia él ----------
+  function openTarget() {
+    var el = location.hash && document.getElementById(location.hash.slice(1));
+    var d = el && (el.matches('details') ? el : el.closest('details') || el.querySelector('details'));
+    if (d) d.open = true;
+  }
+  window.addEventListener('hashchange', openTarget);
+  openTarget();
+
   // ---------- Recursos (lead magnets) ----------
   var modal = document.getElementById('res-modal');
   if (modal && modal.showModal) {
