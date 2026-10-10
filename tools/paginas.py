@@ -143,7 +143,7 @@ def page_shell(index_html, prefix="../"):
         v = re.sub(r'(href|src)="assets/', rf'\1="{prefix}assets/', v)
         v = re.sub(r'href="#(?!faro)', f'href="{prefix}index.html#', v)
         v = v.replace('href="index.html"', f'href="{prefix}index.html"')
-        v = re.sub(r'href="(ds-44|ley-karin|fiscalizaciones|pymes|contratistas|autodiagnostico)/"', rf'href="{prefix}\1/"', v)
+        v = re.sub(r'href="(ds-44|ley-karin|fiscalizaciones|pymes|contratistas|autodiagnostico|liderazgo|demo)/"', rf'href="{prefix}\1/"', v)
         parts[k] = v
     return parts
 
@@ -209,7 +209,7 @@ def render(p, shell):
           {testi}
           <div class="svc-diag">
             <h3>¿No sabes por dónde empezar?</h3>
-            <p>Responde 10 preguntas y descubre en 3 minutos qué tan preparada está tu empresa.</p>
+            <p>12 preguntas simples para dueños y RR.HH. Descubre en 3 minutos qué tan preparada está tu empresa.</p>
             <a class="btn btn-secondary" href="../autodiagnostico/" data-cta="svc_autodiag_{p['slug']}">Hacer autodiagnóstico</a>
           </div>
         </aside>
@@ -234,41 +234,54 @@ def render(p, shell):
 """
 
 
+# Autodiagnóstico para dueños y RR.HH. Basado en lo esencial de la
+# "Autoevaluación inicial de cumplimiento de aspectos legales" (Anexo 1,
+# propuesta unificada de los organismos administradores de la Ley 16.744).
+# (bloque, pregunta en lenguaje simple, brecha a mostrar si no se cumple)
 QUESTIONS = [
-    "¿Tienes una política de seguridad firmada por la gerencia y conocida por los trabajadores?",
-    "¿Tienes una matriz de riesgos actualizada en el último año?",
-    "¿Tienes un programa de trabajo preventivo con responsables y plazos?",
-    "¿Todos tus trabajadores recibieron inducción de riesgos con registro firmado?",
-    "¿Tu reglamento interno está actualizado, incluida la Ley Karin?",
-    "¿Tienes protocolo y procedimiento de Ley Karin implementados?",
-    "¿Aplicaste los protocolos MINSAL que te corresponden (CEAL-SM, TMERT, MMC, PREXOR u otros)?",
-    "¿Tienes plan de emergencias y realizaste simulacros este año?",
-    "¿Investigas los accidentes e incidentes y haces seguimiento de las medidas?",
-    "¿Podrías mostrar hoy todas tus evidencias si llega una fiscalización?",
+    ("Tu organización", "¿Tienes Reglamento Interno de Orden, Higiene y Seguridad actualizado y cada trabajador firmó que lo recibió?", "Reglamento interno actualizado y entregado con firma"),
+    ("Tu organización", "¿Tienes el protocolo de Ley Karin implementado y conocido por tu equipo?", "Protocolo Ley Karin"),
+    ("Tu organización", "¿Tienes una política de seguridad, una matriz de riesgos y un programa de trabajo con responsables y plazos?", "Sistema de gestión DS 44: política, matriz de riesgos y programa de trabajo"),
+    ("Tu organización", "Según tu tamaño, ¿funciona el Comité Paritario (más de 25 trabajadores) o eligieron un Delegado de Seguridad (10 a 25)?", "Comité Paritario o Delegado de Seguridad"),
+    ("Tu organización", "¿Tú o la persona que designaste se capacitó en gestión de riesgos con tu mutualidad?", "Capacitación del representante legal en gestión de riesgos"),
+    ("Tus personas", "Antes de empezar a trabajar, ¿cada persona recibe información de sus riesgos y de cómo trabajar seguro, con registro firmado?", "Información de riesgos al ingreso, con registro"),
+    ("Tus personas", "¿Entregas los elementos de protección personal sin costo, con registro y enseñando a usarlos?", "Entrega y capacitación de elementos de protección personal"),
+    ("Tu lugar de trabajo", "¿Baños, comedor, ventilación e iluminación están en buen estado y son suficientes para tu equipo?", "Condiciones sanitarias y ambientales básicas"),
+    ("Tu lugar de trabajo", "¿Las máquinas y equipos tienen procedimiento de trabajo seguro y mantención al día?", "Procedimientos y mantención de máquinas y equipos"),
+    ("Tu lugar de trabajo", "¿Tienes señalización, vías de evacuación, extintores mantenidos y un plan de emergencias que tu equipo conoce?", "Señalización, extintores y plan de emergencias"),
+    ("Tu seguimiento", "¿Investigas cada accidente o incidente y llevas el registro de tu accidentabilidad?", "Investigación de accidentes y estadísticas"),
+    ("Tu seguimiento", "Si mañana llega una fiscalización, ¿podrías mostrar todos estos registros en menos de una hora?", "Evidencias ordenadas y listas para fiscalización"),
 ]
 
 
 def render_autodiag(shell):
     url = f"{SITE}/autodiagnostico/"
-    qs = "\n".join(
-        f"""          <fieldset class="q"><legend><span>{i+1}</span>{q}</legend>
+    rows, last = [], None
+    for i, (blk, q, _) in enumerate(QUESTIONS):
+        if blk != last:
+            rows.append(f'          <h2 class="q-block">{blk}</h2>')
+            last = blk
+        rows.append(f"""          <fieldset class="q"><legend><span>{i+1}</span>{q}</legend>
             <label><input type="radio" name="q{i}" value="2" required> Sí</label>
             <label><input type="radio" name="q{i}" value="1"> En parte</label>
             <label><input type="radio" name="q{i}" value="0"> No</label>
-          </fieldset>""" for i, q in enumerate(QUESTIONS))
+            <label><input type="radio" name="q{i}" value="-1"> No sé</label>
+          </fieldset>""")
+    qs = "\n".join(rows)
+    gaps_js = json.dumps([g for _, _, g in QUESTIONS], ensure_ascii=False)
     return f"""<!doctype html>
 <html lang="es-CL">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Autodiagnóstico de prevención y DS 44 gratis | SafetyCoach</title>
-  <meta name="description" content="Responde 10 preguntas y descubre en 3 minutos qué tan preparada está tu empresa para el DS 44, la Ley Karin y una fiscalización. Resultado inmediato y gratuito.">
+  <meta name="description" content="12 preguntas simples para dueños y gerentes de personas: descubre en 3 minutos qué tan preparada está tu empresa para cumplir la ley y enfrentar una fiscalización.">
   <link rel="canonical" href="{url}">
   <meta name="theme-color" content="#0B1F3A">
   <meta property="og:type" content="website">
   <meta property="og:locale" content="es_CL">
   <meta property="og:title" content="¿Qué tan preparada está tu empresa? Autodiagnóstico SafetyCoach">
-  <meta property="og:description" content="10 preguntas, 3 minutos, resultado inmediato.">
+  <meta property="og:description" content="12 preguntas, 3 minutos, resultado inmediato.">
   <meta property="og:url" content="{url}">
   <meta property="og:image" content="{SITE}/assets/img/og-safetycoach.jpg">
   {shell['head_links']}
@@ -283,7 +296,8 @@ def render_autodiag(shell):
         <p class="crumbs"><a href="../index.html">Inicio</a> › Autodiagnóstico</p>
         <p class="eyebrow">Gratis · 3 minutos</p>
         <h1>¿Qué tan preparada está tu empresa?</h1>
-        <p class="lead">Responde con honestidad. Al final verás tu nivel y las brechas que conviene atender primero frente al DS 44, la Ley Karin y una fiscalización.</p>
+        <p class="lead">Para dueños, gerentes y encargados de personas. No necesitas saber de prevención: responde con honestidad y, si no sabes, marca «No sé». Al final verás tu nivel y lo que conviene atender primero.</p>
+        <p class="note">Basado en lo esencial de la autoevaluación inicial de cumplimiento legal que usan los organismos administradores de la Ley 16.744.</p>
         <form id="diag-form" class="diag-form" novalidate>
 {qs}
           <button class="btn btn-primary btn-lg" type="submit">Ver mi resultado</button>
@@ -292,7 +306,7 @@ def render_autodiag(shell):
 
         <div id="diag-result" class="diag-result" hidden>
           <p class="eyebrow">Tu resultado</p>
-          <div class="diag-score"><strong id="r-score">0</strong><span>/ 20</span></div>
+          <div class="diag-score"><strong id="r-score">0</strong><span>% de cumplimiento</span></div>
           <h2 id="r-level">Nivel</h2>
           <p id="r-text"></p>
           <h3>Lo que conviene atender primero</h3>
@@ -331,12 +345,12 @@ def render_autodiag(shell):
   <script src="../assets/js/main.js" defer></script>
   <script>
   (function () {{
-    var GAPS = {json.dumps(["Política de seguridad", "Matriz de riesgos actualizada", "Programa de trabajo preventivo", "Inducción de riesgos con registro firmado", "Reglamento interno actualizado", "Protocolo y procedimiento Ley Karin", "Protocolos MINSAL", "Plan de emergencias y simulacros", "Investigación de accidentes y seguimiento", "Evidencias listas para fiscalización"], ensure_ascii=False)};
+    var GAPS = {gaps_js};
     var LEVELS = [
-      [8, 'Crítico', 'Tu empresa está muy expuesta ante un accidente o una fiscalización. Conviene actuar de inmediato con un diagnóstico y un plan priorizado.'],
-      [14, 'En riesgo', 'Tienes avances, pero hay brechas importantes que podrían traducirse en multas o accidentes. Es el momento de ordenar y priorizar.'],
-      [18, 'En camino', 'Vas bien. Ajustando algunas brechas y dejando todo en evidencia digital, estarás preparado para cualquier fiscalización.'],
-      [20, 'Preparado', 'Excelente base. El siguiente paso es sostenerlo con indicadores y llevar la seguridad a la cultura de tu equipo.']
+      [40, 'Crítico', 'Tu empresa está muy expuesta ante un accidente o una fiscalización. Conviene actuar de inmediato con un diagnóstico y un plan priorizado.'],
+      [70, 'En riesgo', 'Tienes avances, pero hay brechas importantes que podrían traducirse en multas o accidentes. Es el momento de ordenar y priorizar.'],
+      [90, 'En camino', 'Vas bien. Ajustando algunas brechas y dejando todo en evidencia digital, estarás preparado para cualquier fiscalización.'],
+      [100, 'Preparado', 'Excelente base. El siguiente paso es sostenerlo con indicadores y llevar la seguridad a la cultura de tu equipo.']
     ];
     var form = document.getElementById('diag-form');
     form.addEventListener('submit', function (e) {{
@@ -345,10 +359,11 @@ def render_autodiag(shell):
       for (var i = 0; i < GAPS.length; i++) {{
         var c = form.querySelector('input[name="q' + i + '"]:checked');
         if (!c) {{ missing++; continue; }}
-        score += +c.value;
-        if (c.value !== '2') gaps.push(GAPS[i] + (c.value === '1' ? ' (en parte)' : ''));
+        score += Math.max(0, +c.value);
+        if (c.value !== '2') gaps.push(GAPS[i] + (c.value === '1' ? ' (en parte)' : c.value === '-1' ? ' (no sabes si se cumple)' : ''));
       }}
       if (missing) {{ form.querySelector('.form-msg').textContent = 'Responde las ' + missing + ' preguntas pendientes para ver tu resultado.'; return; }}
+      score = Math.round(score * 100 / (GAPS.length * 2));
       var lv = LEVELS.filter(function (l) {{ return score <= l[0]; }})[0];
       document.getElementById('r-score').textContent = score;
       document.getElementById('r-level').textContent = 'Nivel: ' + lv[1];
@@ -369,6 +384,276 @@ def render_autodiag(shell):
 """
 
 
+# Autoevaluación de liderazgo en seguridad: 5 factores de éxito, escala 1 a 7.
+FACTORS = [
+    ("compromiso", "Fuerte compromiso del liderazgo", "#5B5BF0",
+     ["La gerencia participa personalmente en seguridad (rondas, reuniones o inspecciones) al menos una vez al mes.",
+      "La seguridad tiene recursos y tiempo, incluso cuando hay presión por producir."],
+     "Agenda un liderazgo visible mínimo una vez al mes: una ronda en terreno y una conversación con el equipo."),
+    ("tolerancia", "Tolerancia cero", "#3BA54A",
+     ["No se acepta trabajar sin las medidas de control, aunque eso atrase la producción.",
+      "Ante una falta grave se aplica siempre la misma regla, sin importar el cargo."],
+     "Define 3 a 5 reglas de oro claras, con consecuencias conocidas, y aplícalas igual para todos."),
+    ("comportamiento", "Cambio en comportamiento", "#F2B33D",
+     ["Las jefaturas observan cómo se trabaja y conversan con las personas sobre cómo hacerlo seguro.",
+      "Se reconoce a quienes reportan incidentes o proponen mejoras."],
+     "Instala observaciones conductuales y reconoce públicamente los buenos reportes."),
+    ("comunicacion", "Comunicación clara y retroalimentación", "#7E9AAE",
+     ["Todos conocen las metas de seguridad y saben cómo vamos.",
+      "Cuando alguien reporta un problema, recibe respuesta."],
+     "Comparte un indicador simple cada mes y responde cada reporte, aunque sea para decir «lo estamos viendo»."),
+    ("plan", "Desafiante plan de acción y fuerte seguimiento", "#2F8DE0",
+     ["Existe un plan anual con metas, responsables y plazos para cada cargo.",
+      "Cada mes se revisan los avances y se cierran las observaciones a tiempo."],
+     "Arma un plan por cargo (gerencia, jefaturas, supervisores) y revísalo mes a mes con plazos de cierre."),
+]
+
+
+def render_liderazgo(shell):
+    url = f"{SITE}/liderazgo/"
+    items, n = [], 0
+    for key, name, color, stmts, _ in FACTORS:
+        items.append(f'          <h2 class="q-block" style="border-color:{color}">{name}</h2>')
+        for st in stmts:
+            opts = "".join(f'<label><input type="radio" name="l{n}" value="{v}"{" required" if v == 1 else ""}><span>{v}</span></label>' for v in range(1, 8))
+            items.append(f'          <fieldset class="q q7" data-f="{key}"><legend><span>{n+1}</span>{st}</legend><div class="scale7">{opts}</div><div class="scale7-k"><small>Nunca</small><small>Siempre</small></div></fieldset>')
+            n += 1
+    qs = "\n".join(items)
+    fjs = json.dumps([{"k": k, "n": nm, "c": c, "tip": tip} for k, nm, c, _, tip in FACTORS], ensure_ascii=False)
+    return f"""<!doctype html>
+<html lang="es-CL">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Autoevaluación de liderazgo en seguridad | SafetyCoach</title>
+  <meta name="description" content="¿Tienes real tolerancia cero a los accidentes? Evalúa en 3 minutos el liderazgo en seguridad de tu organización en 5 factores de éxito, con escala de 1 a 7.">
+  <link rel="canonical" href="{url}">
+  <meta name="theme-color" content="#0B1F3A">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="es_CL">
+  <meta property="og:title" content="¿Tienes real tolerancia cero a los accidentes? Autoevaluación de liderazgo">
+  <meta property="og:description" content="5 factores de éxito, escala de 1 a 7, resultado inmediato.">
+  <meta property="og:url" content="{url}">
+  <meta property="og:image" content="{SITE}/assets/img/og-safetycoach.jpg">
+  {shell['head_links']}
+</head>
+<body>
+  <a class="skip" href="#contenido">Saltar al contenido</a>
+  {shell['svg']}
+  {shell['header']}
+  <main id="contenido">
+    <section class="section diag">
+      <div class="wrap narrow">
+        <p class="crumbs"><a href="../index.html">Inicio</a> › Liderazgo en seguridad</p>
+        <p class="eyebrow">Para gerencias y jefaturas · 3 minutos</p>
+        <h1>¿Tienes real tolerancia cero a los accidentes?</h1>
+        <p class="lead">Los accidentes no bajan con más documentos: bajan cuando el liderazgo se involucra. Evalúa a tu organización en los 5 factores de éxito que uso en mis programas, de 1 (nunca) a 7 (siempre).</p>
+        <form id="lid-form" class="diag-form" novalidate>
+{qs}
+          <button class="btn btn-primary btn-lg" type="submit">Ver mi resultado</button>
+          <p class="form-msg" role="status" aria-live="polite"></p>
+        </form>
+
+        <div id="lid-result" class="diag-result" hidden>
+          <p class="eyebrow">Tu resultado</p>
+          <div class="lid-wheel">
+            <div class="lid-core"><b>Factores de éxito</b><strong id="l-avg">0</strong></div>
+            <div id="l-factors"></div>
+          </div>
+          <h2 id="l-level"></h2>
+          <p id="l-text"></p>
+          <h3>Tu factor más débil y por dónde partir</h3>
+          <p id="l-tip" class="lid-tip"></p>
+          <div class="diag-next">
+            <h3>Conversemos 30 minutos sobre tu resultado, sin costo</h3>
+            <form class="lead-form compact" name="liderazgo" method="POST" action="../gracias.html" data-netlify="true" netlify-honeypot="empresa_web" novalidate>
+              <input type="hidden" name="form-name" value="liderazgo">
+              <input type="hidden" name="promedio" value="">
+              <input type="hidden" name="factores" value="">
+              <input type="hidden" name="origen" value="">
+              <p class="hp"><label>No completar <input name="empresa_web" tabindex="-1" autocomplete="off"></label></p>
+              <div class="fgrid">
+                <label>Nombre<input name="nombre" required autocomplete="name"></label>
+                <label>Empresa<input name="empresa" required autocomplete="organization"></label>
+                <label>Cargo<input name="cargo" autocomplete="organization-title"></label>
+                <label>N.º de trabajadores
+                  <select name="trabajadores" required><option value="">Selecciona</option><option>1 a 25</option><option>26 a 99</option><option>100 a 499</option><option>500 o más</option></select>
+                </label>
+                <label>Correo<input type="email" name="correo" required autocomplete="email"></label>
+                <label>Teléfono / WhatsApp<input type="tel" name="telefono" required autocomplete="tel" placeholder="+56 9 ..."></label>
+                <label class="full consent"><input type="checkbox" name="consentimiento" value="Sí" required> Acepto que SafetyCoach use estos datos para contactarme.</label>
+              </div>
+              <button class="btn btn-primary btn-lg full" type="submit">Quiero subir de nivel</button>
+              <p class="form-msg" role="status" aria-live="polite"></p>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+  {shell['footer']}
+  {shell['wa']}
+  <script src="../assets/js/main.js" defer></script>
+  <script>
+  (function () {{
+    var F = {fjs};
+    var form = document.getElementById('lid-form');
+    form.addEventListener('submit', function (e) {{
+      e.preventDefault();
+      var sets = form.querySelectorAll('fieldset.q7'), sums = {{}}, cnt = {{}}, missing = 0;
+      sets.forEach(function (fs, i) {{
+        var c = fs.querySelector('input:checked');
+        if (!c) {{ missing++; return; }}
+        var k = fs.dataset.f; sums[k] = (sums[k] || 0) + +c.value; cnt[k] = (cnt[k] || 0) + 1;
+      }});
+      if (missing) {{ form.querySelector('.form-msg').textContent = 'Responde las ' + missing + ' afirmaciones pendientes.'; return; }}
+      var avgs = F.map(function (f) {{ return {{ f: f, v: Math.round(sums[f.k] / cnt[f.k] * 10) / 10 }}; }});
+      var total = Math.round(avgs.reduce(function (a, b) {{ return a + b.v; }}, 0) / avgs.length * 10) / 10;
+      var fmt = function (v) {{ return v.toFixed(1).replace('.', ','); }};
+      document.getElementById('l-avg').textContent = fmt(total);
+      document.getElementById('l-factors').innerHTML = avgs.map(function (a, i) {{
+        return '<div class="lid-f lid-f' + i + '" style="background:' + a.f.c + '"><span>' + a.f.n + '</span><strong>' + fmt(a.v) + '</strong></div>';
+      }}).join('');
+      var lv = total >= 6 ? ['Liderazgo fuerte', 'Tu liderazgo sostiene la seguridad. El desafío es mantenerlo y llevarlo a cada supervisor y trabajador.']
+             : total >= 5 ? ['Liderazgo en desarrollo', 'Hay compromiso, pero todavía depende de pocas personas. Con un plan por cargo y seguimiento mensual puedes dar el salto.']
+             : ['Liderazgo débil', 'Hoy la seguridad está delegada o se activa solo cuando pasa algo. Es la principal causa de que los accidentes no bajen.'];
+      var weak = avgs.slice().sort(function (a, b) {{ return a.v - b.v; }})[0];
+      document.getElementById('l-level').textContent = lv[0] + ' (' + fmt(total) + ' de 7)';
+      document.getElementById('l-text').textContent = lv[1];
+      document.getElementById('l-tip').innerHTML = '<b>' + weak.f.n + ' (' + fmt(weak.v) + '):</b> ' + weak.f.tip;
+      var lf = document.querySelector('form[name="liderazgo"]');
+      lf.promedio.value = fmt(total);
+      lf.factores.value = avgs.map(function (a) {{ return a.f.n + ' ' + fmt(a.v); }}).join('; ');
+      var res = document.getElementById('lid-result'); res.hidden = false; form.hidden = true;
+      res.scrollIntoView({{ behavior: 'smooth' }});
+      window.dataLayer = window.dataLayer || [];
+      window.dataLayer.push({{ event: 'liderazgo_resultado', promedio: total }});
+    }});
+  }})();
+  </script>
+</body>
+</html>
+"""
+
+
+def render_demo(shell):
+    return """<!doctype html>
+<html lang="es-CL">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Demo SafetyCoach Digital: IRL, cápsulas e inspecciones | SafetyCoach</title>
+  <meta name="description" content="Prueba la demo de SafetyCoach Digital con una empresa ficticia: inducción IRL con firma digital, cápsula de capacitación con evaluación e inspección pre-uso de equipos.">
+  <meta name="robots" content="noindex">
+  <meta name="theme-color" content="#0B1F3A">
+  """ + shell['head_links'] + """
+</head>
+<body class="demo-body">
+  <a class="skip" href="#contenido">Saltar al contenido</a>
+  """ + shell['svg'] + shell['header'] + """
+  <main id="contenido">
+    <section class="section demo">
+      <div class="wrap">
+        <p class="crumbs"><a href="../index.html">Inicio</a> › Demo SafetyCoach Digital</p>
+        <div class="demo-head">
+          <div>
+            <p class="eyebrow">Demo · Empresa ficticia</p>
+            <h1>Alimentos Demo SpA</h1>
+            <p class="lead">Planta de alimentos con 60 trabajadores. Así se ve, desde el celular del trabajador, lo que en tu empresa hoy está en papel.</p>
+          </div>
+          <p class="demo-warn">Esta es una demostración. Los datos que ingreses se guardan solo en este navegador y no se envían a nadie.</p>
+        </div>
+
+        <div class="demo-tabs" role="tablist">
+          <button role="tab" aria-selected="true" data-t="irl">1 · Inducción IRL</button>
+          <button role="tab" aria-selected="false" data-t="cap">2 · Cápsula</button>
+          <button role="tab" aria-selected="false" data-t="ins">3 · Inspección pre-uso</button>
+          <button role="tab" aria-selected="false" data-t="reg">4 · Registros <span id="reg-n">0</span></button>
+        </div>
+
+        <div class="phone">
+          <!-- IRL -->
+          <div class="demo-pane" id="t-irl">
+            <h2>Información de riesgos laborales (IRL)</h2>
+            <p class="demo-sub">Antes de empezar a trabajar, revisa tus riesgos y firma.</p>
+            <label>Nombre (ficticio)<input id="irl-nombre" value="Camila Rojas"></label>
+            <label>Cargo<select id="irl-cargo"><option>Operaria de envasado</option><option>Bodeguero</option><option>Ayudante de cocina industrial</option></select></label>
+            <div class="mods" id="irl-mods">
+              <details><summary>Caídas al mismo nivel</summary><p>Pisos húmedos en zona de lavado. Usa calzado antideslizante y avisa de derrames de inmediato.</p></details>
+              <details><summary>Cortes</summary><p>Cuchillos y rebanadoras. Usa guante anticorte y nunca retires la guarda de la máquina.</p></details>
+              <details><summary>Manejo manual de carga</summary><p>Máximo 25 kg por persona. Dobla las rodillas, carga pegada al cuerpo y pide ayuda o usa transpaleta.</p></details>
+              <details><summary>Atrapamiento en máquinas</summary><p>No intervengas una máquina en movimiento. Bloquea la energía antes de limpiar o mantener.</p></details>
+              <details><summary>Quemaduras</summary><p>Hornos y vapor. Usa guantes térmicos y no abras equipos a presión.</p></details>
+              <details><summary>Emergencias y evacuación</summary><p>Conoce tu vía de evacuación y el punto de encuentro. Ante una alarma, sal sin correr.</p></details>
+            </div>
+            <p class="demo-prog"><span id="irl-read">0</span> de 6 módulos revisados</p>
+            <p class="decl">Declaro haber recibido y comprendido la información de los riesgos de mi trabajo, sus medidas preventivas y los métodos de trabajo correctos.</p>
+            <div class="sig"><canvas id="sig-irl" width="600" height="160"></canvas><button type="button" class="sig-clear" data-c="sig-irl">Borrar</button><span>Firma aquí con el dedo</span></div>
+            <button class="btn btn-primary full" id="irl-send">Firmar y enviar</button>
+            <p class="demo-msg" id="irl-msg"></p>
+          </div>
+
+          <!-- Cápsula -->
+          <div class="demo-pane" id="t-cap" hidden>
+            <h2>Cápsula: manejo manual de carga</h2>
+            <p class="demo-sub">3 láminas, 2 preguntas y tu firma. 2 minutos.</p>
+            <div class="slides">
+              <div class="slide on"><b>1/3 · ¿Por qué importa?</b><p>Las lesiones de espalda son una de las causas más comunes de licencias en bodegas y plantas de alimentos.</p></div>
+              <div class="slide"><b>2/3 · La regla</b><p>Hasta 25 kg por persona. Sobre eso, usa ayuda mecánica (transpaleta) o carga entre dos.</p></div>
+              <div class="slide"><b>3/3 · La técnica</b><p>Pies separados, rodillas dobladas, espalda recta y la carga pegada al cuerpo. No gires el tronco con peso.</p></div>
+            </div>
+            <div class="slide-nav"><button type="button" class="btn btn-ghost btn-sm" id="sl-prev">‹ Anterior</button><button type="button" class="btn btn-ghost btn-sm" id="sl-next">Siguiente ›</button></div>
+            <div class="quiz" id="quiz" hidden>
+              <fieldset><legend>¿Cuál es el peso máximo por persona?</legend>
+                <label><input type="radio" name="qa" value="0"> 50 kg</label><label><input type="radio" name="qa" value="1"> 25 kg</label><label><input type="radio" name="qa" value="0"> No hay límite</label></fieldset>
+              <fieldset><legend>Al levantar una caja debes…</legend>
+                <label><input type="radio" name="qb" value="0"> Doblar la espalda</label><label><input type="radio" name="qb" value="1"> Doblar las rodillas y mantener la carga pegada</label></fieldset>
+              <label>Nombre (ficticio)<input id="cap-nombre" value="Camila Rojas"></label>
+              <div class="sig"><canvas id="sig-cap" width="600" height="160"></canvas><button type="button" class="sig-clear" data-c="sig-cap">Borrar</button><span>Firma aquí con el dedo</span></div>
+              <button class="btn btn-primary full" id="cap-send">Enviar evaluación y firma</button>
+              <p class="demo-msg" id="cap-msg"></p>
+            </div>
+          </div>
+
+          <!-- Inspección -->
+          <div class="demo-pane" id="t-ins" hidden>
+            <h2>Inspección pre-uso</h2>
+            <p class="demo-sub">En terreno, el trabajador llega aquí escaneando el código QR pegado en el equipo.</p>
+            <label>Equipo<select id="ins-eq">
+              <option value="transpaleta">Transpaleta eléctrica TP-02</option>
+              <option value="rebanadora">Rebanadora industrial RB-01</option>
+              <option value="horno">Horno a gas HG-03</option></select></label>
+            <label>Operador (ficticio)<input id="ins-nombre" value="Pedro Soto"></label>
+            <div id="ins-list" class="ins-list"></div>
+            <button type="button" class="btn btn-ghost btn-sm" id="ins-geo">📍 Agregar ubicación (opcional)</button> <small id="ins-geo-t"></small>
+            <button class="btn btn-primary full" id="ins-send">Registrar inspección</button>
+            <div class="ins-res" id="ins-res" hidden></div>
+          </div>
+
+          <!-- Registros -->
+          <div class="demo-pane" id="t-reg" hidden>
+            <h2>Registros</h2>
+            <p class="demo-sub">Lo que vería la gerencia o el prevencionista: cada registro con responsable, fecha, hora y firma.</p>
+            <div id="reg-list" class="reg-list"></div>
+            <button type="button" class="btn btn-ghost btn-sm" id="reg-clear">Borrar datos de la demo</button>
+          </div>
+        </div>
+
+        <div class="demo-cta">
+          <div><h4>¿Lo quieres para tu empresa?</h4><p>Lo hacemos a la medida de tu operación: tus riesgos, tus equipos, tus cargos y tu logo.</p></div>
+          <a class="btn btn-primary" href="../index.html?necesidad=Demo%20digital#contacto" data-cta="demo_contacto">Quiero mi versión</a>
+        </div>
+      </div>
+    </section>
+  </main>
+  """ + shell['footer'] + shell['wa'] + """
+  <script src="../assets/js/main.js" defer></script>
+  <script src="../assets/js/demo.js" defer></script>
+</body>
+</html>
+"""
+
+
 def main():
     index_html = (ROOT / "index.html").read_text(encoding="utf-8")
     shell = page_shell(index_html)
@@ -377,6 +662,14 @@ def main():
         out.parent.mkdir(exist_ok=True)
         out.write_text(render(p, shell), encoding="utf-8")
         print("ok", out.relative_to(ROOT))
+    out = ROOT / "demo" / "index.html"
+    out.parent.mkdir(exist_ok=True)
+    out.write_text(render_demo(shell), encoding="utf-8")
+    print("ok", out.relative_to(ROOT))
+    out = ROOT / "liderazgo" / "index.html"
+    out.parent.mkdir(exist_ok=True)
+    out.write_text(render_liderazgo(shell), encoding="utf-8")
+    print("ok", out.relative_to(ROOT))
     out = ROOT / "autodiagnostico" / "index.html"
     out.parent.mkdir(exist_ok=True)
     out.write_text(render_autodiag(shell), encoding="utf-8")

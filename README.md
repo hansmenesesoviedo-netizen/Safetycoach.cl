@@ -9,7 +9,9 @@ Estado: **bosquejo v1** (página principal completa y funcional). La estrategia,
 ```
 index.html              Página principal (todas las secciones)
 ds-44/ ley-karin/ fiscalizaciones/ pymes/ contratistas/   Páginas por servicio (generadas)
-autodiagnostico/        Autodiagnóstico de 10 preguntas con captura de contacto
+autodiagnostico/        Autodiagnóstico legal simple (12 preguntas, basado en Anexo 1) para dueños y RR.HH.
+liderazgo/              Autoevaluación de liderazgo en seguridad (5 factores, escala 1 a 7)
+demo/                   Demo digital con empresa ficticia (IRL con firma, cápsula, inspección); usa assets/js/demo.js
 tools/paginas.py        Generador de las páginas por servicio: edita aquí y ejecuta
 gracias.html            Página de agradecimiento (conversión)
 404.html                Página no encontrada
