@@ -544,3 +544,29 @@ details p { padding: 0 22px 18px; margin: 0; color: var(--muted); }
 .dig-show { grid-template-columns: repeat(4, 1fr) !important; align-items: start; }
 .dig-show img { height: auto !important; object-fit: contain !important; background: transparent !important; }
 @media (max-width: 760px) { .dig-show { grid-template-columns: 1fr 1fr !important; } }
+
+/* ---------- v4: cuadros transparentes (solo marco) sobre fotos de fondo ---------- */
+.bg-photo .ds-col, .bg-photo .panel, .bg-photo .coach-levels article, .bg-photo .pillars article,
+.bg-photo .compare > div, .bg-photo .maturity, .bg-photo .compare .win {
+  background: transparent !important; box-shadow: none !important; border: 1.5px solid rgba(11,31,58,.28);
+}
+.bg-photo .ds-col { border-top-width: 4px; }
+.bg-photo .compare .win { border: 2px solid var(--green); }
+.bg-photo .mat-tabs button:not([aria-selected="true"]) { background: rgba(255,255,255,.45); }
+/* Fiscalizaciones mantiene sus cuadros blancos */
+#fiscalizaciones .fis-grid article { background: #fff !important; }
+/* Herramientas digitales: tarjetas y capturas transparentes */
+.digital .dig-grid article { background: transparent; border-color: rgba(255,255,255,.35); }
+.digital .dig-results { background: transparent; border-color: rgba(255,255,255,.35); }
+.dig-show img { opacity: .6; transition: opacity .2s; box-shadow: none !important; }
+.dig-show img:hover { opacity: 1; }
+.lead-dig { font: 700 1.2rem/1.4 var(--font-h); color: var(--yellow); margin-top: -4px; }
+/* Diplomas más transparentes */
+.cert-row img { opacity: .5; transition: opacity .2s; }
+.cert-row img:hover { opacity: 1; }
+/* Caso real */
+.case-real { border: 2px solid var(--green); border-radius: 14px; padding: 22px; background: #F4FBF5; }
+.case-real .case-k { display: block; font-size: .78rem; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; color: var(--green-d); }
+.case-real strong { display: block; font-family: var(--font-h); color: var(--navy); font-size: 1.1rem; margin: 6px 0; line-height: 1.3; }
+.case-real span:last-child { color: var(--muted); font-size: .9rem; }
+.gallery figcaption b { color: var(--navy); }
