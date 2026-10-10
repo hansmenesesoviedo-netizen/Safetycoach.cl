@@ -104,6 +104,28 @@ PAGES = [
         "testi": ("Junto a SafetyCoach logramos nuestro sueño: abrir nuestro restaurante en Pirque, Onde Skinners, con todos los permisos y autorizaciones sanitarias de la SEREMI.", "Alex Skinner · Restaurante Onde Skinners, Pirque"),
     },
     {
+        "slug": "sistemas-de-gestion",
+        "title": "Implementación de sistemas de gestión y certificación PEC / GPS | SafetyCoach",
+        "desc": "Implementa tu sistema de gestión de seguridad y salud en el trabajo y certifícate en el programa de tu organismo administrador (Mutual de Seguridad, ACHS, IST, ISL). Desde el nivel básico.",
+        "eyebrow": "Sistemas de gestión · Certificaciones",
+        "h1": "Implementa tu sistema de gestión y certifícalo con tu mutualidad",
+        "lead": "Un sistema de gestión ordena tu prevención, te prepara para clientes y licitaciones exigentes y es la base para certificarte en el programa de tu organismo administrador. Te acompaño desde el nivel básico hasta el siguiente.",
+        "img": "taller-riesgos-3.webp",
+        "need": "Sistema de gestión",
+        "cta": "Quiero implementar mi sistema de gestión",
+        "blocks": [
+            ("Certificaciones que puedes lograr", "<div class='seals'><img src='../assets/img/sello-pec-mutual.webp' alt='Sello PEC Empresa Estándar, Mutual de Seguridad' width='200' height='265' loading='lazy'><img src='../assets/img/sello-gps-achs.webp' alt='Certificado de nivel de desarrollo preventivo GPS, ACHS' width='564' height='222' loading='lazy'></div><p>Cada organismo administrador tiene su propio programa y niveles. Por ejemplo, el <b>PEC</b> de Mutual de Seguridad (con niveles como <b>Empresa Estándar</b>) o el <b>GPS</b> de ACHS, que certifica tu nivel de desarrollo preventivo. IST e ISL también tienen sus programas. <b>Partimos por el nivel básico</b> y avanzamos.</p><p class='note'>Las certificaciones las otorga tu organismo administrador. SafetyCoach te acompaña a cumplir sus requisitos; las imágenes son referenciales.</p>"),
+            ("Cómo lo implementamos", "<ol class='steps'><li><b>Diagnóstico</b> frente a los requisitos del programa de tu mutualidad.</li><li><b>Plan de implementación</b> con responsables y plazos realistas.</li><li><b>Documentos y registros</b>, en formato digital y trazable.</li><li><b>Auditoría interna</b> para llegar preparados.</li><li><b>Postulación</b> y acompañamiento en la auditoría del organismo.</li><li><b>Mantención</b> y paso al siguiente nivel.</li></ol>"),
+            ("Por qué te conviene", "<ul class='checks'><li>Muchos clientes y licitaciones exigen un sistema de gestión de seguridad</li><li>Ordena el cumplimiento del DS 44 en un solo sistema</li><li>Mejores indicadores y menos accidentes</li><li>Te ayuda a cumplir requisitos para optar a rebaja de tu tasa de cotización adicional en la evaluación de los años impares</li><li>Es la base para instalar una cultura preventiva</li></ul>"),
+        ],
+        "faq": [
+            ("¿Qué nivel me conviene?", "Parte por el nivel básico del programa de tu organismo administrador. Es alcanzable, ordena lo esencial y te deja listo para el siguiente nivel."),
+            ("¿SafetyCoach entrega la certificación?", "No. La certificación la otorga tu organismo administrador (Mutual de Seguridad, ACHS, IST o ISL) después de su auditoría. Yo te acompaño a cumplir los requisitos y a llegar preparado."),
+            ("¿Cuánto demora?", "Depende de tu tamaño y de tu punto de partida. En el diagnóstico estimamos el plazo con un plan concreto."),
+        ],
+        "testi": ("Nuestra empresa creció y me dieron más responsabilidades. Hans me ayudó a implementar el DS 44 y los protocolos.", "Patricio Abarca · Experto en Prevención, Alex Stewart International"),
+    },
+    {
         "slug": "contratistas",
         "title": "Cumplimiento de contratistas y programa para mandantes | SafetyCoach",
         "desc": "Apoyo a empresas contratistas para cumplir los estándares de su mandante, y programa para mandantes: requisitos unificados, inducciones digitales y control de cumplimiento por contratista.",
@@ -143,7 +165,7 @@ def page_shell(index_html, prefix="../"):
         v = re.sub(r'(href|src)="assets/', rf'\1="{prefix}assets/', v)
         v = re.sub(r'href="#(?!faro)', f'href="{prefix}index.html#', v)
         v = v.replace('href="index.html"', f'href="{prefix}index.html"')
-        v = re.sub(r'href="(ds-44|ley-karin|fiscalizaciones|pymes|contratistas|autodiagnostico|liderazgo|demo)/"', rf'href="{prefix}\1/"', v)
+        v = re.sub(r'href="(ds-44|ley-karin|fiscalizaciones|pymes|contratistas|sistemas-de-gestion|autodiagnostico|liderazgo|demo)/"', rf'href="{prefix}\1/"', v)
         parts[k] = v
     return parts
 
@@ -256,11 +278,17 @@ def gate_form(herramienta, titulo, texto, boton):
               <label>Rubro<select name="rubro" required><option value="">Selecciona</option>{rub}</select></label>
               <label>Correo<input type="email" name="correo" required autocomplete="email"></label>
               <label>Teléfono / WhatsApp<input type="tel" name="telefono" required autocomplete="tel" placeholder="+56 9 ..."></label>
-              <label>N.º de trabajadores<select name="trabajadores" required><option value="">Selecciona</option><option>1 a 10</option><option>11 a 25</option><option>26 a 49</option><option>50 a 99</option><option>100 a 499</option><option>500 o más</option></select></label>
-              <label>Sucursales o centros de trabajo<select name="centros" required><option value="">Selecciona</option><option>1</option><option>2 a 5</option><option>6 a 20</option><option>Más de 20</option></select></label>
-              <label>Accidentes del trabajo el último año<select name="accidentes" required><option value="">Selecciona</option><option>0</option><option>1 a 2</option><option>3 a 5</option><option>6 a 10</option><option>Más de 10</option><option>No lo sé</option></select></label>
-              <label>¿Sabes cuánto pagas hoy por el seguro de accidentes (cotización adicional)?<select name="seguro_conoce" required><option value="">Selecciona</option><option>Sí</option><option>No lo sé</option></select></label>
-              <label class="full">Si lo sabes: tasa de cotización adicional o monto mensual aproximado (opcional)<input name="seguro_monto" placeholder="Ej.: 0,68 % o $450.000 al mes"></label>
+              <div class="gate-extra full" hidden>
+                <p class="gate-extra-t">Opcional: con estos datos ajusto aún más tu evaluación</p>
+                <div class="fgrid">
+                  <label>N.º de trabajadores<select name="trabajadores"><option value="">Selecciona</option><option>1 a 10</option><option>11 a 25</option><option>26 a 49</option><option>50 a 99</option><option>100 a 499</option><option>500 o más</option></select></label>
+                  <label>Sucursales o centros de trabajo<select name="centros"><option value="">Selecciona</option><option>1</option><option>2 a 5</option><option>6 a 20</option><option>Más de 20</option></select></label>
+                  <label>Accidentes del trabajo el último año<select name="accidentes"><option value="">Selecciona</option><option>0</option><option>1 a 2</option><option>3 a 5</option><option>6 a 10</option><option>Más de 10</option><option>No lo sé</option></select></label>
+                  <label>¿Sabes tu tasa de cotización actual o cuánto pagas a tu mutualidad por el seguro de accidentes?<select name="seguro_conoce"><option value="">Selecciona</option><option>Sí</option><option>No lo sé</option></select></label>
+                  <label class="full seguro-monto" hidden>Tasa de cotización adicional o monto mensual aproximado<input name="seguro_monto" placeholder="Ej.: 0,68 % o $450.000 al mes"></label>
+                  <p class="full gate-help">Te lo pregunto solo para saber si estás pagando más de lo que deberías y ayudarte a reducir ese monto. ¿Sabías que en los años impares tu empresa es evaluada y puede optar a una rebaja de la tasa, cumpliendo un par de requisitos?</p>
+                </div>
+              </div>
               <label class="full consent"><input type="checkbox" name="consentimiento" value="Sí" required> Acepto que SafetyCoach use estos datos para contactarme y preparar mi evaluación.</label>
             </div>
             <button class="btn btn-primary btn-lg full" type="submit">{boton}</button>

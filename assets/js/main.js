@@ -147,6 +147,23 @@
     if (tool) { tool.hidden = false; if (!quiet) tool.scrollIntoView({ behavior: 'smooth' }); }
   }
 
+
+  // ---------- Preguntas opcionales: aparecen al completar las obligatorias ----------
+  document.querySelectorAll('.gate-form').forEach(function (form) {
+    var extra = form.querySelector('.gate-extra');
+    if (!extra) return;
+    var req = Array.prototype.filter.call(form.querySelectorAll('[required]'), function (f) { return f.type !== 'checkbox'; });
+    function check() {
+      if (!extra.hidden) return;
+      var ok = req.every(function (f) { return f.value.trim() !== '' && f.checkValidity(); });
+      if (ok) { extra.hidden = false; extra.classList.add('reveal'); }
+    }
+    form.addEventListener('input', check);
+    form.addEventListener('change', check);
+    var conoce = form.querySelector('[name="seguro_conoce"]'), monto = form.querySelector('.seguro-monto');
+    if (conoce && monto) conoce.addEventListener('change', function () { monto.hidden = conoce.value !== 'Sí'; });
+  });
+
   // ---------- Formularios: validación + envío ----------
   // Por defecto el formulario se envía de forma nativa (Netlify Forms lo captura).
   // Para usar otro servicio (Formspree, CRM, Make/Zapier), define data-endpoint="https://..." en el <form>:

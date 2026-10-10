@@ -821,8 +821,16 @@ details p { padding: 0 22px 18px; margin: 0; color: var(--muted); }
 .gate .lead-form { box-shadow: none; padding: 0; margin-top: 14px; }
 .gate .fgrid label { font-size: .84rem; }
 @media (max-width: 760px) { .tools-grid { grid-template-columns: 1fr; } }
-@media (min-width: 1081px) {
-  .sol-grid { grid-template-columns: repeat(6, 1fr); }
-  .sol-grid .sol { grid-column: span 2; }
-  .sol-grid .sol:nth-child(4) { grid-column: 2 / span 2; }
-}
+
+/* ---------- Sellos de certificación y preguntas opcionales ---------- */
+.sol-sgs { position: relative; overflow: hidden; }
+.sol-sgs::after { content: ""; position: absolute; right: -10px; bottom: -14px; width: 120px; height: 150px; background: url("../img/sello-pec-mutual.webp") center/contain no-repeat; opacity: .14; pointer-events: none; }
+.seals { display: flex; gap: 24px; align-items: center; flex-wrap: wrap; margin: 6px 0 16px; }
+.seals img { height: 130px; width: auto; opacity: .45; filter: grayscale(.2); transition: opacity .2s; border-radius: 8px; }
+.seals img:hover { opacity: 1; }
+.gate-extra { border-top: 1px dashed var(--line); padding-top: 14px; margin-top: 4px; }
+.gate-extra.reveal { animation: fadeIn .4s ease; }
+.gate-extra-t { margin: 0 0 10px; font-weight: 700; color: var(--green-d); font-size: .9rem; }
+.gate-extra > .fgrid { margin-bottom: 0; }
+.gate-help { color: var(--muted); font-size: .84rem; font-weight: 400; margin: 0; background: #FFF8E1; border-left: 3px solid var(--yellow); padding: 8px 10px; border-radius: 6px; display: block; }
+@keyframes fadeIn { from { opacity: 0; transform: translateY(-4px); } to { opacity: 1; transform: none; } }

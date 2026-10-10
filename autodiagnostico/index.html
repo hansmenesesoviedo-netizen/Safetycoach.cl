@@ -76,11 +76,17 @@
               <label>Rubro<select name="rubro" required><option value="">Selecciona</option><option>Alimentación y casinos</option><option>Industria / manufactura</option><option>Construcción</option><option>Comercio y retail</option><option>Logística y transporte</option><option>Agrícola</option><option>Minería</option><option>Servicios</option><option>Salud</option><option>Educación</option><option>Otro</option></select></label>
               <label>Correo<input type="email" name="correo" required autocomplete="email"></label>
               <label>Teléfono / WhatsApp<input type="tel" name="telefono" required autocomplete="tel" placeholder="+56 9 ..."></label>
-              <label>N.º de trabajadores<select name="trabajadores" required><option value="">Selecciona</option><option>1 a 10</option><option>11 a 25</option><option>26 a 49</option><option>50 a 99</option><option>100 a 499</option><option>500 o más</option></select></label>
-              <label>Sucursales o centros de trabajo<select name="centros" required><option value="">Selecciona</option><option>1</option><option>2 a 5</option><option>6 a 20</option><option>Más de 20</option></select></label>
-              <label>Accidentes del trabajo el último año<select name="accidentes" required><option value="">Selecciona</option><option>0</option><option>1 a 2</option><option>3 a 5</option><option>6 a 10</option><option>Más de 10</option><option>No lo sé</option></select></label>
-              <label>¿Sabes cuánto pagas hoy por el seguro de accidentes (cotización adicional)?<select name="seguro_conoce" required><option value="">Selecciona</option><option>Sí</option><option>No lo sé</option></select></label>
-              <label class="full">Si lo sabes: tasa de cotización adicional o monto mensual aproximado (opcional)<input name="seguro_monto" placeholder="Ej.: 0,68 % o $450.000 al mes"></label>
+              <div class="gate-extra full" hidden>
+                <p class="gate-extra-t">Opcional: con estos datos ajusto aún más tu evaluación</p>
+                <div class="fgrid">
+                  <label>N.º de trabajadores<select name="trabajadores"><option value="">Selecciona</option><option>1 a 10</option><option>11 a 25</option><option>26 a 49</option><option>50 a 99</option><option>100 a 499</option><option>500 o más</option></select></label>
+                  <label>Sucursales o centros de trabajo<select name="centros"><option value="">Selecciona</option><option>1</option><option>2 a 5</option><option>6 a 20</option><option>Más de 20</option></select></label>
+                  <label>Accidentes del trabajo el último año<select name="accidentes"><option value="">Selecciona</option><option>0</option><option>1 a 2</option><option>3 a 5</option><option>6 a 10</option><option>Más de 10</option><option>No lo sé</option></select></label>
+                  <label>¿Sabes tu tasa de cotización actual o cuánto pagas a tu mutualidad por el seguro de accidentes?<select name="seguro_conoce"><option value="">Selecciona</option><option>Sí</option><option>No lo sé</option></select></label>
+                  <label class="full seguro-monto" hidden>Tasa de cotización adicional o monto mensual aproximado<input name="seguro_monto" placeholder="Ej.: 0,68 % o $450.000 al mes"></label>
+                  <p class="full gate-help">Te lo pregunto solo para saber si estás pagando más de lo que deberías y ayudarte a reducir ese monto. ¿Sabías que en los años impares tu empresa es evaluada y puede optar a una rebaja de la tasa, cumpliendo un par de requisitos?</p>
+                </div>
+              </div>
               <label class="full consent"><input type="checkbox" name="consentimiento" value="Sí" required> Acepto que SafetyCoach use estos datos para contactarme y preparar mi evaluación.</label>
             </div>
             <button class="btn btn-primary btn-lg full" type="submit">Comenzar el autodiagnóstico</button>
@@ -202,7 +208,7 @@
       </div>
       <nav aria-label="Servicios">
         <h2>Servicios</h2>
-        <a href="../ds-44/">Diagnóstico e implementación DS&nbsp;44</a><a href="../ley-karin/">Ley Karin</a><a href="../fiscalizaciones/">Fiscalizaciones y trámites SEREMI</a><a href="../pymes/">Prevencionista externo para pymes</a><a href="../contratistas/">Contratistas y mandantes</a><a href="../autodiagnostico/">Autodiagnóstico gratis</a><a href="../liderazgo/">Autoevaluación de liderazgo</a><a href="../demo/">Demo digital</a>
+        <a href="../ds-44/">Diagnóstico e implementación DS&nbsp;44</a><a href="../ley-karin/">Ley Karin</a><a href="../fiscalizaciones/">Fiscalizaciones y trámites SEREMI</a><a href="../pymes/">Prevencionista externo para pymes</a><a href="../contratistas/">Contratistas y mandantes</a><a href="../sistemas-de-gestion/">Sistemas de gestión y certificación</a><a href="../autodiagnostico/">Autodiagnóstico gratis</a><a href="../liderazgo/">Autoevaluación de liderazgo</a><a href="../demo/">Demo digital</a>
       </nav>
       <nav aria-label="SafetyCoach">
         <h2>SafetyCoach</h2>
