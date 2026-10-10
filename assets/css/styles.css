@@ -807,3 +807,22 @@ details p { padding: 0 22px 18px; margin: 0; color: var(--muted); }
 .reg img { width: 90px; height: 30px; object-fit: contain; border-bottom: 1px solid var(--line); }
 .demo .demo-cta { margin-top: 30px; }
 @media (max-width: 760px) { .demo-head { grid-template-columns: 1fr; } .phone { border-width: 6px; padding: 16px 12px; } }
+
+/* ---------- Herramientas con registro previo ---------- */
+.tools-t { margin: 34px 0 12px; font-size: .9rem; letter-spacing: .08em; text-transform: uppercase; color: var(--green-d); }
+.tools-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; }
+.tool-card { display: flex; flex-direction: column; gap: 8px; padding: 24px; border-radius: 16px; background: var(--navy); text-decoration: none; transition: .15s; }
+.tool-card:hover { transform: translateY(-2px); box-shadow: var(--shadow); }
+.tool-card .sol-k { color: var(--yellow); }
+.tool-card strong { color: #fff; font-family: var(--font-h); font-size: 1.15rem; }
+.tool-card span:last-child { color: #8FD69A; font-weight: 600; font-size: .92rem; }
+.gate { border: 2px solid var(--navy); border-radius: 20px; padding: clamp(20px, 4vw, 32px); background: #fff; margin-top: 20px; }
+.gate h2 { font-size: 1.4rem; }
+.gate .lead-form { box-shadow: none; padding: 0; margin-top: 14px; }
+.gate .fgrid label { font-size: .84rem; }
+@media (max-width: 760px) { .tools-grid { grid-template-columns: 1fr; } }
+@media (min-width: 1081px) {
+  .sol-grid { grid-template-columns: repeat(6, 1fr); }
+  .sol-grid .sol { grid-column: span 2; }
+  .sol-grid .sol:nth-child(4) { grid-column: 2 / span 2; }
+}

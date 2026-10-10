@@ -119,12 +119,46 @@
     });
   }
 
+
+  // ---------- Registro previo a herramientas (autodiagnóstico, liderazgo, demo) ----------
+  // Envía los datos a Netlify Forms sin salir de la página y luego muestra la herramienta.
+  function netlifyPost(data) {
+    return fetch('/', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+      body: new URLSearchParams(data).toString()
+    }).catch(function () { /* sin conexión o vista local: se continúa igual */ });
+  }
+  var lead = null;
+  try { lead = JSON.parse(sessionStorage.getItem('sc-lead')); } catch (e) { lead = null; }
+  window.scSendResult = function (herramienta, resultado, detalle) {
+    var l = lead || {};
+    track('herramienta_resultado', { herramienta: herramienta, resultado: resultado });
+    return netlifyPost({ 'form-name': 'resultado-herramienta', herramienta: herramienta, correo: l.correo || '', empresa: l.empresa || '', resultado: resultado, detalle: detalle || '' });
+  };
+  // Si ya se registró en esta sesión, no se le piden los datos de nuevo.
+  if (lead && lead.correo) {
+    document.querySelectorAll('form[data-gate]').forEach(function (f) { setTimeout(function () { openTool(f, true); }, 0); });
+  }
+  function openTool(gateForm, quiet) {
+    var tool = document.getElementById(gateForm.dataset.gate);
+    var gate = document.getElementById('gate');
+    if (gate) gate.hidden = true;
+    if (tool) { tool.hidden = false; if (!quiet) tool.scrollIntoView({ behavior: 'smooth' }); }
+  }
+
   // ---------- Formularios: validación + envío ----------
   // Por defecto el formulario se envía de forma nativa (Netlify Forms lo captura).
   // Para usar otro servicio (Formspree, CRM, Make/Zapier), define data-endpoint="https://..." en el <form>:
   // se enviará por fetch como JSON y luego redirige a /gracias.html.
   document.querySelectorAll('.lead-form').forEach(function (form) {
     var msg = form.querySelector('.form-msg');
+    form.addEventListener('input', function (e) {
+      if (e.target.classList.contains('invalid')) { e.target.classList.remove('invalid'); e.target.removeAttribute('aria-invalid'); }
+    });
+    form.addEventListener('change', function (e) {
+      if (e.target.classList.contains('invalid')) { e.target.classList.remove('invalid'); e.target.removeAttribute('aria-invalid'); }
+    });
     form.addEventListener('submit', function (e) {
       var firstInvalid = null;
       form.querySelectorAll('[required]').forEach(function (f) {
@@ -144,6 +178,14 @@
       var data = Object.fromEntries(new FormData(form).entries());
       track(eventName, { necesidad: data.necesidad || data.recurso || '', trabajadores: data.trabajadores || '' });
 
+      if (form.dataset.gate) {
+        e.preventDefault();
+        lead = { correo: data.correo, empresa: data.empresa, nombre: data.nombre };
+        try { sessionStorage.setItem('sc-lead', JSON.stringify(lead)); } catch (err) { /* sin almacenamiento */ }
+        netlifyPost(data);
+        openTool(form);
+        return;
+      }
       var endpoint = form.dataset.endpoint;
       if (!endpoint) return; // envío nativo
       e.preventDefault();

@@ -44,7 +44,7 @@
       <nav id="menu" class="nav" aria-label="Principal">
         <a href="../index.html#perfiles">Para quién</a>
         <a href="../index.html#soluciones">Soluciones</a>
-        <a href="../index.html#ds44">DS&nbsp;44</a>
+        <a href="../ds-44/">DS&nbsp;44</a>
         <a href="../index.html#digital">Digital</a>
         <a href="../index.html#casos">Casos</a>
         <a href="../autodiagnostico/">Autodiagnóstico</a>
@@ -61,6 +61,35 @@
         <h1>¿Qué tan preparada está tu empresa?</h1>
         <p class="lead">Para dueños, gerentes y encargados de personas. No necesitas saber de prevención: responde con honestidad y, si no sabes, marca «No sé». Al final verás tu nivel y lo que conviene atender primero.</p>
         <p class="note">Basado en lo esencial de la autoevaluación inicial de cumplimiento legal que usan los organismos administradores de la Ley 16.744.</p>
+        <div class="gate" id="gate">
+          <h2>Antes de empezar, cuéntame de tu empresa</h2>
+          <p>Así la evaluación queda acorde a tu realidad y puedo darte una lectura útil de tu resultado. Toma 1 minuto.</p>
+          <form class="lead-form gate-form" name="registro-herramienta" method="POST" action="../gracias.html" data-netlify="true" netlify-honeypot="empresa_web" data-gate="tool" novalidate>
+            <input type="hidden" name="form-name" value="registro-herramienta">
+            <input type="hidden" name="herramienta" value="Autodiagnóstico legal">
+            <input type="hidden" name="origen" value="">
+            <p class="hp"><label>No completar <input name="empresa_web" tabindex="-1" autocomplete="off"></label></p>
+            <div class="fgrid">
+              <label>Nombre<input name="nombre" required autocomplete="name"></label>
+              <label>Cargo<input name="cargo" required autocomplete="organization-title"></label>
+              <label>Empresa<input name="empresa" required autocomplete="organization"></label>
+              <label>Rubro<select name="rubro" required><option value="">Selecciona</option><option>Alimentación y casinos</option><option>Industria / manufactura</option><option>Construcción</option><option>Comercio y retail</option><option>Logística y transporte</option><option>Agrícola</option><option>Minería</option><option>Servicios</option><option>Salud</option><option>Educación</option><option>Otro</option></select></label>
+              <label>Correo<input type="email" name="correo" required autocomplete="email"></label>
+              <label>Teléfono / WhatsApp<input type="tel" name="telefono" required autocomplete="tel" placeholder="+56 9 ..."></label>
+              <label>N.º de trabajadores<select name="trabajadores" required><option value="">Selecciona</option><option>1 a 10</option><option>11 a 25</option><option>26 a 49</option><option>50 a 99</option><option>100 a 499</option><option>500 o más</option></select></label>
+              <label>Sucursales o centros de trabajo<select name="centros" required><option value="">Selecciona</option><option>1</option><option>2 a 5</option><option>6 a 20</option><option>Más de 20</option></select></label>
+              <label>Accidentes del trabajo el último año<select name="accidentes" required><option value="">Selecciona</option><option>0</option><option>1 a 2</option><option>3 a 5</option><option>6 a 10</option><option>Más de 10</option><option>No lo sé</option></select></label>
+              <label>¿Sabes cuánto pagas hoy por el seguro de accidentes (cotización adicional)?<select name="seguro_conoce" required><option value="">Selecciona</option><option>Sí</option><option>No lo sé</option></select></label>
+              <label class="full">Si lo sabes: tasa de cotización adicional o monto mensual aproximado (opcional)<input name="seguro_monto" placeholder="Ej.: 0,68 % o $450.000 al mes"></label>
+              <label class="full consent"><input type="checkbox" name="consentimiento" value="Sí" required> Acepto que SafetyCoach use estos datos para contactarme y preparar mi evaluación.</label>
+            </div>
+            <button class="btn btn-primary btn-lg full" type="submit">Comenzar el autodiagnóstico</button>
+            <p class="form-msg" role="status" aria-live="polite"></p>
+          </form>
+          <p class="note">Tus datos son confidenciales y solo se usan para contactarte sobre tu evaluación.</p>
+        </div>
+
+        <div id="tool" hidden>
         <form id="diag-form" class="diag-form" novalidate>
           <h2 class="q-block">Tu organización</h2>
           <fieldset class="q"><legend><span>1</span>¿Tienes Reglamento Interno de Orden, Higiene y Seguridad actualizado y cada trabajador firmó que lo recibió?</legend>
@@ -150,30 +179,15 @@
           <h3>Lo que conviene atender primero</h3>
           <ul id="r-gaps" class="aud-pain"></ul>
           <div class="diag-next">
-            <h3>Recibe tu resultado y una conversación de 30 minutos sin costo</h3>
-            <form class="lead-form compact" name="autodiagnostico" method="POST" action="../gracias.html" data-netlify="true" netlify-honeypot="empresa_web" novalidate>
-              <input type="hidden" name="form-name" value="autodiagnostico">
-              <input type="hidden" name="puntaje" value="">
-              <input type="hidden" name="nivel" value="">
-              <input type="hidden" name="brechas" value="">
-              <input type="hidden" name="origen" value="">
-              <p class="hp"><label>No completar <input name="empresa_web" tabindex="-1" autocomplete="off"></label></p>
-              <div class="fgrid">
-                <label>Nombre<input name="nombre" required autocomplete="name"></label>
-                <label>Empresa<input name="empresa" required autocomplete="organization"></label>
-                <label>Cargo<input name="cargo" autocomplete="organization-title"></label>
-                <label>N.º de trabajadores
-                  <select name="trabajadores" required><option value="">Selecciona</option><option>1 a 10</option><option>11 a 25</option><option>26 a 49</option><option>50 a 99</option><option>100 a 499</option><option>500 o más</option></select>
-                </label>
-                <label>Correo<input type="email" name="correo" required autocomplete="email"></label>
-                <label>Teléfono / WhatsApp<input type="tel" name="telefono" required autocomplete="tel" placeholder="+56 9 ..."></label>
-                <label class="full consent"><input type="checkbox" name="consentimiento" value="Sí" required> Acepto que SafetyCoach use estos datos para contactarme.</label>
-              </div>
-              <button class="btn btn-primary btn-lg full" type="submit">Quiero conversar sobre mi resultado</button>
-              <p class="form-msg" role="status" aria-live="polite"></p>
-            </form>
+            <h3>Siguiente paso: conversemos sobre tu resultado</h3>
+            <p>Ya recibí tus datos y tu resultado. Antes de conversar te enviaré una breve entrevista para que la reunión vaya directo a lo importante.</p>
+            <div class="cta-row">
+              <a class="btn btn-primary" href="https://wa.me/56932304800?text=Hola%20Hans%2C%20complet%C3%A9%20una%20evaluaci%C3%B3n%20en%20SafetyCoach%20y%20quiero%20conversar%20sobre%20mi%20resultado." target="_blank" rel="noopener" data-wa="resultado">Escribir a Hans por WhatsApp</a>
+              <a class="btn btn-ghost" href="../index.html" data-cta="resultado_inicio">Volver al inicio</a>
+            </div>
           </div>
           <p class="note">Este autodiagnóstico es orientativo y no reemplaza una revisión de la normativa aplicable a tu empresa.</p>
+        </div>
         </div>
       </div>
     </section>
@@ -192,7 +206,7 @@
       </nav>
       <nav aria-label="SafetyCoach">
         <h2>SafetyCoach</h2>
-        <a href="../index.html#hans">Sobre Hans Meneses</a><a href="../index.html#metodo">Método</a><a href="../index.html#recursos">Recursos</a><a href="../index.html#faq">Preguntas frecuentes</a><a href="../index.html#contacto">Contacto</a>
+        <a href="../index.html#hans">Sobre Hans Meneses</a><a href="../liderazgo/">Autoevaluación de liderazgo</a><a href="../index.html#faq">Preguntas frecuentes</a><a href="../index.html#contacto">Contacto</a>
       </nav>
       <div>
         <h2>Contacto</h2>
@@ -205,6 +219,9 @@
     <svg viewBox="0 0 32 32" aria-hidden="true"><path fill="currentColor" d="M16 3a13 13 0 0 0-11.2 19.6L3 29l6.6-1.7A13 13 0 1 0 16 3Zm0 23.6a10.6 10.6 0 0 1-5.4-1.5l-.4-.2-3.9 1 1-3.8-.2-.4A10.6 10.6 0 1 1 16 26.6Zm5.8-7.9c-.3-.2-1.9-.9-2.2-1s-.5-.2-.7.2-.8 1-1 1.2-.4.2-.7.1a8.7 8.7 0 0 1-4.3-3.8c-.3-.6.3-.5.9-1.7.1-.2 0-.4 0-.5l-1-2.4c-.3-.6-.5-.5-.7-.5h-.6a1.2 1.2 0 0 0-.9.4 3.6 3.6 0 0 0-1.1 2.7 6.3 6.3 0 0 0 1.3 3.3 14.4 14.4 0 0 0 5.5 4.9c2 .9 2.8 1 3.9.8a3.3 3.3 0 0 0 2.2-1.5 2.7 2.7 0 0 0 .2-1.5c-.1-.2-.3-.3-.6-.4Z"/></svg>
     <span>Conversemos</span>
   </a>
+  <form name="resultado-herramienta" data-netlify="true" hidden>
+    <input name="herramienta"><input name="correo"><input name="empresa"><input name="resultado"><textarea name="detalle"></textarea>
+  </form>
   <script src="../assets/js/main.js" defer></script>
   <script>
   (function () {
@@ -232,8 +249,7 @@
       document.getElementById('r-level').textContent = 'Nivel: ' + lv[1];
       document.getElementById('r-text').textContent = lv[2];
       document.getElementById('r-gaps').innerHTML = gaps.length ? gaps.map(function (g) { return '<li>' + g + '</li>'; }).join('') : '<li>No detectamos brechas en estas preguntas.</li>';
-      var lf = document.querySelector('form[name="autodiagnostico"]');
-      lf.puntaje.value = score; lf.nivel.value = lv[1]; lf.brechas.value = gaps.join('; ');
+      window.scSendResult && window.scSendResult('Autodiagnóstico legal', score + '% · ' + lv[1], gaps.join('; '));
       var res = document.getElementById('diag-result');
       res.hidden = false; form.hidden = true;
       res.scrollIntoView({ behavior: 'smooth' });

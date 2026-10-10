@@ -234,6 +234,59 @@ def render(p, shell):
 """
 
 
+RUBROS = ["Alimentación y casinos", "Industria / manufactura", "Construcción", "Comercio y retail",
+          "Logística y transporte", "Agrícola", "Minería", "Servicios", "Salud", "Educación", "Otro"]
+
+
+def gate_form(herramienta, titulo, texto, boton):
+    """Registro previo: datos de contacto y de la empresa antes de entregar la herramienta."""
+    rub = "".join(f"<option>{r}</option>" for r in RUBROS)
+    return f"""        <div class="gate" id="gate">
+          <h2>{titulo}</h2>
+          <p>{texto}</p>
+          <form class="lead-form gate-form" name="registro-herramienta" method="POST" action="../gracias.html" data-netlify="true" netlify-honeypot="empresa_web" data-gate="tool" novalidate>
+            <input type="hidden" name="form-name" value="registro-herramienta">
+            <input type="hidden" name="herramienta" value="{herramienta}">
+            <input type="hidden" name="origen" value="">
+            <p class="hp"><label>No completar <input name="empresa_web" tabindex="-1" autocomplete="off"></label></p>
+            <div class="fgrid">
+              <label>Nombre<input name="nombre" required autocomplete="name"></label>
+              <label>Cargo<input name="cargo" required autocomplete="organization-title"></label>
+              <label>Empresa<input name="empresa" required autocomplete="organization"></label>
+              <label>Rubro<select name="rubro" required><option value="">Selecciona</option>{rub}</select></label>
+              <label>Correo<input type="email" name="correo" required autocomplete="email"></label>
+              <label>Teléfono / WhatsApp<input type="tel" name="telefono" required autocomplete="tel" placeholder="+56 9 ..."></label>
+              <label>N.º de trabajadores<select name="trabajadores" required><option value="">Selecciona</option><option>1 a 10</option><option>11 a 25</option><option>26 a 49</option><option>50 a 99</option><option>100 a 499</option><option>500 o más</option></select></label>
+              <label>Sucursales o centros de trabajo<select name="centros" required><option value="">Selecciona</option><option>1</option><option>2 a 5</option><option>6 a 20</option><option>Más de 20</option></select></label>
+              <label>Accidentes del trabajo el último año<select name="accidentes" required><option value="">Selecciona</option><option>0</option><option>1 a 2</option><option>3 a 5</option><option>6 a 10</option><option>Más de 10</option><option>No lo sé</option></select></label>
+              <label>¿Sabes cuánto pagas hoy por el seguro de accidentes (cotización adicional)?<select name="seguro_conoce" required><option value="">Selecciona</option><option>Sí</option><option>No lo sé</option></select></label>
+              <label class="full">Si lo sabes: tasa de cotización adicional o monto mensual aproximado (opcional)<input name="seguro_monto" placeholder="Ej.: 0,68 % o $450.000 al mes"></label>
+              <label class="full consent"><input type="checkbox" name="consentimiento" value="Sí" required> Acepto que SafetyCoach use estos datos para contactarme y preparar mi evaluación.</label>
+            </div>
+            <button class="btn btn-primary btn-lg full" type="submit">{boton}</button>
+            <p class="form-msg" role="status" aria-live="polite"></p>
+          </form>
+          <p class="note">Tus datos son confidenciales y solo se usan para contactarte sobre tu evaluación.</p>
+        </div>
+"""
+
+
+RESULT_FORM = """  <form name="resultado-herramienta" data-netlify="true" hidden>
+    <input name="herramienta"><input name="correo"><input name="empresa"><input name="resultado"><textarea name="detalle"></textarea>
+  </form>
+"""
+
+NEXT_STEP = """          <div class="diag-next">
+            <h3>Siguiente paso: conversemos sobre tu resultado</h3>
+            <p>Ya recibí tus datos y tu resultado. Antes de conversar te enviaré una breve entrevista para que la reunión vaya directo a lo importante.</p>
+            <div class="cta-row">
+              <a class="btn btn-primary" href="WAURL" target="_blank" rel="noopener" data-wa="resultado">Escribir a Hans por WhatsApp</a>
+              <a class="btn btn-ghost" href="../index.html" data-cta="resultado_inicio">Volver al inicio</a>
+            </div>
+          </div>
+""".replace("WAURL", "https://wa.me/56932304800?text=Hola%20Hans%2C%20complet%C3%A9%20una%20evaluaci%C3%B3n%20en%20SafetyCoach%20y%20quiero%20conversar%20sobre%20mi%20resultado.")
+
+
 # Autodiagnóstico para dueños y RR.HH. Basado en lo esencial de la
 # "Autoevaluación inicial de cumplimiento de aspectos legales" (Anexo 1,
 # propuesta unificada de los organismos administradores de la Ley 16.744).
@@ -298,6 +351,8 @@ def render_autodiag(shell):
         <h1>¿Qué tan preparada está tu empresa?</h1>
         <p class="lead">Para dueños, gerentes y encargados de personas. No necesitas saber de prevención: responde con honestidad y, si no sabes, marca «No sé». Al final verás tu nivel y lo que conviene atender primero.</p>
         <p class="note">Basado en lo esencial de la autoevaluación inicial de cumplimiento legal que usan los organismos administradores de la Ley 16.744.</p>
+{gate_form("Autodiagnóstico legal", "Antes de empezar, cuéntame de tu empresa", "Así la evaluación queda acorde a tu realidad y puedo darte una lectura útil de tu resultado. Toma 1 minuto.", "Comenzar el autodiagnóstico")}
+        <div id="tool" hidden>
         <form id="diag-form" class="diag-form" novalidate>
 {qs}
           <button class="btn btn-primary btn-lg" type="submit">Ver mi resultado</button>
@@ -311,38 +366,15 @@ def render_autodiag(shell):
           <p id="r-text"></p>
           <h3>Lo que conviene atender primero</h3>
           <ul id="r-gaps" class="aud-pain"></ul>
-          <div class="diag-next">
-            <h3>Recibe tu resultado y una conversación de 30 minutos sin costo</h3>
-            <form class="lead-form compact" name="autodiagnostico" method="POST" action="../gracias.html" data-netlify="true" netlify-honeypot="empresa_web" novalidate>
-              <input type="hidden" name="form-name" value="autodiagnostico">
-              <input type="hidden" name="puntaje" value="">
-              <input type="hidden" name="nivel" value="">
-              <input type="hidden" name="brechas" value="">
-              <input type="hidden" name="origen" value="">
-              <p class="hp"><label>No completar <input name="empresa_web" tabindex="-1" autocomplete="off"></label></p>
-              <div class="fgrid">
-                <label>Nombre<input name="nombre" required autocomplete="name"></label>
-                <label>Empresa<input name="empresa" required autocomplete="organization"></label>
-                <label>Cargo<input name="cargo" autocomplete="organization-title"></label>
-                <label>N.º de trabajadores
-                  <select name="trabajadores" required><option value="">Selecciona</option><option>1 a 10</option><option>11 a 25</option><option>26 a 49</option><option>50 a 99</option><option>100 a 499</option><option>500 o más</option></select>
-                </label>
-                <label>Correo<input type="email" name="correo" required autocomplete="email"></label>
-                <label>Teléfono / WhatsApp<input type="tel" name="telefono" required autocomplete="tel" placeholder="+56 9 ..."></label>
-                <label class="full consent"><input type="checkbox" name="consentimiento" value="Sí" required> Acepto que SafetyCoach use estos datos para contactarme.</label>
-              </div>
-              <button class="btn btn-primary btn-lg full" type="submit">Quiero conversar sobre mi resultado</button>
-              <p class="form-msg" role="status" aria-live="polite"></p>
-            </form>
-          </div>
-          <p class="note">Este autodiagnóstico es orientativo y no reemplaza una revisión de la normativa aplicable a tu empresa.</p>
+{NEXT_STEP}          <p class="note">Este autodiagnóstico es orientativo y no reemplaza una revisión de la normativa aplicable a tu empresa.</p>
+        </div>
         </div>
       </div>
     </section>
   </main>
   {shell['footer']}
   {shell['wa']}
-  <script src="../assets/js/main.js" defer></script>
+{RESULT_FORM}  <script src="../assets/js/main.js" defer></script>
   <script>
   (function () {{
     var GAPS = {gaps_js};
@@ -369,8 +401,7 @@ def render_autodiag(shell):
       document.getElementById('r-level').textContent = 'Nivel: ' + lv[1];
       document.getElementById('r-text').textContent = lv[2];
       document.getElementById('r-gaps').innerHTML = gaps.length ? gaps.map(function (g) {{ return '<li>' + g + '</li>'; }}).join('') : '<li>No detectamos brechas en estas preguntas.</li>';
-      var lf = document.querySelector('form[name="autodiagnostico"]');
-      lf.puntaje.value = score; lf.nivel.value = lv[1]; lf.brechas.value = gaps.join('; ');
+      window.scSendResult && window.scSendResult('Autodiagnóstico legal', score + '% · ' + lv[1], gaps.join('; '));
       var res = document.getElementById('diag-result');
       res.hidden = false; form.hidden = true;
       res.scrollIntoView({{ behavior: 'smooth' }});
@@ -448,6 +479,8 @@ def render_liderazgo(shell):
         <p class="eyebrow">Para gerencias y jefaturas · 3 minutos</p>
         <h1>¿Tienes real tolerancia cero a los accidentes?</h1>
         <p class="lead">Los accidentes no bajan con más documentos: bajan cuando el liderazgo se involucra. Evalúa a tu organización en los 5 factores de éxito que uso en mis programas, de 1 (nunca) a 7 (siempre).</p>
+{gate_form("Autoevaluación de liderazgo", "Antes de empezar, cuéntame de tu empresa", "Así puedo leer tu resultado en contexto: tu rubro, tu tamaño y tu accidentabilidad. Toma 1 minuto.", "Comenzar la autoevaluación")}
+        <div id="tool" hidden>
         <form id="lid-form" class="diag-form" novalidate>
 {qs}
           <button class="btn btn-primary btn-lg" type="submit">Ver mi resultado</button>
@@ -464,36 +497,14 @@ def render_liderazgo(shell):
           <p id="l-text"></p>
           <h3>Tu factor más débil y por dónde partir</h3>
           <p id="l-tip" class="lid-tip"></p>
-          <div class="diag-next">
-            <h3>Conversemos 30 minutos sobre tu resultado, sin costo</h3>
-            <form class="lead-form compact" name="liderazgo" method="POST" action="../gracias.html" data-netlify="true" netlify-honeypot="empresa_web" novalidate>
-              <input type="hidden" name="form-name" value="liderazgo">
-              <input type="hidden" name="promedio" value="">
-              <input type="hidden" name="factores" value="">
-              <input type="hidden" name="origen" value="">
-              <p class="hp"><label>No completar <input name="empresa_web" tabindex="-1" autocomplete="off"></label></p>
-              <div class="fgrid">
-                <label>Nombre<input name="nombre" required autocomplete="name"></label>
-                <label>Empresa<input name="empresa" required autocomplete="organization"></label>
-                <label>Cargo<input name="cargo" autocomplete="organization-title"></label>
-                <label>N.º de trabajadores
-                  <select name="trabajadores" required><option value="">Selecciona</option><option>1 a 25</option><option>26 a 99</option><option>100 a 499</option><option>500 o más</option></select>
-                </label>
-                <label>Correo<input type="email" name="correo" required autocomplete="email"></label>
-                <label>Teléfono / WhatsApp<input type="tel" name="telefono" required autocomplete="tel" placeholder="+56 9 ..."></label>
-                <label class="full consent"><input type="checkbox" name="consentimiento" value="Sí" required> Acepto que SafetyCoach use estos datos para contactarme.</label>
-              </div>
-              <button class="btn btn-primary btn-lg full" type="submit">Quiero subir de nivel</button>
-              <p class="form-msg" role="status" aria-live="polite"></p>
-            </form>
-          </div>
+{NEXT_STEP}        </div>
         </div>
       </div>
     </section>
   </main>
   {shell['footer']}
   {shell['wa']}
-  <script src="../assets/js/main.js" defer></script>
+{RESULT_FORM}  <script src="../assets/js/main.js" defer></script>
   <script>
   (function () {{
     var F = {fjs};
@@ -521,9 +532,7 @@ def render_liderazgo(shell):
       document.getElementById('l-level').textContent = lv[0] + ' (' + fmt(total) + ' de 7)';
       document.getElementById('l-text').textContent = lv[1];
       document.getElementById('l-tip').innerHTML = '<b>' + weak.f.n + ' (' + fmt(weak.v) + '):</b> ' + weak.f.tip;
-      var lf = document.querySelector('form[name="liderazgo"]');
-      lf.promedio.value = fmt(total);
-      lf.factores.value = avgs.map(function (a) {{ return a.f.n + ' ' + fmt(a.v); }}).join('; ');
+      window.scSendResult && window.scSendResult('Autoevaluación de liderazgo', fmt(total) + ' de 7 · ' + lv[0], avgs.map(function (a) {{ return a.f.n + ' ' + fmt(a.v); }}).join('; '));
       var res = document.getElementById('lid-result'); res.hidden = false; form.hidden = true;
       res.scrollIntoView({{ behavior: 'smooth' }});
       window.dataLayer = window.dataLayer || [];
@@ -564,6 +573,8 @@ def render_demo(shell):
           <p class="demo-warn">Esta es una demostración. Los datos que ingreses se guardan solo en este navegador y no se envían a nadie.</p>
         </div>
 
+""" + gate_form("Demo digital", "Para ver la demo, cuéntame de tu empresa", "Así te muestro lo que más sirve a tu operación. Toma 1 minuto.", "Ver la demo") + """
+        <div id="tool" hidden>
         <div class="demo-tabs" role="tablist">
           <button role="tab" aria-selected="true" data-t="irl">1 · Inducción IRL</button>
           <button role="tab" aria-selected="false" data-t="cap">2 · Cápsula</button>
@@ -639,6 +650,7 @@ def render_demo(shell):
           </div>
         </div>
 
+        </div>
         <div class="demo-cta">
           <div><h4>¿Lo quieres para tu empresa?</h4><p>Lo hacemos a la medida de tu operación: tus riesgos, tus equipos, tus cargos y tu logo.</p></div>
           <a class="btn btn-primary" href="../index.html?necesidad=Demo%20digital#contacto" data-cta="demo_contacto">Quiero mi versión</a>
@@ -646,7 +658,7 @@ def render_demo(shell):
       </div>
     </section>
   </main>
-  """ + shell['footer'] + shell['wa'] + """
+  """ + shell['footer'] + shell['wa'] + RESULT_FORM + """
   <script src="../assets/js/main.js" defer></script>
   <script src="../assets/js/demo.js" defer></script>
 </body>
