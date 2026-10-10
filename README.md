@@ -8,6 +8,9 @@ Estado: **bosquejo v1** (página principal completa y funcional). La estrategia,
 
 ```
 index.html              Página principal (todas las secciones)
+ds-44/ ley-karin/ fiscalizaciones/ pymes/ contratistas/   Páginas por servicio (generadas)
+autodiagnostico/        Autodiagnóstico de 10 preguntas con captura de contacto
+tools/paginas.py        Generador de las páginas por servicio: edita aquí y ejecuta
 gracias.html            Página de agradecimiento (conversión)
 404.html                Página no encontrada
 robots.txt, sitemap.xml SEO técnico
@@ -52,3 +55,13 @@ Pega tu etiqueta de Google Tag Manager en `<head>` (hay un comentario marcando e
 ## Placeholders a reemplazar
 
 Ya no quedan placeholders de contenido. Los comentarios `<!-- Confirmar ... -->` marcan datos que debes verificar.
+
+## Páginas por servicio
+
+El contenido está en `tools/paginas.py`. Después de editar ese archivo, o el encabezado y pie de `index.html`, ejecuta:
+
+```bash
+python3 tools/paginas.py
+```
+
+Visibilidad y marca personal: ver `docs/GUIA-VISIBILIDAD.md`.

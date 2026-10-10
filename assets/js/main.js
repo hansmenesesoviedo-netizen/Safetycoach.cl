@@ -38,6 +38,9 @@
 
   // ---------- CTA que preseleccionan la necesidad en el formulario ----------
   var needSelect = document.getElementById('necesidad');
+  // Preselección desde otras páginas: index.html?necesidad=Ley%20Karin#contacto
+  var needParam = params.get('necesidad');
+  if (needParam && needSelect) needSelect.value = needParam;
   document.addEventListener('click', function (e) {
     var el = e.target.closest('[data-need], [data-cta], [data-wa]');
     if (!el) return;

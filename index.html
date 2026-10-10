@@ -66,6 +66,62 @@
   }
   </script>
 
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "¿Necesito tener un prevencionista para trabajar con SafetyCoach?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No. Puedo funcionar como tu área externa de prevención. Si ya tienes prevencionista, lo apoyo para que deje de estar sobrecargado y pueda enfocarse en lo importante."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Qué incluye el diagnóstico DS 44?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Una visita de levantamiento, revisión de documentos y evidencias, y un informe con las brechas priorizadas y una hoja de ruta. Es la base para decidir si implementas por tu cuenta o con acompañamiento."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Trabajan con empresas fuera de Santiago?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Sí. Atiendo empresas en distintas regiones de Chile, combinando visitas en terreno y reuniones online según lo que necesite cada etapa."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Cuánto cuesta?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Depende del tamaño de la empresa, el número de centros de trabajo y el nivel de apoyo. Después de una primera conversación te propongo un plan concreto con alcance y valor cerrados."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿El programa de bienestar es terapia?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No. Son instancias formativas y prácticas para equipos y líderes, vinculadas al bienestar laboral y la gestión psicosocial. No reemplazan la atención de salud mental profesional."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Qué pasa si ya tuve una fiscalización o una multa?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Revisamos lo observado, corregimos y ordenamos las evidencias, y armamos un plan para que no se repita. Mientras antes se actúe, más opciones hay."
+      }
+    }
+  ]
+}
+  </script>
   <!-- Medición de conversiones: pega aquí tu etiqueta de Google Tag Manager / GA4 cuando la tengas.
        main.js ya envía eventos a window.dataLayer: cta_click, whatsapp_click, form_submit, lead_magnet_submit. -->
 </head>
@@ -94,10 +150,11 @@
       </button>
       <nav id="menu" class="nav" aria-label="Principal">
         <a href="#perfiles">Para quién</a>
+        <a href="#soluciones">Soluciones</a>
         <a href="#ds44">DS&nbsp;44</a>
-        <a href="#fiscalizaciones">Fiscalizaciones</a>
         <a href="#digital">Digital</a>
         <a href="#experiencia">Resultados</a>
+        <a href="autodiagnostico/">Autodiagnóstico</a>
         <a href="#hans">Sobre Hans</a>
         <a class="btn btn-sm btn-primary" href="#contacto" data-cta="nav_diagnostico">Solicitar diagnóstico</a>
       </nav>
@@ -111,12 +168,13 @@
       <div class="bg-photo-img" aria-hidden="true"><img src="assets/img/hans-facilitando.webp" alt="" width="1195" height="896" fetchpriority="high"></div>
       <div class="wrap hero-grid">
         <div class="hero-copy">
-          <p class="eyebrow">Asesoría externa en prevención de riesgos · Chile</p>
+          <p class="eyebrow">Prevención de riesgos digital a la medida · Chile</p>
           <h1>Menos accidentes, <span class="hl">cero sorpresas</span> en fiscalización y un equipo que se cuida.</h1>
-          <p class="lead">Soy Hans Meneses. Hace más de 20 años acompaño a gerencias, áreas de personas, contratistas y pymes a cumplir el DS&nbsp;44, enfrentar fiscalizaciones y bajar su accidentabilidad, con herramientas digitales que dejan todo en evidencia.</p>
+          <p class="lead">Soy Hans Meneses. Hace más de 20 años acompaño a gerencias, áreas de personas, contratistas y pymes a cumplir el DS&nbsp;44, enfrentar fiscalizaciones y bajar su accidentabilidad, con herramientas digitales que dejan todo en evidencia. Lo que antes era carpeta, hoy está en el celular de tu equipo, firmado y listo para la fiscalización.</p>
           <div class="cta-row">
             <a class="btn btn-primary btn-lg" href="#contacto" data-cta="hero_diagnostico">Solicitar diagnóstico</a>
-            <a class="btn btn-ghost btn-lg" href="https://wa.me/56932304800?text=Hola%20Hans%2C%20llegu%C3%A9%20a%20SafetyCoach%20y%20quisiera%20conversar%20sobre%20las%20necesidades%20de%20prevenci%C3%B3n%20de%20mi%20empresa." target="_blank" rel="noopener" data-wa="hero">Hablar con Hans</a>
+            <a class="btn btn-ghost btn-lg" href="autodiagnostico/" data-cta="hero_autodiagnostico">Autodiagnóstico gratis (3 min)</a>
+            <a class="btn btn-link" href="https://wa.me/56932304800?text=Hola%20Hans%2C%20llegu%C3%A9%20a%20SafetyCoach%20y%20quisiera%20conversar%20sobre%20las%20necesidades%20de%20prevenci%C3%B3n%20de%20mi%20empresa." target="_blank" rel="noopener" data-wa="hero">Hablar con Hans</a>
           </div>
           <ul class="hero-proof" aria-label="Respaldo">
             <li><strong>+20 años</strong><span>en prevención de riesgos</span></li>
@@ -199,6 +257,7 @@
                 <div><h4>Lo que logras conmigo</h4><ul class="aud-gain"><li>Carpeta de requisitos al día y lista para auditar</li><li>Matrices, procedimientos y protocolos de tu faena</li><li>Inducciones y permisos de trabajo digitales</li><li>Acompañamiento en las auditorías del mandante</li></ul></div>
               </div>
               
+              <p class="aud-more"><a href="contratistas/">¿Eres mandante? Conoce el programa de cumplimiento para tus contratistas →</a></p>
               <a class="btn btn-primary" href="#contacto" data-need="Auditoría/fiscalización" data-cta="perfil_contratistas">Preparar mi empresa para el mandante</a>
             </div>
             
@@ -218,6 +277,22 @@
             <blockquote class="aud-quote">“Junto a SafetyCoach logramos nuestro sueño: abrir nuestro restaurante en Pirque, Onde Skinners, con todos los permisos y autorizaciones sanitarias de la SEREMI.”<cite>Alex Skinner · Onde Skinners, Pirque</cite></blockquote>
           </div>
 
+      </div>
+    </section>
+
+    <!-- ===================== SOLUCIONES (PÁGINAS) ===================== -->
+    <section class="section soluciones" id="soluciones" aria-labelledby="sol-t">
+      <div class="wrap">
+        <p class="eyebrow">Soluciones</p>
+        <h2 id="sol-t">Elige lo que necesitas resolver</h2>
+        <div class="sol-grid">
+          <a class="sol" href="ds-44/"><span class="sol-k">Normativa</span><strong>DS&nbsp;44: diagnóstico e implementación</strong><span>Qué te exige, qué te falta y cómo cumplirlo →</span></a>
+          <a class="sol" href="ley-karin/"><span class="sol-k">Personas</span><strong>Ley Karin</strong><span>Protocolo, denuncias, investigación y registros →</span></a>
+          <a class="sol" href="fiscalizaciones/"><span class="sol-k">Autoridad</span><strong>Fiscalizaciones, accidentes graves y trámites SEREMI</strong><span>DT, PAC, autorizaciones sanitarias →</span></a>
+          <a class="sol" href="pymes/"><span class="sol-k">Pymes</span><strong>Prevencionista externo para pymes</strong><span>Tu área de prevención, sin contratar un departamento →</span></a>
+          <a class="sol" href="contratistas/"><span class="sol-k">Contratistas y mandantes</span><strong>Cumplimiento de contratistas</strong><span>Requisitos, auditorías y programa para mandantes →</span></a>
+          <a class="sol sol-cta" href="autodiagnostico/"><span class="sol-k">Gratis · 3 minutos</span><strong>¿Qué tan preparada está tu empresa?</strong><span>Haz el autodiagnóstico y recibe tu resultado al instante →</span></a>
+        </div>
       </div>
     </section>
 
@@ -312,7 +387,8 @@
             <li><b>Evidencia lista</b> para fiscalizaciones y mandantes</li>
           </ul>
           <p class="pull-dig">Como anillo al dedo: lo creamos contigo, lo ajustamos en terreno y lo dejamos funcionando.</p>
-          <a class="btn btn-primary" href="#contacto" data-need="Soluciones digitales" data-cta="digital_demo">Quiero ver cómo funciona</a>
+          <a class="btn btn-primary" href="#contacto" data-need="Demo digital" data-cta="digital_demo">Pedir una demo de 15 minutos</a>
+          <p class="dig-privacy">La información de tus trabajadores se trata con confidencialidad y se usa solo para la gestión de seguridad de tu empresa.</p>
         </div>
       </div>
     </section>
@@ -355,33 +431,36 @@
     <section class="section" id="planes" aria-labelledby="planes-t">
       <div class="wrap">
         <h2 id="planes-t" class="h-center">No necesitas otro informe.<br>Necesitas que alguien te acompañe a implementarlo.</h2>
-        <div class="tiers">
-          <article class="tier">
-            <p class="tier-k">Nivel 1</p>
-            <h3>Diagnóstico</h3>
-            <p>Para conocer tus brechas y saber qué resolver primero.</p>
-            <ul><li>Visita y levantamiento</li><li>Informe ejecutivo de brechas</li><li>Hoja de ruta priorizada</li></ul>
+        <p class="sub center">Formas simples de trabajar juntos. Alcance y valor cerrados desde la primera reunión, sin sorpresas.</p>
+        <div class="offers">
+          <article class="offer">
+            <p class="tier-k">Para empezar</p>
+            <h3>Diagnóstico DS&nbsp;44 / Ley Karin</h3>
+            <p>Valor fijo, en 1 a 2 semanas. Sabes exactamente dónde estás y qué hacer primero.</p>
+            <ul><li>Visita y revisión de evidencias</li><li>Informe ejecutivo de brechas</li><li>Hoja de ruta priorizada</li></ul>
+            <a class="btn btn-secondary" href="#contacto" data-need="Diagnóstico DS 44" data-cta="oferta_diagnostico">Pedir diagnóstico</a>
           </article>
-          <article class="tier featured">
-            <p class="tier-k">Nivel 2</p>
-            <h3>Implementación</h3>
-            <p>Para construir y poner en marcha el sistema con tu equipo.</p>
-            <ul><li>Documentación que se usa</li><li>MIPER, programa y protocolos</li><li>Capacitación e involucramiento</li></ul>
+          <article class="offer featured">
+            <p class="tier-k">Recomendado</p>
+            <h3>Prevención externa mensual</h3>
+            <p>Tu área de prevención por una mensualidad según trabajadores y centros de trabajo.</p>
+            <ul><li>Implementación y visitas periódicas</li><li>Indicadores y reuniones de avance</li><li>Soporte en fiscalizaciones y accidentes</li></ul>
+            <a class="btn btn-primary" href="#contacto" data-need="Prevención externa" data-cta="oferta_mensual">Quiero evaluar mi empresa</a>
           </article>
-          <article class="tier">
-            <p class="tier-k">Nivel 3 · Recomendado</p>
-            <h3>Acompañamiento</h3>
-            <p>Para mantenerlo, medirlo y mejorarlo durante todo el año.</p>
-            <ul><li>Visitas periódicas</li><li>Indicadores y reuniones de avance</li><li>Soporte ante fiscalizaciones y accidentes</li></ul>
+          <article class="offer">
+            <p class="tier-k">Tecnología</p>
+            <h3>Kit SafetyCoach Digital</h3>
+            <p>Inducciones IRL, cápsulas con firma e inspecciones por QR, por centro de trabajo.</p>
+            <ul><li>Hecho a la medida de tu operación</li><li>Registros en línea y trazables</li><li>Listo para auditorías y fiscalizaciones</li></ul>
+            <a class="btn btn-secondary" href="#contacto" data-need="Demo digital" data-cta="oferta_digital">Pedir demo de 15 minutos</a>
           </article>
-        </div>
-        <div class="external">
-          <img class="ext-img" src="assets/img/foto-crecimiento.webp" alt="Ejecutivo apuntando hacia una curva de mejora" width="560" height="317" loading="lazy">
-          <div>
-            <h3>Tu área externa de prevención</h3>
-            <p>Sin necesidad de contratar de inmediato un equipo interno completo. Un plan mensual ajustado al tamaño, rubro y número de centros de trabajo de tu empresa.</p>
-          </div>
-          <a class="btn btn-primary" href="#contacto" data-need="Prevención externa" data-cta="planes_externa">Quiero evaluar mi empresa</a>
+          <article class="offer">
+            <p class="tier-k">Mandantes</p>
+            <h3>Programa para contratistas</h3>
+            <p>Para empresas con muchos contratistas: un estándar común, controlado en línea.</p>
+            <ul><li>Requisitos y documentación unificados</li><li>Inducciones y permisos digitales</li><li>Reporte de cumplimiento por contratista</li></ul>
+            <a class="btn btn-secondary" href="contratistas/" data-cta="oferta_mandantes">Ver programa</a>
+          </article>
         </div>
       </div>
     </section>
@@ -733,6 +812,7 @@
                 <option>Investigación de accidente</option>
                 <option>Bienestar/cultura</option>
                 <option>Soluciones digitales</option>
+                <option>Demo digital</option>
                 <option>Ley Karin</option>
                 <option>Otro</option>
               </select>
@@ -759,7 +839,7 @@
       </div>
       <nav aria-label="Servicios">
         <h2>Servicios</h2>
-        <a href="#ds44">Implementación DS&nbsp;44</a><a href="#pymes">Prevencionista externo para pymes</a><a href="#contratistas">Empresas contratistas</a><a href="#servicios">Protocolos MINSAL</a><a href="#psicosocial">Riesgo psicosocial y CEAL-SM</a><a href="#bienestar">Bienestar laboral</a>
+        <a href="ds-44/">Diagnóstico e implementación DS&nbsp;44</a><a href="ley-karin/">Ley Karin</a><a href="fiscalizaciones/">Fiscalizaciones y trámites SEREMI</a><a href="pymes/">Prevencionista externo para pymes</a><a href="contratistas/">Contratistas y mandantes</a><a href="autodiagnostico/">Autodiagnóstico gratis</a>
       </nav>
       <nav aria-label="SafetyCoach">
         <h2>SafetyCoach</h2>
