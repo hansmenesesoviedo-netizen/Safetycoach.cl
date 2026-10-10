@@ -530,3 +530,17 @@ details p { padding: 0 22px 18px; margin: 0; color: var(--muted); }
   .fis-grid, .fis-photos { grid-template-columns: 1fr; }
   .fis-photos img { height: 190px; }
 }
+
+/* ---------- Fondos a todo el ancho (v3): foto completa, nítida y transparente ---------- */
+.bg-photo-img img { opacity: .38 !important; filter: none !important; }
+.bg-photo-img::after { background: linear-gradient(180deg, rgba(255,255,255,.55), rgba(255,255,255,.70)) !important; }
+.section.alt.bg-photo .bg-photo-img::after { background: linear-gradient(180deg, rgba(245,247,250,.55), rgba(245,247,250,.72)) !important; }
+.hero.bg-photo .bg-photo-img img { opacity: .5 !important; }
+.hero.bg-photo .bg-photo-img::after { background: linear-gradient(90deg, rgba(255,255,255,.88) 0%, rgba(255,255,255,.62) 45%, rgba(255,255,255,.12) 100%) !important; }
+.bg-dark .bg-photo-img img { opacity: .30 !important; }
+.bg-dark .bg-photo-img::after { background: linear-gradient(180deg, rgba(11,31,58,.80), rgba(11,31,58,.90)) !important; }
+.bg-photo .ds-col, .bg-photo .panel, .bg-photo .coach-levels article, .bg-photo .fis-grid article, .bg-photo .pillars article, .bg-photo .compare > div, .bg-photo .maturity { background: rgba(255,255,255,.90); }
+.bg-photo .compare .win { background: rgba(244,251,245,.92); }
+.dig-show { grid-template-columns: repeat(4, 1fr) !important; align-items: start; }
+.dig-show img { height: auto !important; object-fit: contain !important; background: transparent !important; }
+@media (max-width: 760px) { .dig-show { grid-template-columns: 1fr 1fr !important; } }
