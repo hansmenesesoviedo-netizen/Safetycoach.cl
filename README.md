@@ -51,4 +51,4 @@ Pega tu etiqueta de Google Tag Manager en `<head>` (hay un comentario marcando e
 
 ## Placeholders a reemplazar
 
-Busca en `index.html`: `[TESTIMONIO REAL]` y `[CASO DE ÉXITO]`. Los comentarios `<!-- Confirmar ... -->` marcan datos que debes verificar.
+Ya no quedan placeholders de contenido. Los comentarios `<!-- Confirmar ... -->` marcan datos que debes verificar.
