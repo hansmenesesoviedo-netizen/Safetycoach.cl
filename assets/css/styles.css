@@ -834,3 +834,32 @@ details p { padding: 0 22px 18px; margin: 0; color: var(--muted); }
 .gate-extra > .fgrid { margin-bottom: 0; }
 .gate-help { color: var(--muted); font-size: .84rem; font-weight: 400; margin: 0; background: #FFF8E1; border-left: 3px solid var(--yellow); padding: 8px 10px; border-radius: 6px; display: block; }
 @keyframes fadeIn { from { opacity: 0; transform: translateY(-4px); } to { opacity: 1; transform: none; } }
+
+/* ---------- Diferenciación coach ---------- */
+.diff-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; margin: 26px 0 22px; }
+.diff-grid article { border: 1.5px solid rgba(11,31,58,.28); border-radius: 16px; padding: 22px; background: rgba(255,255,255,.55); }
+.diff-n { font: 800 1.6rem var(--font-h); color: var(--green); }
+.diff-grid h3 { font-size: 1.08rem; margin: 6px 0 8px; }
+.diff-grid p { margin: 0; font-size: .93rem; color: var(--ink); }
+
+/* ---------- Plan Pyme Anual ---------- */
+.plan-pyme { background: radial-gradient(800px 400px at 100% 0%, rgba(59,165,74,.28), transparent 60%), linear-gradient(160deg, #0B1F3A, #13325C); color: #fff; }
+.plan-pyme h2 { color: #fff; } .plan-pyme h2 span { color: var(--yellow); }
+.pp-grid { display: grid; grid-template-columns: 1.3fr 1fr; gap: 40px; align-items: center; }
+.pp-list li { position: relative; padding-left: 28px; margin: 9px 0; color: #DCE6F2; }
+.pp-list li::before { content: "✓"; position: absolute; left: 0; color: var(--yellow); font-weight: 800; }
+.pp-list b { color: #fff; }
+.pp-card { background: #fff; color: var(--ink); border-radius: 22px; padding: 30px; box-shadow: 0 30px 60px -30px rgba(0,0,0,.6); border-top: 6px solid var(--green); }
+.pp-k { font-size: .8rem; letter-spacing: .12em; text-transform: uppercase; font-weight: 800; color: var(--green-d); margin: 0; }
+.pp-price { font: 800 3.2rem/1 var(--font-h); color: var(--navy); margin: 10px 0 6px; }
+.pp-cur { font-size: 1.6rem; vertical-align: top; margin-right: 2px; }
+.pp-price small { font-size: 1rem; color: var(--muted); font-weight: 600; margin-left: 4px; }
+.pp-per { color: var(--muted); font-size: .92rem; }
+.pp-terms { margin: 12px 0 18px; }
+.pp-terms li { font-size: .9rem; padding: 6px 0; border-bottom: 1px dashed var(--line); }
+.pp-cupos { font-size: .84rem; color: #A36A00; background: #FFF8E1; border-radius: 8px; padding: 8px 10px; margin: 12px 0 0; }
+.pp-mini { border: 2px solid var(--green); border-radius: 16px; padding: 18px 20px; background: #F4FBF5; }
+.pp-mini .pp-price { font-size: 2.4rem; }
+@media (max-width: 1080px) { .diff-grid { grid-template-columns: 1fr 1fr; } }
+@media (max-width: 900px) { .pp-grid { grid-template-columns: 1fr; } }
+@media (max-width: 620px) { .diff-grid { grid-template-columns: 1fr; } .pp-price { font-size: 2.6rem; } }

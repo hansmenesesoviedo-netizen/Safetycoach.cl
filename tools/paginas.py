@@ -91,14 +91,15 @@ PAGES = [
         "h1": "Tu prevencionista externo, sin contratar un departamento",
         "lead": "Sabes que tienes que cumplir, pero no tienes tiempo ni un experto en casa. Te digo qué es urgente según tu tamaño y rubro, y lo hacemos juntos, con un plan mensual a tu medida.",
         "img": "terreno-cocina.webp",
-        "need": "Prevención externa",
-        "cta": "Quiero conversar sobre mi pyme",
+        "need": "Plan Pyme anual",
+        "cta": "Quiero el Plan Pyme",
         "blocks": [
+            ("Promoción: Plan Pyme Anual", "<div class='pp-mini'><p class='pp-price'><span class='pp-cur'>$</span>556.000<small>/ mes</small></p><p>Pymes de hasta 50 trabajadores · 1 centro de trabajo · contrato anual con pago mensual. Incluye <b>visita semanal en terreno</b> y <b>coaching mensual a la gerencia</b>.</p><p class='pp-per'>Con 50 trabajadores son unos <b>$11.120 por persona al mes</b>. Cupos limitados.</p></div>"),
             ("Lo que incluye", "<ul class='checks'><li>Diagnóstico y plan priorizado</li><li>Reglamento interno, matriz de riesgos y programa preventivo</li><li>Protocolos MINSAL que te correspondan</li><li>Inducciones y capacitaciones con firma digital</li><li>Apoyo en trámites ante la SEREMI y la Dirección del Trabajo</li><li>Visitas y seguimiento mensual</li></ul>"),
             ("Por qué funciona para una pyme", "<p>Pagas solo lo que necesitas, sin sueldos fijos. Tienes a alguien con más de 20 años de experiencia que conoce tu operación y responde cuando lo necesitas.</p>"),
         ],
         "faq": [
-            ("¿Cuánto cuesta?", "Depende del número de trabajadores, centros de trabajo y nivel de apoyo. Después de una primera conversación te propongo un plan con alcance y valor cerrados."),
+            ("¿Cuánto cuesta?", "Para pymes de hasta 50 trabajadores y un centro de trabajo, el Plan Pyme Anual cuesta $556.000 al mes, con visita semanal. Con más centros o en zonas alejadas, lo ajustamos en el diagnóstico."),
             ("Tengo muy pocos trabajadores, ¿igual debo cumplir?", "Sí, hay obligaciones que aplican a todas las empresas. Lo que cambia es la forma y la cantidad de exigencias. Te digo exactamente cuáles te corresponden."),
         ],
         "testi": ("Junto a SafetyCoach logramos nuestro sueño: abrir nuestro restaurante en Pirque, Onde Skinners, con todos los permisos y autorizaciones sanitarias de la SEREMI.", "Alex Skinner · Restaurante Onde Skinners, Pirque"),
