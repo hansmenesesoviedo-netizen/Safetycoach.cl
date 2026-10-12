@@ -103,7 +103,7 @@
         </div>
 
         <div class="phone">
-          <p class="phone-co">Alimentos Demo SpA · RUT 76.000.000-0 <small>(empresa ficticia)</small></p>
+          <div class="phone-co"><span class="logo-ph">TU LOGO</span><p>Alimentos Demo SpA<small>RUT 76.000.000-0 · empresa ficticia</small></p></div>
 
           <!-- 1. Ingreso -->
           <div class="demo-pane" id="t-irl">
@@ -113,10 +113,10 @@
             <label>RUT (ficticio)<input id="irl-rut" value="11.111.111-1"></label>
             <label>Cargo<select id="irl-cargo"><option>Ayudante de cocina</option><option>Operaria de envasado</option><option>Maestro de mantención</option><option>Bodeguero</option></select></label>
             <div class="mods docs" id="irl-mods">
-              <details data-code="AD-RE-RIOHS" data-name="Entrega del Reglamento Interno (RIOHS)" data-ref="Art. 156 CT · DS 44 Art. 56"><summary>Reglamento Interno (RIOHS) <small>Art. 156 CT · DS 44 Art. 56</small></summary><p>Declaro haber recibido en forma gratuita una copia del Reglamento Interno de Orden, Higiene y Seguridad, y asumo la responsabilidad de leerlo y cumplir sus obligaciones, prohibiciones y normas.</p></details>
-              <details data-code="AD-RE-IRL" data-name="Información de riesgos laborales (IRL)" data-ref="DS 44"><summary>Información de riesgos laborales (IRL) <small>DS 44</small></summary><p><b>Tus riesgos:</b> caídas por pisos húmedos, cortes con cuchillos y rebanadoras, quemaduras con hornos y vapor, manejo manual de carga y atrapamiento en máquinas. <b>Medidas:</b> calzado antideslizante, guante anticorte, guantes térmicos, máximo 25 kg por persona y nunca intervenir una máquina en movimiento.</p></details>
-              <details data-code="AD-RE-PTS" data-name="Procedimiento de trabajo seguro: uso de cuchillos y rebanadora" data-ref="DS 44"><summary>Procedimiento de trabajo seguro (PTS) <small>Cuchillos y rebanadora</small></summary><p>Corta siempre alejando el filo del cuerpo, transporta el cuchillo con la punta hacia abajo y nunca lo dejes en agua jabonosa. Antes de limpiar la rebanadora: desenchúfala, deja la perilla en cero y usa guante anticorte.</p></details>
-              <details data-code="AD-RE-EMER" data-name="Plan de emergencias y evacuación" data-ref="DS 44"><summary>Plan de emergencias <small>Vías de evacuación y punto de encuentro</small></summary><p>Ante una alarma, detén tu trabajo, corta el gas si es seguro hacerlo y evacúa sin correr por la vía señalizada hasta el punto de encuentro del estacionamiento.</p></details>
+              <details data-k="riohs"><summary>Reglamento Interno (RIOHS) <small>Art. 156 CT · DS 44 Art. 56</small></summary><p>Declaro haber recibido en forma gratuita una copia del Reglamento Interno de Orden, Higiene y Seguridad, y asumo la responsabilidad de leerlo y cumplir sus obligaciones, prohibiciones y normas.</p></details>
+              <details data-k="irl"><summary>Información de riesgos laborales (IRL) <small>DS 44</small></summary><p><b>Tus riesgos:</b> caídas por pisos húmedos, cortes con cuchillos y rebanadoras, quemaduras con hornos y vapor, manejo manual de carga y atrapamiento en máquinas. <b>Medidas:</b> calzado antideslizante, guante anticorte, guantes térmicos, máximo 25 kg por persona y nunca intervenir una máquina en movimiento.</p></details>
+              <details data-k="pts"><summary>Procedimiento de trabajo seguro (PTS) <small>Cuchillos y rebanadora</small></summary><p>Corta siempre alejando el filo del cuerpo, transporta el cuchillo con la punta hacia abajo y nunca lo dejes en agua jabonosa. Antes de limpiar la rebanadora: desenchúfala, deja la perilla en cero y usa guante anticorte.</p></details>
+              <details data-k="emer"><summary>Plan de emergencias <small>Vías de evacuación y punto de encuentro</small></summary><p>Ante una alarma, detén tu trabajo, corta el gas si es seguro hacerlo y evacúa sin correr por la vía señalizada hasta el punto de encuentro del estacionamiento.</p></details>
             </div>
             <p class="demo-prog"><span id="irl-read">0</span> de 4 documentos leídos</p>
             <p class="decl">Declaro haber recibido, leído y comprendido los documentos anteriores, sus riesgos, medidas preventivas y métodos de trabajo correctos.</p>
@@ -130,7 +130,7 @@
             <h2>Cápsula M03 · Prevención de cortes</h2>
             <p class="demo-sub">Interactiva, con tiempo mínimo, evaluación, intentos y firma. <span class="cap-timer" id="cap-timer">⏱ 0 s</span></p>
             <div class="cap-steps"><span class="on">1</span><span>2</span><span>3</span><span>4</span><span>✓</span></div>
-            <div class="slide on" data-s="0"><b>1 · ¿Por qué importa?</b><p>Los cortes son de los accidentes más frecuentes en cocinas y plantas de alimentos. Casi todos se evitan con tres hábitos. Vamos a encontrarlos.</p></div>
+            <div class="slide on" data-s="0"><div class="video-ph" role="img" aria-label="Espacio para video"><span>▶</span><small>Espacio para el video de tu cápsula · 1 a 2 min</small></div><b>1 · ¿Por qué importa?</b><p>Los cortes son de los accidentes más frecuentes en cocinas y plantas de alimentos. Casi todos se evitan con tres hábitos. Vamos a encontrarlos.</p></div>
             <div class="slide" data-s="1"><b>2 · Toca las 3 conductas inseguras</b>
               <div class="tap-grid" id="tap-grid">
                 <button type="button" data-bad="1">Cortar en dirección al cuerpo</button>
@@ -202,14 +202,20 @@
           <!-- 5. Registros -->
           <div class="demo-pane" id="t-reg" hidden>
             <h2>Registros e indicadores</h2>
-            <p class="demo-sub">Lo que ve la gerencia o el prevencionista, en línea: cada registro con folio, firma, fecha, hora y código de verificación.</p>
+            <p class="demo-sub">Lo que ve la gerencia o el prevencionista, en línea. Toca <b>Ver hoja</b> para ver el registro tal como se entrega.</p>
             <div class="kpis" id="kpis"></div>
             <div id="reg-list" class="reg-list"></div>
             <button type="button" class="btn btn-ghost btn-sm" id="reg-clear">Borrar datos de la demo</button>
           </div>
         </div>
 
-        <dialog class="comp" id="comp"><div class="comp-in" id="comp-in"></div><div class="comp-btns"><button type="button" class="btn btn-ghost btn-sm" id="comp-print">Imprimir / guardar PDF</button><button type="button" class="btn btn-primary btn-sm" id="comp-close">Cerrar</button></div></dialog>
+        <section class="sheets-wrap" id="carpeta" aria-labelledby="carpeta-t">
+          <div class="sheets-head">
+            <div><p class="eyebrow">El entregable</p><h2 id="carpeta-t">Tu carpeta digital: así queda cada registro</h2><p class="demo-sub">Mismo formato que entregamos a nuestros clientes: código, versión, folio, firma validada y huella digital. Con tu logo. Lista para imprimir o guardar en PDF.</p></div>
+            <div class="sheets-btns"><button type="button" class="btn btn-ghost btn-sm" id="sheets-all">Ver carpeta completa</button><button type="button" class="btn btn-primary btn-sm" id="sheets-print">Imprimir / guardar PDF</button></div>
+          </div>
+          <div class="sheets" id="sheets"></div>
+        </section>
         </div>
         <div class="demo-cta">
           <div><h4>¿Lo quieres para tu empresa?</h4><p>Lo hacemos a la medida de tu operación: tus riesgos, tus equipos, tus cargos y tu logo.</p></div>
