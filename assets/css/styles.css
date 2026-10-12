@@ -1275,3 +1275,4 @@ body.frame-zoom::after { content: ""; position: fixed; inset: 0; background: rgb
 .guia-cta { background: var(--navy); color: #fff; border-radius: 18px; padding: 22px 24px; margin: 34px 0 16px; }
 .guia-cta p { color: #E6ECF3; }
 .guia-cta b { color: var(--yellow); }
+.slogan { display: inline-block; font: 800 1rem var(--font-h); letter-spacing: .04em; color: var(--navy); background: var(--yellow); padding: 6px 14px; border-radius: 999px; margin: 0 0 14px; }
