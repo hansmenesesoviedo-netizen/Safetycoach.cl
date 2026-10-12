@@ -2,8 +2,8 @@
    Cada registro se entrega en el mismo formato de hoja que usan los clientes de SafetyCoach. */
 (function () {
   'use strict';
-  var KEY = 'sc-demo-registros-v3';
-  var CO = 'Alimentos Demo SpA', RUT = '76.000.000-0', CO_UP = 'ALIMENTOS DEMO SPA';
+  var KEY = 'sc-demo-registros-v4';
+  var CO = 'Demo Pyme SpA', RUT = '76.000.000-0', CO_UP = 'DEMO PYME SPA';
   var RELATOR = 'Encargado de Prevención · SafetyCoach';
 
   function load() { try { return JSON.parse(localStorage.getItem(KEY)) || null; } catch (e) { return null; } }
@@ -14,7 +14,7 @@
   function day(iso) { return iso.slice(0, 10); }
   function fmt(iso) { return new Date(iso).toLocaleString('es-CL', { dateStyle: 'short', timeStyle: 'short' }); }
   function rnd(n) { return Math.floor(Math.random() * Math.pow(10, n)).toString().padStart(n, '0'); }
-  function folio(pre) { return 'AD-' + pre + '-' + new Date().getFullYear() + '-' + rnd(4); }
+  function folio(pre) { return 'DP-' + pre + '-' + new Date().getFullYear() + '-' + rnd(4); }
 
   function sha256(text) {
     function fallback() {
@@ -72,13 +72,13 @@
     var base = [['Nombre completo', p.nombre], ['N° Carnet identidad', p.rut], ['Cargo', p.cargo], ['Centro de trabajo', 'Planta Santiago']];
     var rel = ['Modalidad', 'Capacitación en línea · equivale a 2 horas'], rl = ['Relator', RELATOR];
     return [
-      { fmt: 'fc', tipo: 'Documento de ingreso', code: 'AD-RE-RIOHS', titulo: 'Entrega y Recepción del Reglamento Interno', norma: 'Art.156° CT · DS44 Art.56', folio: folio('RIOHS'), nombre: p.nombre,
+      { fmt: 'fc', tipo: 'Documento de ingreso', code: 'DP-RE-RIOHS', titulo: 'Entrega y Recepción del Reglamento Interno', norma: 'Art.156° CT · DS44 Art.56', folio: folio('RIOHS'), nombre: p.nombre,
         kv: base.concat([['Fecha de entrega', 'hoy']]), firma: firma, relator: false,
         decl: 'Declaro haber recibido en forma gratuita una copia del <b>REGLAMENTO INTERNO DE ORDEN, HIGIENE Y SEGURIDAD (RIOHS)</b> de la Empresa <b>' + CO_UP + '</b>, de acuerdo con lo establecido en el artículo 156° inciso 2 del Código del Trabajo y el artículo 56 del Decreto Supremo N°44/2024. Asumo mi responsabilidad de dar lectura a su contenido y dar cumplimiento a las obligaciones, prohibiciones y normas de orden, higiene y seguridad que en él están escritas.' },
-      { fmt: 'fc', tipo: 'Documento de ingreso', code: 'AD-RE-PTS', titulo: 'Registro de Capacitación y Entrega de Procedimientos', norma: 'DS44 Art.15 num.3-4 · DS43 SGA · Ley 16.744', folio: folio('PTS'), nombre: p.nombre,
+      { fmt: 'fc', tipo: 'Documento de ingreso', code: 'DP-RE-PTS', titulo: 'Registro de Capacitación y Entrega de Procedimientos', norma: 'DS44 Art.15 num.3-4 · DS43 SGA · Ley 16.744', folio: folio('PTS'), nombre: p.nombre,
         kv: [['Trabajador/a', p.nombre], ['RUT', p.rut], ['Centro de trabajo', 'Planta Santiago'], ['Fecha', 'hoy'], rel, rl], list: { t: 'Procedimientos, protocolos y HDS entregados', items: PTS }, firma: firma, relator: true,
         decl: 'Declaro haber recibido y comprendido la información entregada. Se me ha informado sobre los riesgos, medidas de prevención y métodos de trabajo seguro. He recibido los documentos indicados, conforme al D.S. N°44/2024 Art.15.' },
-      { fmt: 'fc', tipo: 'Documento de ingreso', code: 'AD-RE-IRL', titulo: 'Registro de Información de Riesgos Laborales (IRL)', norma: 'DS44 Art.15 · Derecho a Saber · Ley 16.744', folio: folio('IRL'), nombre: p.nombre,
+      { fmt: 'fc', tipo: 'Documento de ingreso', code: 'DP-RE-IRL', titulo: 'Registro de Información de Riesgos Laborales (IRL)', norma: 'DS44 Art.15 · Derecho a Saber · Ley 16.744', folio: folio('IRL'), nombre: p.nombre,
         kv: [['Tipo de inducción', 'Trabajador/a nuevo/a'], ['Nombre completo', p.nombre], ['N° Carnet identidad', p.rut], ['Cargo', p.cargo], ['Centro de trabajo', 'Planta Santiago'], ['Fecha', 'hoy'], rel, rl],
         list: { t: 'Módulos IRL completados y aprobados', items: IRL.concat(['PTS y plan de emergencia entregados', 'RIOHS + protocolo Ley Karin entregados']) }, firma: firma, relator: true,
         decl: 'Declaro haber completado el proceso de integración y formación IRL de <b>' + CO_UP + '</b> (RUT ' + RUT + '). Cada módulo fue impartido en lenguaje comprensible. Ninguna actividad fue realizada fuera de mi horario laboral. Declaro conocer el protocolo de emergencias, el procedimiento de reporte de incidentes y el canal de denuncia. Se conservará por mínimo 5 años.' }
@@ -147,7 +147,7 @@
     if (secs() < MIN_SEG) { msg.textContent = 'Tiempo mínimo de la cápsula: faltan ' + (MIN_SEG - secs()) + ' s.'; return; }
     if (!sigs['sig-cap'].signed()) { msg.textContent = 'Falta tu firma.'; return; }
     var nombre = $('cap-nombre').value.trim() || 'Sin nombre', fin = new Date().toISOString();
-    add({ fmt: 'fc', tipo: 'Cápsula', code: 'AD-RE-CAP-M03', titulo: 'Registro de Capacitación — Cápsula M03 · Prevención de cortes', norma: 'DS44 Art.15-16 · Ley 16.744', folio: folio('CAP'), nombre: nombre,
+    add({ fmt: 'fc', tipo: 'Cápsula', code: 'DP-RE-CAP-M03', titulo: 'Registro de Capacitación — Cápsula M03 · Prevención de cortes', norma: 'DS44 Art.15-16 · Ley 16.744', folio: folio('CAP'), nombre: nombre,
       kv: [['Trabajador/a', nombre], ['Módulo', 'M03 — Prevención de cortes · versión 1'], ['Inicio de sesión', fmt(sesIni)], ['Término de sesión', fmt(fin)], ['Duración', secs() + ' s'],
         ['Tiempo mínimo pedagógico', 'Cumple (' + MIN_SEG + ' s)'], ['Evaluación', nota + ' de 4 (' + (nota * 25) + '%) · Aprobada'], ['Intentos', String(attempts)], ['Modalidad', 'Cápsula interactiva en línea'], ['Relator', RELATOR]],
       list: { t: 'Actividades completadas', items: ['Video y contenido del módulo', 'Identificación de 3 conductas inseguras (3 de 3)', 'Escenario de decisión: respuesta correcta', 'Evaluación final aprobada'] },
@@ -179,7 +179,7 @@
     if (!nombre) { msg.textContent = 'Ingresa el nombre del trabajador.'; return; }
     if (!rows.length) { msg.textContent = 'Marca al menos un elemento.'; return; }
     if (!sigs['sig-epp'].signed()) { msg.textContent = 'Falta la firma del trabajador.'; return; }
-    add({ fmt: 'fc', tipo: 'Entrega de EPP', code: 'AD-RE-EPP', titulo: 'Registro de Entrega de Elementos de Protección Personal', norma: 'DS594 Art.53 · NCh461 · NCh1261', folio: folio('EPP'), nombre: nombre,
+    add({ fmt: 'fc', tipo: 'Entrega de EPP', code: 'DP-RE-EPP', titulo: 'Registro de Entrega de Elementos de Protección Personal', norma: 'DS594 Art.53 · NCh461 · NCh1261', folio: folio('EPP'), nombre: nombre,
       kv: [['Trabajador/a', nombre], ['Cargo', $('epp-cargo').value], ['Centro de trabajo', 'Planta Santiago'], ['Motivo de la entrega', $('epp-motivo').value], ['Fecha', 'hoy']],
       table: { t: 'Elementos de protección personal entregados', head: ['Elemento', 'Norma', 'Talla', 'Cant.'], rows: rows },
       firma: sigs['sig-epp'].data(), relator: false, ok: true, detalle: rows.length + ' elementos · ' + $('epp-motivo').value,
@@ -189,15 +189,15 @@
 
   // ---------- 4. Inspección de máquina (formato PROSEMEH) ----------
   var MAQ = {
-    esmeril: { n: 'Esmeril Angular', code: 'AD-INS-ESANG', serie: '6', area: 'Taller de mantención', hab: 'Maestro de mantención', riesgos: 'Proyección de partículas · corte · contacto eléctrico · incendio por chispas',
+    esmeril: { n: 'Esmeril Angular', code: 'DP-INS-ESANG', serie: '6', area: 'Taller de mantención', hab: 'Maestro de mantención', riesgos: 'Proyección de partículas · corte · contacto eléctrico · incendio por chispas',
       op: [['Disco sin grietas, deformación ni desgaste excesivo', 1], ['Disco compatible (diámetro y velocidad máxima ≥ velocidad máquina)', 1], ['Protector de disco instalado y orientado hacia el operador', 1], ['Material sujeto firmemente antes de operar', 1], ['Protector facial completo en uso (no solo antiparras)', 1], ['Protección auditiva en uso', 0], ['Guantes de seguridad en uso', 0], ['Ropa ajustada — sin mangas sueltas ni elementos colgantes', 0], ['Sin personal en área de proyección de chispas', 1], ['Sin inflamables almacenados cerca del área', 1]],
       mant: [['Herramienta desenchufada antes de intervenir (bloqueo de energía)', 1], ['Cambio de disco con la llave adecuada', 0], ['Cable, enchufe y carcasa sin daños', 1], ['Protector reinstalado y ajustado tras la mantención', 1]],
       limp: [['Herramienta desenchufada antes de limpiar', 1], ['Rejillas de ventilación limpias, sin polvo metálico', 0]] },
-    sierra: { n: 'Mesa Sierra (sierra de banco)', code: 'AD-INS-MSIER', serie: '2', area: 'Taller de mantención', hab: 'Maestro de mantención', riesgos: 'Corte o amputación · proyección de partículas · contacto eléctrico',
+    sierra: { n: 'Mesa Sierra (sierra de banco)', code: 'DP-INS-MSIER', serie: '2', area: 'Taller de mantención', hab: 'Maestro de mantención', riesgos: 'Corte o amputación · proyección de partículas · contacto eléctrico',
       op: [['Resguardo superior del disco instalado y sin intervenir', 1], ['Cuchillo divisor alineado con el disco', 1], ['Parada de emergencia operativa, visible y accesible', 1], ['Disco sin dientes faltantes ni fisuras', 1], ['Empujador disponible para cortes angostos', 0], ['Tablero de comandos identificado en español', 0], ['Antiparras y protector auditivo en uso', 0], ['Operador habilitado para esta máquina', 1]],
       mant: [['Bloqueo LOTO aplicado: candado y tarjeta personal', 1], ['Energía residual disipada y estado cero verificado', 1], ['Herramientas adecuadas y en buen estado', 0]],
       limp: [['Máquina detenida y desenergizada antes de limpiar', 1], ['Viruta retirada con escobilla o aspiradora, nunca con la mano', 0], ['Área libre de residuos y derrames', 0]] },
-    rebanadora: { n: 'Rebanadora Industrial', code: 'AD-INS-REBAN', serie: '1', area: 'Cocina', hab: 'Ayudante de cocina habilitado', riesgos: 'Corte o amputación · contacto eléctrico',
+    rebanadora: { n: 'Rebanadora Industrial', code: 'DP-INS-REBAN', serie: '1', area: 'Cocina', hab: 'Ayudante de cocina habilitado', riesgos: 'Corte o amputación · contacto eléctrico',
       op: [['Guarda de la hoja instalada', 1], ['Carro portaalimentos y empujador funcionan', 1], ['Hoja sin fisuras ni desgaste irregular', 0], ['Cable y enchufe sin daños', 0], ['Guante anticorte disponible y en uso', 1], ['Operador habilitado para esta máquina', 1]],
       mant: [['Desenchufada antes de intervenir', 1], ['Afilado solo por personal autorizado', 0]],
       limp: [['Desenchufada y perilla en cero antes de limpiar', 1], ['Guante anticorte en uso durante la limpieza', 1], ['Limpieza desde el centro hacia afuera de la hoja', 0]] }
