@@ -164,6 +164,18 @@
     if (conoce && monto) conoce.addEventListener('change', function () { monto.hidden = conoce.value !== 'Sí'; });
   });
 
+  // ---------- Encuesta inicial de brechas: solo las más prioritarias (máximo 8) ----------
+  document.querySelectorAll('.brechas-grid[data-max]').forEach(function (grid) {
+    var max = +grid.dataset.max, n = grid.parentElement.querySelector('.brechas-n');
+    grid.addEventListener('change', function (e) {
+      var checked = grid.querySelectorAll('input:checked');
+      if (checked.length > max) { e.target.checked = false; checked = grid.querySelectorAll('input:checked'); }
+      var full = checked.length >= max;
+      if (n) { n.textContent = checked.length + ' de ' + max + ' seleccionadas' + (full ? ' · elige solo las más prioritarias' : ''); n.classList.toggle('full', full); }
+      grid.querySelectorAll('input:not(:checked)').forEach(function (i) { i.disabled = full; });
+    });
+  });
+
   // ---------- Formularios: validación + envío ----------
   // Por defecto el formulario se envía de forma nativa (Netlify Forms lo captura).
   // Para usar otro servicio (Formspree, CRM, Make/Zapier), define data-endpoint="https://..." en el <form>:

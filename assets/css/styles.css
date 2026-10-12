@@ -1175,3 +1175,32 @@ body.frame-zoom::after { content: ""; position: fixed; inset: 0; background: rgb
 .scenes button { border: 1px solid var(--line); background: #fff; color: var(--navy); border-radius: 999px; padding: 6px 14px; font: 700 .85rem var(--font-b); cursor: pointer; }
 .scenes button[aria-pressed="true"] { background: var(--navy); color: #fff; border-color: var(--navy); }
 .frame-img { transition: opacity .25s; }
+
+/* ---------- Pasada final: marquesina de logos, palabra de coach, precios desde ---------- */
+.logos.marquee { display: block; overflow: hidden; -webkit-mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent); mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent); }
+.marquee-track { display: flex; align-items: center; gap: 56px; width: max-content; animation: logosLoop 38s linear infinite; }
+.logos.marquee:hover .marquee-track { animation-play-state: paused; }
+@keyframes logosLoop { from { transform: translateX(0); } to { transform: translateX(calc(-50% - 28px)); } }
+@media (prefers-reduced-motion: reduce) { .marquee-track { animation: none; flex-wrap: wrap; width: auto; justify-content: center; } .marquee-track img[aria-hidden] { display: none; } }
+.esp-close span { display: block; color: var(--yellow); margin-top: 6px; }
+.pa-fuera { list-style: none; padding: 0; margin: 4px 0 12px; display: flex; flex-wrap: wrap; gap: 8px; }
+.pa-fuera li { background: #FDF0EE; border: 1px solid #F3C6C0; color: #7A1F17; border-radius: 999px; padding: 6px 12px; font-size: .92rem; }
+.pa-fuera b { color: #C0392B; }
+.pp-desde { font: 700 .9rem var(--font-b); margin-right: 6px; opacity: .8; }
+.offer .desde { font: 700 .78rem var(--font-b); color: var(--muted); }
+.offer-note { font-size: .8rem !important; color: var(--muted); background: var(--bg-alt); border-radius: 8px; padding: 8px 10px; }
+.scale { text-align: center; max-width: 760px; margin: -6px auto 22px; font-size: .95rem; color: var(--navy); background: #FFF8DC; border-radius: 12px; padding: 10px 14px; }
+.coach-word { background: linear-gradient(180deg, #fff, var(--bg-alt)); }
+.coach-word h2 { font-size: clamp(1.7rem, 3.6vw, 2.6rem); max-width: 26ch; }
+.coach-word h2 span { display: block; color: var(--green-d); }
+.cw-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; margin: 24px 0; }
+.cw-grid article { background: #fff; border: 1px solid var(--line); border-top: 4px solid var(--yellow); border-radius: 14px; padding: 18px; }
+.cw-grid b { display: block; font: 800 1.05rem var(--font-h); color: var(--navy); margin-bottom: 6px; }
+.cw-grid p { margin: 0; font-size: .94rem; color: var(--ink); }
+.cw-warn { background: #FDF0EE; border-left: 4px solid #C0392B; border-radius: 0 12px 12px 0; padding: 14px 18px; font-size: 1.02rem; color: #5A1A14; }
+.cw-close { display: flex; align-items: center; justify-content: space-between; gap: 18px; flex-wrap: wrap; margin-top: 18px; }
+.cw-close p { margin: 0; font: 700 clamp(1.1rem, 2.4vw, 1.4rem)/1.3 var(--font-h); color: var(--navy); }
+.brechas-n { font-size: .82rem; font-weight: 700; color: var(--green-d); margin: 0 0 8px; }
+.brechas-n.full { color: #C0392B; }
+@media (max-width: 900px) { .cw-grid { grid-template-columns: 1fr 1fr; } }
+@media (max-width: 560px) { .cw-grid { grid-template-columns: 1fr; } }
