@@ -155,7 +155,7 @@ PAGES = [
         "need": "Programa contratistas",
         "cta": "Toma tu programa · $549.000/mes",
         "blocks": [
-            ("Por si no lo sabías", "<p class='lic-inline'><b>Te pueden estar dejando fuera por tu tasa de accidentes.</b> Las políticas de compra y licitación de muchos mandantes evalúan la accidentabilidad de sus proveedores. Hay competidores que hacen lo mismo que tú, o peor, pero llegan sin accidentes a cuestas. Y se quedan con el contrato.</p>"),
+            ("Por si no lo sabías", "<div class='lic-inline'><p><b>Tú miras tus costos. Tu mandante no mira solo tu precio.</b> Para elegirte también revisa si estás limpio: sin accidentes, sin denuncias, sin multas. Las políticas de compra y licitación evalúan tu accidentabilidad, y hay competidores que hacen lo mismo que tú, o peor, pero llegan sin accidentes a cuestas. Y se quedan con el contrato.</p><p><i>Te lo digo porque estuve ahí, del otro lado de la mesa.</i></p></div>"),
             ("Si eres contratista: programa por $549.000 + IVA al mes", "<ul class='checks'><li>Revisión de los requisitos de tu mandante</li><li>Matrices, procedimientos y protocolos de tu faena</li><li>Documentación y acreditaciones al día</li><li>Inducciones y permisos de trabajo digitales</li><li>Preparación para las auditorías del mandante</li></ul>"),
             ("Si eres mandante: programa para contratistas", "<ul class='checks'><li>Un estándar común de seguridad para todos tus contratistas</li><li>Inducción digital con firma antes de entrar a tus instalaciones</li><li>Inspecciones y permisos por QR</li><li>Reporte de cumplimiento por contratista, en línea</li><li>Acompañamiento a los contratistas que más lo necesitan</li></ul>"),
         ],
