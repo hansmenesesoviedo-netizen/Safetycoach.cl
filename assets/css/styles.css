@@ -1245,3 +1245,33 @@ body.frame-zoom::after { content: ""; position: fixed; inset: 0; background: rgb
 @media (max-width: 760px) { .story-hero-in, .story-ch.with-img { grid-template-columns: 1fr; } .story-hero img { justify-self: center; max-width: 240px; } }
 .story-hero img { height: 420px; object-fit: cover; object-position: center 20%; }
 @media (max-width: 760px) { .story-hero img { height: 300px; } }
+
+/* ---------- Match, cupos, cifra BASF, seguimiento ---------- */
+.match { display: flex; align-items: center; justify-content: center; gap: 22px; margin: 26px 0; }
+.match p { margin: 0; text-align: center; max-width: 380px; }
+.match p b { display: block; font: 800 1.5rem var(--font-h); color: #fff; }
+.match p span { color: #C9D6E6; font-size: .95rem; }
+.match.light p b { color: var(--navy); }
+.match.light p span { color: var(--muted); }
+.m-btn { flex: none; display: grid; place-items: center; width: 74px; height: 74px; border-radius: 50%; background: #fff; font-size: 2rem; text-decoration: none; box-shadow: 0 10px 24px -8px rgba(0,0,0,.45); transition: transform .15s; }
+.m-btn:hover { transform: scale(1.08); }
+.m-no { color: #E5534B; border: 2px solid #F3C6C0; }
+.m-yes { color: #fff; background: linear-gradient(135deg, #FF5F6D, #FF2D55); }
+.cw-h { color: #fff; font-size: clamp(1.2rem, 2.6vw, 1.6rem); margin: 30px 0 0; }
+.filtro .cw-grid article { background: rgba(255,255,255,.96); }
+.pp-left { display: inline-block; background: #C0392B; color: #fff; font: 700 .85rem var(--font-b); border-radius: 999px; padding: 4px 12px; margin: 0 0 8px; }
+.pp-left b { font-size: 1rem; }
+.big-stat { display: flex; align-items: center; gap: 16px; background: var(--navy); color: #fff; border-radius: 16px; padding: 16px 22px; margin: 0 0 22px; }
+.big-stat b { font: 800 clamp(2rem, 5vw, 3rem) var(--font-h); color: var(--yellow); white-space: nowrap; }
+.big-stat span { font-size: 1.05rem; }
+.offer-wide.seg { border-left-color: var(--green); }
+@media (max-width: 560px) { .match { gap: 12px; } .m-btn { width: 58px; height: 58px; font-size: 1.6rem; } }
+.guias-row { margin: 18px 0 0; font-size: .95rem; }
+.guias-row a { font-weight: 700; }
+.guia { padding: clamp(30px, 5vw, 60px) 0 60px; }
+.guia h1 { font-size: clamp(1.8rem, 4.4vw, 2.8rem); line-height: 1.1; }
+.guia h2 { font-size: clamp(1.25rem, 2.6vw, 1.6rem); margin-top: 30px; }
+.guia p, .guia li { font-size: 1.05rem; line-height: 1.7; }
+.guia-cta { background: var(--navy); color: #fff; border-radius: 18px; padding: 22px 24px; margin: 34px 0 16px; }
+.guia-cta p { color: #E6ECF3; }
+.guia-cta b { color: var(--yellow); }

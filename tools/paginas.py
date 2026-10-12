@@ -29,7 +29,7 @@ PAGES = [
         "lead": "El DS 44 no se cumple con documentos: se cumple gestionando. Te digo qué te exige según tu tamaño y rubro, qué te falta, y lo implementamos con tus líderes y tu equipo, con evidencia lista para cualquier fiscalización.",
         "img": "terreno-bodega.webp",
         "need": "Diagnóstico DS 44",
-        "cta": "Quiero saber dónde estoy · desde $99.000",
+        "cta": "Quiero saber dónde estoy · $99.000",
         "blocks": [
             ("¿Qué es el DS 44?", "<p>Es el reglamento sobre gestión preventiva de los riesgos laborales, vigente desde febrero de 2025, que reemplazó a los antiguos DS 40 y DS 54. Pone el foco en que la empresa <b>gestione</b> sus riesgos de forma continua, no solo en tener documentos.</p>"),
             ("Lo que normalmente se revisa", "<ul class='checks'><li>Política de seguridad y salud en el trabajo</li><li>Matriz de identificación de peligros y evaluación de riesgos</li><li>Programa de trabajo preventivo con responsables y plazos</li><li>Información de riesgos y capacitación a los trabajadores</li><li>Plan de emergencias</li><li>Organización preventiva: comité paritario, encargado o departamento según tamaño</li><li>Investigación de accidentes y seguimiento de medidas</li></ul>"),
@@ -37,7 +37,7 @@ PAGES = [
         ],
         "faq": [
             ("¿El DS 44 aplica a mi empresa?", "Aplica a las empresas y entidades empleadoras en Chile. Lo que cambia según el número de trabajadores y el rubro es cómo se organiza la prevención (comité paritario, departamento de prevención, etc.). En el diagnóstico revisamos exactamente qué te corresponde."),
-            ("¿Cuánto demora el diagnóstico?", "Normalmente entre 1 y 2 semanas, según el tamaño y la cantidad de centros de trabajo. El diagnóstico en una sola vista parte desde $99.000 + IVA, con garantía: si no te muestra al menos 3 brechas que no marcaste en tu encuesta inicial, no lo pagas."),
+            ("¿Cuánto demora el diagnóstico?", "Normalmente entre 1 y 2 semanas, según el tamaño y la cantidad de centros de trabajo. El diagnóstico en una sola vista cuesta $99.000 + IVA, con garantía: si no te muestra al menos 3 brechas que no marcaste en tu encuesta inicial, no lo pagas."),
             ("Ya tengo prevencionista, ¿me sirve?", "Sí. Un prevencionista solo no puede estar en todas partes. Lo apoyo para ordenar el sistema, priorizar y dejar evidencia digital, sin reemplazarlo."),
         ],
         "testi": None,
@@ -104,14 +104,14 @@ PAGES = [
         "lead": "Deja de botar plata en multas y parches: mejor inviértela y protégete. No tienes tiempo ni un experto en casa. No es excusa: tu coach y prevencionista externo, sin contratar un departamento. Te digo qué es urgente según tu tamaño y rubro, y lo hacemos juntos, cada semana.",
         "img": "terreno-cocina.webp",
         "need": "Plan Pyme anual",
-        "cta": "Quiero uno de los 5 cupos",
+        "cta": "Reservar mi cupo",
         "blocks": [
-            ("Promoción: Plan Pyme Anual", "<div class='pp-mini'><p class='pp-price'><span class='pp-desde'>desde</span><span class='pp-cur'>$</span>549.000<small>+ IVA / mes</small></p><p>Pymes de hasta 50 trabajadores en Santiago · contrato anual con pago mensual. Incluye <b>visita semanal en terreno de hasta 3 horas</b> (AM o PM según disponibilidad), <b>asesoría virtual entre visitas</b>, <b>implementación de protocolos MINSAL</b> y <b>coaching mensual a la gerencia</b>.</p><p class='pp-per'><b>Solo 5 cupos.</b> Cuando se llenan, se cierra la promoción.</p></div>"),
+            ("Promoción: Plan Pyme Anual", "<div class='pp-mini'><p class='pp-price'><span class='pp-desde'>desde</span><span class='pp-cur'>$</span>549.000<small>+ IVA / mes</small></p><p>Pymes de hasta 50 trabajadores en Santiago · contrato anual con pago mensual. Incluye <b>visita semanal en terreno de hasta 3 horas</b> (AM o PM según disponibilidad), <b>asesoría virtual entre visitas</b>, <b>implementación de protocolos MINSAL</b> y <b>coaching mensual a la gerencia</b>.</p><p class='pp-per'><b>Quedan 5 de 10 cupos.</b> Cuando se llenan, se cierra la promoción.</p></div>"),
             ("Lo que incluye", "<ul class='checks'><li>Diagnóstico y plan priorizado</li><li>Reglamento interno, matriz de riesgos y programa preventivo</li><li>Implementación de los protocolos MINSAL que te correspondan, con cronograma real</li><li>Inducciones y capacitaciones con firma digital</li><li>Apoyo en trámites ante la SEREMI y la Dirección del Trabajo</li><li>Visitas y seguimiento mensual</li></ul>"),
             ("Por qué funciona para una pyme", "<p>Pagas solo lo que necesitas, sin sueldos fijos. Tienes a alguien con más de 20 años de experiencia, que conoció más de 300 pymes por dentro desde una mutualidad, conoce tu operación y responde cuando lo necesitas.</p>"),
         ],
         "faq": [
-            ("¿Cuánto cuesta?", "Para pymes de hasta 50 trabajadores, el Plan Pyme Anual parte desde $549.000 + IVA al mes, con visita semanal en Santiago y asesoría virtual (solo 5 cupos). Si tienes más trabajadores o centros, lo ajustamos en el diagnóstico."),
+            ("¿Cuánto cuesta?", "Para pymes de hasta 50 trabajadores, el Plan Pyme Anual parte desde $549.000 + IVA al mes, con visita semanal en Santiago y asesoría virtual (quedan 5 de 10 cupos). Si tienes más trabajadores o centros, lo ajustamos en el diagnóstico."),
             ("Tengo muy pocos trabajadores, ¿igual debo cumplir?", "Sí, hay obligaciones que aplican a todas las empresas. Lo que cambia es la forma y la cantidad de exigencias. Te digo exactamente cuáles te corresponden."),
         ],
         "testi": None,
@@ -151,7 +151,7 @@ PAGES = [
         "desc": "Apoyo a empresas contratistas para cumplir los estándares de su mandante, y programa para mandantes: requisitos unificados, inducciones digitales y control de cumplimiento por contratista.",
         "eyebrow": "Contratistas y mandantes",
         "h1": "Tu mandante no te pregunta si cumples. Te pide que lo demuestres.",
-        "lead": "No seas huevón: ¿no tienes sistema? Pa' fuera. ¿Demandas o enfermedades profesionales? Pa' fuera. La empresa principal responde contigo de forma solidaria o subsidiaria y tiene tolerancia cero: tus números importan, pero su reputación importa más. Y en cada licitación aparece el Chacal de la Trompeta. Al contratista le exigen demostrar que trabaja seguro. Al mandante le cuesta controlar a decenas de contratistas. Trabajo con ambos lados para que el cumplimiento sea simple, digital y verificable, y deje de ser un dolor de cabeza antes de cada auditoría.",
+        "lead": "¿No tienes sistema? Pa' fuera. ¿Demandas o enfermedades profesionales? Pa' fuera. La empresa principal responde contigo de forma solidaria o subsidiaria y tiene tolerancia cero: tus números importan, pero su reputación importa más. Y en cada licitación aparece el Chacal de la Trompeta. Al contratista le exigen demostrar que trabaja seguro. Al mandante le cuesta controlar a decenas de contratistas. Trabajo con ambos lados para que el cumplimiento sea simple, digital y verificable, y deje de ser un dolor de cabeza antes de cada auditoría.",
         "img": "trabajo-altura.webp",
         "need": "Programa contratistas",
         "cta": "Toma tu programa · desde $549.000/mes",
@@ -186,7 +186,7 @@ def page_shell(index_html, prefix="../"):
         v = re.sub(r'(href|src)="assets/', rf'\1="{prefix}assets/', v)
         v = re.sub(r'href="#(?!faro)', f'href="{prefix}index.html#', v)
         v = v.replace('href="index.html"', f'href="{prefix}index.html"')
-        v = re.sub(r'href="(ds-44|ley-karin|fiscalizaciones|pymes|contratistas|sistemas-de-gestion|autodiagnostico|liderazgo|demo|mi-historia)/"', rf'href="{prefix}\1/"', v)
+        v = re.sub(r'href="(ds-44|ley-karin|fiscalizaciones|pymes|contratistas|sistemas-de-gestion|autodiagnostico|liderazgo|demo|mi-historia|guias)/"', rf'href="{prefix}\1/"', v)
         parts[k] = v
     return parts
 
@@ -866,10 +866,10 @@ def render_demo(shell):
 """
 
 HISTORIA = """
-        <section class="story-ch"><h2>El héroe sin capa</h2>
+        <section class="story-ch"><h2>Los años idealistas</h2>
           <p>Soy Hans Meneses, prevencionista, coach y consultor en prevención de riesgos, liderazgo y cultura preventiva, con más de 20 años de experiencia.</p>
-          <p>Durante mucho tiempo me vi como un héroe sin capa. Mi pega era proteger vidas, anticiparme a los peligros y lograr que cada persona volviera sana a su casa. Lo hacía con convicción y con una exigencia brutal.</p>
-          <p>Hasta que descubrí una verdad incómoda: <b>podía cuidar a todos y, al mismo tiempo, dejar de cuidar lo esencial de mi propia vida.</b> Penca, pero real.</p>
+          <p>¿Recuerdas ese tiempo idealista, cuando partías motivado y con todo el entusiasmo del mundo? Yo lo viví así. Mi pega era proteger vidas, anticiparme a los peligros y lograr que cada persona volviera sana a su casa. Lo hacía con convicción y con una exigencia brutal.</p>
+          <p>Hasta que descubrí una verdad incómoda: <b>podía cuidar a todos y, al mismo tiempo, dejar de cuidar lo esencial de mi propia vida.</b></p>
         </section>
         <section class="story-ch with-img"><div><h2>BASF: la prevención tenía que ir más allá</h2>
           <p>En BASF enfrenté el desafío que marcó mi carrera: avanzar hacia el cero accidentes. Y aprendí que no basta con procedimientos, capacitaciones ni carpetas. Si los líderes no se involucran y los hábitos no cambian, el papel no protege a nadie.</p>
@@ -890,22 +890,21 @@ HISTORIA = """
         <section class="story-ch"><h2>La noche más oscura del alma</h2>
           <p>Decidí hacer un proceso de transformación profundo, con la misma determinación con la que enfrentaba los desafíos de seguridad. Coaching, exploración emocional, respiración consciente, meditación, PNL y otras prácticas de bienestar. Revisé mis patrones, mis relaciones, mis creencias y mis decisiones.</p>
           <p>No fue mágico ni de un día para otro. Hubo que mirar lo incómodo, asumir mi parte y dejar de esconderme detrás del trabajo y de los logros. Cambiar no es negar lo vivido ni cargar con toda la culpa: es reconocer lo que te corresponde, aprender y decidir qué vas a hacer distinto.</p>
-          <p>Ahí la imagen del ave fénix se volvió real. No se trataba de volver a ser el mismo. Se trataba de renacer con más conciencia.</p>
+          <p>Ahí la imagen del fénix se volvió real. No se trataba de volver a ser el mismo. Se trataba de renacer con más conciencia.</p>
         </section>
         <section class="story-ch"><h2>De mi proceso al servicio</h2>
           <p>Lo que aprendí despertó las ganas de acompañar a otros. Empecé a guiar procesos de bienestar y transformación personal, con las herramientas que estudié y practiqué. Conocí historias muy duras y aprendí que cada persona es distinta y que no hay una técnica que lo resuelva todo.</p>
-          <p class="story-note">No atribuyo a mis herramientas la curación de enfermedades ni prometo resultados que no se pueden garantizar. Acompaño procesos de autoconocimiento y bienestar, y respeto siempre la necesidad de atención médica o psicológica cuando corresponde.</p>
         </section>
         <section class="story-ch"><h2>SafetyCoach renace</h2>
           <p>Hoy llevo todo esto a una nueva etapa de SafetyCoach. Conservo la base de dos décadas: prevención de riesgos, gestión, experiencia con empresas y la convicción de que los resultados salen de acciones concretas y sostenidas. Y le sumo una mirada más profunda sobre las personas, el liderazgo, la comunicación y los factores humanos.</p>
           <p>No basta con diseñar un buen sistema. Hay que lograr que funcione en la realidad, que los responsables se involucren y que las medidas se mantengan. <b>No vendo soluciones mágicas.</b> La prevención no cambia de la noche a la mañana: requiere método, compromiso, seguimiento y mejora continua.</p>
         </section>
-        <section class="story-ch"><h2>Yo Puedo Sanarme</h2>
-          <p>En paralelo, a través de Yo Puedo Sanarme desarrollo mi faceta de coach de bienestar: acompaño procesos de autoconocimiento, exploración emocional y transformación personal. SafetyCoach trabaja con empresas; Yo Puedo Sanarme, con personas. Los dos nacen del mismo propósito.</p>
+        <section class="story-ch"><h2>Coach de bienestar</h2>
+          <p>En paralelo desarrollo mi faceta de coach de bienestar: acompaño procesos de autoconocimiento, exploración emocional y transformación personal. SafetyCoach trabaja con empresas; el coaching de bienestar, con personas. Los dos nacen del mismo propósito.</p>
         </section>
-        <section class="story-ch phoenix"><h2>El ave fénix</h2>
-          <p>No reniego del profesional que fui, ni de mis errores, mis logros o lo que me trajo hasta aquí. Lo integro todo. Ya no quiero ser el héroe sin capa que protege a todos mientras se olvida de sí mismo.</p>
-          <p class="story-hit">Soy Hans Meneses. No comienzo desde cero: renazco con todo lo aprendido.</p>
+        <section class="story-ch phoenix"><h2>El fénix</h2>
+          <p>No reniego del profesional que fui, ni de mis errores, mis logros o lo que me trajo hasta aquí. Lo integro todo. Ya no quiero proteger a todos mientras me olvido de mí mismo.</p>
+          <p class="story-hit">Soy Hans Meneses. Y esto es lo que aprendí: no se parte de cero. Se comienza desde donde estás.</p>
           <p class="story-claim">SafetyCoach: experiencia que protege, liderazgo que transforma y prevención que se sostiene.</p>
         </section>
 """
@@ -933,12 +932,12 @@ def render_historia(shell):
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Mi historia: del héroe sin capa al ave fénix | Hans Meneses · SafetyCoach</title>
+  <title>Mi historia: del quiebre al fénix | Hans Meneses · SafetyCoach</title>
   <meta name="description" content="La historia de Hans Meneses: más de 20 años en prevención de riesgos, más de tres años sin accidentes en BASF, el quiebre personal y el renacimiento de SafetyCoach.">
   <link rel="canonical" href="https://www.safetycoach.cl/mi-historia/">
   <meta name="theme-color" content="#0B1F3A">
   <meta property="og:type" content="profile">
-  <meta property="og:title" content="Mi historia: del héroe sin capa al ave fénix · Hans Meneses">
+  <meta property="og:title" content="Mi historia: del quiebre al fénix · Hans Meneses">
   <meta property="og:image" content="https://www.safetycoach.cl/assets/img/og-safetycoach.jpg">
   """ + shell['head_links'] + """
 </head>
@@ -951,7 +950,7 @@ def render_historia(shell):
         <div>
           <p class="crumbs"><a href="../index.html">Inicio</a> › Mi historia</p>
           <p class="eyebrow">Mi historia</p>
-          <h1>Del héroe sin capa al <span>ave fénix</span></h1>
+          <h1>Del quiebre al <span>fénix</span></h1>
           <p class="lead">Durante años protegí a otros. Hasta que la vida me enseñó que también tenía que aprender a cuidarme.</p>
         </div>
         <img src="../assets/img/hans-retrato.webp" alt="Hans Meneses, fundador de SafetyCoach" width="800" height="1000">
@@ -959,14 +958,108 @@ def render_historia(shell):
     </section>
     <div class="wrap narrow story">""" + HISTORIA + PUENTE + """
       <div class="story-cta">
-        <h2>¿Hacemos match?</h2>
-        <p>Yo elijo con quién trabajo. Si tú también eliges hacerlo distinto, conversemos.</p>
-        <div class="cta-row center"><a class="btn btn-primary btn-lg" href="../index.html#contacto" data-cta="historia_contacto">Conversemos</a><a class="btn btn-ghost btn-lg" href="../autodiagnostico/" data-cta="historia_autodiag">Hacer el autodiagnóstico</a></div>
+        <div class="match light" role="group" aria-label="¿Hacemos match?">
+          <a class="m-btn m-no" href="../autodiagnostico/" aria-label="Todavía no: hacer el autodiagnóstico" data-cta="historia_match_no">✕</a>
+          <p><b>¿Hacemos match?</b><span>Si te mueve lo mismo, conversemos. Si aún no, parte por el autodiagnóstico.</span></p>
+          <a class="m-btn m-yes" href="../index.html#contacto" aria-label="Hagamos match" data-cta="historia_match_si">❤</a>
+        </div>
       </div>
     </div>
   </main>
   """ + shell['footer'] + shell['wa'] + """
   <script src="../assets/js/main.js" defer></script>
+</body>
+</html>
+"""
+
+GUIAS = [
+    {"slug": "ds-44-pymes", "title": "DS 44 para pymes: qué te exige y por dónde empezar | SafetyCoach",
+     "desc": "Guía simple del DS 44 para pymes en Chile: qué exige, qué cambia según tu tamaño y cómo empezar sin estresar a tu empresa.",
+     "h1": "DS 44 para pymes: qué te exige y por dónde empezar",
+     "lead": "Si tienes una pyme y no sabes qué te pide el DS 44, no eres el único. Pero ya no te puedes hacer el loco: aquí va lo esencial, sin letra chica.",
+     "body": """
+        <h2>¿Qué es el DS 44?</h2>
+        <p>Es el reglamento del Ministerio del Trabajo sobre gestión preventiva de los riesgos laborales. Está vigente desde febrero de 2025 y reemplazó a los antiguos DS 40 y DS 54. Su foco no es tener carpetas: es que tu empresa <b>gestione</b> sus riesgos todo el año.</p>
+        <h2>Lo esencial que te van a pedir</h2>
+        <ul class="checks"><li>Una política de seguridad y salud en el trabajo, firmada por la gerencia.</li><li>Una matriz de identificación de peligros y evaluación de riesgos (MIPER).</li><li>Un programa de trabajo preventivo con responsables y plazos.</li><li>Información de riesgos a cada trabajador (el derecho a saber) y capacitación con registro.</li><li>Un plan de emergencias.</li><li>Investigación de accidentes y seguimiento de las medidas.</li></ul>
+        <h2>Lo que cambia según tu tamaño</h2>
+        <p>La organización preventiva depende del número de trabajadores: por ejemplo, el <b>comité paritario</b> corresponde a empresas con más de 25 trabajadores y el <b>departamento de prevención</b>, a las de más de 100. En el diagnóstico revisamos exactamente qué te corresponde a ti.</p>
+        <h2>Por dónde empezar: el 80/20</h2>
+        <ol class="steps"><li><b>Mira dónde estás:</b> haz el autodiagnóstico de 3 minutos.</li><li><b>Prioriza:</b> primero los riesgos que pueden matar o dejar a alguien inválido.</li><li><b>Ordena lo básico:</b> reglamento interno, MIPER y programa.</li><li><b>Deja evidencia:</b> firmas, fechas y registros que se puedan mostrar.</li><li><b>Haz seguimiento:</b> sin seguimiento, el plan es solo un papel.</li></ol>
+"""},
+    {"slug": "rebaja-tasa-cotizacion", "title": "Cómo bajar tu tasa de cotización del seguro de accidentes (DS 67) | SafetyCoach",
+     "desc": "Cómo funciona la evaluación de la tasa de cotización adicional en Chile (DS 67), qué requisitos piden para la rebaja y qué hacer desde ya.",
+     "h1": "Cómo bajar tu tasa de cotización del seguro de accidentes",
+     "lead": "¿Sabes cuánto pagas de seguro de accidentes? ¿Y cuánto podrías dejar de pagar? Deja de botar plata: así funciona la rebaja.",
+     "body": """
+        <h2>¿Qué es la cotización adicional?</h2>
+        <p>Además de la cotización básica del seguro de la Ley 16.744, tu empresa paga una <b>cotización adicional</b> según su siniestralidad. Esa tasa se revisa con el proceso del DS 67.</p>
+        <h2>¿Cuándo y cómo se evalúa?</h2>
+        <p>La evaluación se hace <b>cada dos años, en los años impares</b>. Se mide la siniestralidad de tu empresa en los periodos anteriores, considerando sobre todo los días perdidos por accidentes y enfermedades profesionales, y las invalideces y muertes. Según el resultado, la tasa puede bajar, mantenerse o subir.</p>
+        <h2>Requisitos para optar a la rebaja</h2>
+        <ul class="checks"><li>Estar al día en el pago de tus cotizaciones.</li><li>Tener un <b>sistema de gestión de seguridad y salud en el trabajo funcionando durante todo el año previo</b> a la evaluación, con política firmada, diagnóstico de riesgos y programa de trabajo.</li><li>Acreditarlo ante tu organismo administrador dentro de los plazos del proceso.</li></ul>
+        <h2>Qué hacer desde ya</h2>
+        <ol class="steps"><li><b>Revisa tu tasa actual</b> y tu historial de accidentes.</li><li><b>Implementa tu sistema de gestión ahora:</b> necesita un año completo funcionando.</li><li><b>Gestiona cada accidente:</b> investigación, medidas y reintegro oportuno.</li><li><b>Deja evidencia</b> de todo, ordenada y a la mano.</li></ol>
+        <p>Empieza ya. Haremos todo lo posible para que tu empresa sea candidata a la rebaja.</p>
+"""},
+    {"slug": "ley-karin-empresas", "title": "Ley Karin en tu empresa: lo mínimo que debes tener | SafetyCoach",
+     "desc": "Lo mínimo que tu empresa debe tener por la Ley Karin (Ley 21.643): protocolo de prevención, procedimiento de investigación, canal de denuncia y capacitación.",
+     "h1": "Ley Karin en tu empresa: lo mínimo que debes tener",
+     "lead": "La denuncia va a llegar. La pregunta es si tu empresa va a saber qué hacer. Aquí va lo mínimo, sin vueltas.",
+     "body": """
+        <h2>¿Qué es la Ley Karin?</h2>
+        <p>La Ley 21.643, vigente desde agosto de 2024, obliga a los empleadores a <b>prevenir, investigar y sancionar</b> el acoso laboral, el acoso sexual y la violencia en el trabajo, incluida la que viene de clientes o terceros.</p>
+        <h2>Lo mínimo que debes tener</h2>
+        <ul class="checks"><li>Un <b>protocolo de prevención</b> basado en la gestión de los riesgos psicosociales.</li><li>Un <b>procedimiento de investigación</b> incorporado en tu reglamento interno.</li><li>Un <b>canal de denuncia</b> claro, conocido y confidencial.</li><li><b>Medidas de resguardo</b> para las personas involucradas.</li><li><b>Información y capacitación</b> a tus trabajadores, con registro.</li></ul>
+        <h2>Errores que salen caros</h2>
+        <ul class="checks"><li>Tener el protocolo en un cajón y que nadie sepa cómo denunciar.</li><li>Improvisar cuando llega la primera denuncia y pasarse de los plazos legales.</li><li>No poder demostrar que capacitaste a tu equipo.</li></ul>
+        <h2>Más allá de cumplir</h2>
+        <p>La prevención también se construye en las relaciones humanas: liderazgo, comunicación y gestión de conflictos. Lo trabajamos con tus líderes para que la ley se cumpla y el clima mejore.</p>
+"""},
+]
+
+
+def render_guia(g, shell):
+    url = f"{SITE}/guias/{g['slug']}/"
+    art = {"@context": "https://schema.org", "@type": "Article", "headline": g["h1"], "description": g["desc"], "url": url,
+           "author": {"@type": "Person", "name": "Hans Meneses"}, "publisher": {"@type": "Organization", "name": "SafetyCoach"}}
+    return f"""<!doctype html>
+<html lang="es-CL">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{g['title']}</title>
+  <meta name="description" content="{g['desc']}">
+  <link rel="canonical" href="{url}">
+  <meta name="theme-color" content="#0B1F3A">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="{g['h1']}">
+  <meta property="og:description" content="{g['desc']}">
+  <meta property="og:image" content="{SITE}/assets/img/og-safetycoach.jpg">
+  {shell['head_links'].replace('href="../assets/', 'href="../../assets/')}
+  <script type="application/ld+json">{json.dumps(art, ensure_ascii=False)}</script>
+</head>
+<body>
+  <a class="skip" href="#contenido">Saltar al contenido</a>
+  {shell['svg']}
+  {shell['header']}
+  <main id="contenido">
+    <article class="guia wrap narrow">
+      <p class="crumbs"><a href="../../index.html">Inicio</a> › Guías</p>
+      <p class="eyebrow">Guía gratuita · SafetyCoach</p>
+      <h1>{g['h1']}</h1>
+      <p class="lead">{g['lead']}</p>
+{g['body']}
+      <div class="guia-cta">
+        <p><b>¿Quieres saber dónde está tu empresa?</b> Haz el autodiagnóstico gratis o pide el diagnóstico en una sola vista: $99.000 con garantía.</p>
+        <div class="cta-row"><a class="btn btn-primary" href="../../index.html?necesidad=Diagn%C3%B3stico%20DS%2044#contacto" data-cta="guia_{g['slug']}">Diagnóstico $99.000</a><a class="btn btn-light" href="../../autodiagnostico/" data-cta="guia_autodiag_{g['slug']}">Autodiagnóstico gratis</a></div>
+      </div>
+      <p class="note">Contenido informativo. Los requisitos específicos se verifican según el tipo de empresa, su actividad y su número de trabajadores.</p>
+    </article>
+  </main>
+  {shell['footer']}
+  {shell['wa']}
+  <script src="../../assets/js/main.js" defer></script>
 </body>
 </html>
 """
@@ -988,6 +1081,12 @@ def main():
     out.parent.mkdir(exist_ok=True)
     out.write_text(render_liderazgo(shell), encoding="utf-8")
     print("ok", out.relative_to(ROOT))
+    shell2 = page_shell(index_html, prefix="../../")
+    for g in GUIAS:
+        out = ROOT / "guias" / g["slug"] / "index.html"
+        out.parent.mkdir(parents=True, exist_ok=True)
+        out.write_text(render_guia(g, shell2), encoding="utf-8")
+        print("ok", out.relative_to(ROOT))
     out = ROOT / "mi-historia" / "index.html"
     out.parent.mkdir(exist_ok=True)
     out.write_text(render_historia(shell), encoding="utf-8")
