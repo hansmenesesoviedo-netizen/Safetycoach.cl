@@ -149,7 +149,7 @@
 
 
   // ---------- Preguntas opcionales: aparecen al completar las obligatorias ----------
-  document.querySelectorAll('.gate-form').forEach(function (form) {
+  document.querySelectorAll('.lead-form').forEach(function (form) {
     var extra = form.querySelector('.gate-extra');
     if (!extra) return;
     var req = Array.prototype.filter.call(form.querySelectorAll('[required]'), function (f) { return f.type !== 'checkbox'; });
