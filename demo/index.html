@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Demo SafetyCoach Digital: IRL, cápsulas e inspecciones | SafetyCoach</title>
-  <meta name="description" content="Prueba la demo de SafetyCoach Digital con una empresa ficticia: inducción IRL con firma digital, cápsula de capacitación con evaluación e inspección pre-uso de equipos.">
+  <title>Demo SafetyCoach Digital: ingreso, cápsulas, EPP e inspecciones | SafetyCoach</title>
+  <meta name="description" content="Prueba la demo de SafetyCoach Digital con una empresa ficticia: documentos de ingreso con firma, cápsula interactiva con evaluación, entrega de EPP e inspección de máquinas con criterios STOP.">
   <meta name="robots" content="noindex">
   <meta name="theme-color" content="#0B1F3A">
   <link rel="icon" href="../assets/img/favicon.svg" type="image/svg+xml">
@@ -54,7 +54,7 @@
           <div>
             <p class="eyebrow">Demo · Empresa ficticia</p>
             <h1>Alimentos Demo SpA</h1>
-            <p class="lead">Planta de alimentos con 60 trabajadores. Así se ve, desde el celular del trabajador, lo que en tu empresa hoy está en papel.</p>
+            <p class="lead">Planta de alimentos con 60 trabajadores y taller de mantención. Así se ve, desde el celular del trabajador, lo que en tu empresa hoy está en papel: firmado, con folio y listo para cualquier fiscalización.</p>
           </div>
           <p class="demo-warn">Esta es una demostración. Los datos que ingreses se guardan solo en este navegador y no se envían a nadie.</p>
         </div>
@@ -95,80 +95,121 @@
 
         <div id="tool" hidden>
         <div class="demo-tabs" role="tablist">
-          <button role="tab" aria-selected="true" data-t="irl">1 · Inducción IRL</button>
-          <button role="tab" aria-selected="false" data-t="cap">2 · Cápsula</button>
-          <button role="tab" aria-selected="false" data-t="ins">3 · Inspección pre-uso</button>
-          <button role="tab" aria-selected="false" data-t="reg">4 · Registros <span id="reg-n">0</span></button>
+          <button role="tab" aria-selected="true" data-t="irl">1 · Ingreso: RIOHS + IRL</button>
+          <button role="tab" aria-selected="false" data-t="cap">2 · Cápsula interactiva</button>
+          <button role="tab" aria-selected="false" data-t="epp">3 · Entrega de EPP</button>
+          <button role="tab" aria-selected="false" data-t="ins">4 · Inspección de máquina</button>
+          <button role="tab" aria-selected="false" data-t="reg">5 · Registros <span id="reg-n">0</span></button>
         </div>
 
         <div class="phone">
-          <!-- IRL -->
+          <p class="phone-co">Alimentos Demo SpA · RUT 76.000.000-0 <small>(empresa ficticia)</small></p>
+
+          <!-- 1. Ingreso -->
           <div class="demo-pane" id="t-irl">
-            <h2>Información de riesgos laborales (IRL)</h2>
-            <p class="demo-sub">Antes de empezar a trabajar, revisa tus riesgos y firma.</p>
+            <h2>Documentos de ingreso</h2>
+            <p class="demo-sub">El trabajador abre cada documento, lo lee y firma una sola vez. Cada documento queda con su propio registro, folio y código de verificación.</p>
             <label>Nombre (ficticio)<input id="irl-nombre" value="Camila Rojas"></label>
-            <label>Cargo<select id="irl-cargo"><option>Operaria de envasado</option><option>Bodeguero</option><option>Ayudante de cocina industrial</option></select></label>
-            <div class="mods" id="irl-mods">
-              <details><summary>Caídas al mismo nivel</summary><p>Pisos húmedos en zona de lavado. Usa calzado antideslizante y avisa de derrames de inmediato.</p></details>
-              <details><summary>Cortes</summary><p>Cuchillos y rebanadoras. Usa guante anticorte y nunca retires la guarda de la máquina.</p></details>
-              <details><summary>Manejo manual de carga</summary><p>Máximo 25 kg por persona. Dobla las rodillas, carga pegada al cuerpo y pide ayuda o usa transpaleta.</p></details>
-              <details><summary>Atrapamiento en máquinas</summary><p>No intervengas una máquina en movimiento. Bloquea la energía antes de limpiar o mantener.</p></details>
-              <details><summary>Quemaduras</summary><p>Hornos y vapor. Usa guantes térmicos y no abras equipos a presión.</p></details>
-              <details><summary>Emergencias y evacuación</summary><p>Conoce tu vía de evacuación y el punto de encuentro. Ante una alarma, sal sin correr.</p></details>
+            <label>RUT (ficticio)<input id="irl-rut" value="11.111.111-1"></label>
+            <label>Cargo<select id="irl-cargo"><option>Ayudante de cocina</option><option>Operaria de envasado</option><option>Maestro de mantención</option><option>Bodeguero</option></select></label>
+            <div class="mods docs" id="irl-mods">
+              <details data-code="AD-RE-RIOHS" data-name="Entrega del Reglamento Interno (RIOHS)" data-ref="Art. 156 CT · DS 44 Art. 56"><summary>Reglamento Interno (RIOHS) <small>Art. 156 CT · DS 44 Art. 56</small></summary><p>Declaro haber recibido en forma gratuita una copia del Reglamento Interno de Orden, Higiene y Seguridad, y asumo la responsabilidad de leerlo y cumplir sus obligaciones, prohibiciones y normas.</p></details>
+              <details data-code="AD-RE-IRL" data-name="Información de riesgos laborales (IRL)" data-ref="DS 44"><summary>Información de riesgos laborales (IRL) <small>DS 44</small></summary><p><b>Tus riesgos:</b> caídas por pisos húmedos, cortes con cuchillos y rebanadoras, quemaduras con hornos y vapor, manejo manual de carga y atrapamiento en máquinas. <b>Medidas:</b> calzado antideslizante, guante anticorte, guantes térmicos, máximo 25 kg por persona y nunca intervenir una máquina en movimiento.</p></details>
+              <details data-code="AD-RE-PTS" data-name="Procedimiento de trabajo seguro: uso de cuchillos y rebanadora" data-ref="DS 44"><summary>Procedimiento de trabajo seguro (PTS) <small>Cuchillos y rebanadora</small></summary><p>Corta siempre alejando el filo del cuerpo, transporta el cuchillo con la punta hacia abajo y nunca lo dejes en agua jabonosa. Antes de limpiar la rebanadora: desenchúfala, deja la perilla en cero y usa guante anticorte.</p></details>
+              <details data-code="AD-RE-EMER" data-name="Plan de emergencias y evacuación" data-ref="DS 44"><summary>Plan de emergencias <small>Vías de evacuación y punto de encuentro</small></summary><p>Ante una alarma, detén tu trabajo, corta el gas si es seguro hacerlo y evacúa sin correr por la vía señalizada hasta el punto de encuentro del estacionamiento.</p></details>
             </div>
-            <p class="demo-prog"><span id="irl-read">0</span> de 6 módulos revisados</p>
-            <p class="decl">Declaro haber recibido y comprendido la información de los riesgos de mi trabajo, sus medidas preventivas y los métodos de trabajo correctos.</p>
+            <p class="demo-prog"><span id="irl-read">0</span> de 4 documentos leídos</p>
+            <p class="decl">Declaro haber recibido, leído y comprendido los documentos anteriores, sus riesgos, medidas preventivas y métodos de trabajo correctos.</p>
             <div class="sig"><canvas id="sig-irl" width="600" height="160"></canvas><button type="button" class="sig-clear" data-c="sig-irl">Borrar</button><span>Firma aquí con el dedo</span></div>
             <button class="btn btn-primary full" id="irl-send">Firmar y enviar</button>
             <p class="demo-msg" id="irl-msg"></p>
           </div>
 
-          <!-- Cápsula -->
+          <!-- 2. Cápsula interactiva -->
           <div class="demo-pane" id="t-cap" hidden>
-            <h2>Cápsula: manejo manual de carga</h2>
-            <p class="demo-sub">3 láminas, 2 preguntas y tu firma. 2 minutos.</p>
-            <div class="slides">
-              <div class="slide on"><b>1/3 · ¿Por qué importa?</b><p>Las lesiones de espalda son una de las causas más comunes de licencias en bodegas y plantas de alimentos.</p></div>
-              <div class="slide"><b>2/3 · La regla</b><p>Hasta 25 kg por persona. Sobre eso, usa ayuda mecánica (transpaleta) o carga entre dos.</p></div>
-              <div class="slide"><b>3/3 · La técnica</b><p>Pies separados, rodillas dobladas, espalda recta y la carga pegada al cuerpo. No gires el tronco con peso.</p></div>
-            </div>
+            <h2>Cápsula M03 · Prevención de cortes</h2>
+            <p class="demo-sub">Interactiva, con tiempo mínimo, evaluación, intentos y firma. <span class="cap-timer" id="cap-timer">⏱ 0 s</span></p>
+            <div class="cap-steps"><span class="on">1</span><span>2</span><span>3</span><span>4</span><span>✓</span></div>
+            <div class="slide on" data-s="0"><b>1 · ¿Por qué importa?</b><p>Los cortes son de los accidentes más frecuentes en cocinas y plantas de alimentos. Casi todos se evitan con tres hábitos. Vamos a encontrarlos.</p></div>
+            <div class="slide" data-s="1"><b>2 · Toca las 3 conductas inseguras</b>
+              <div class="tap-grid" id="tap-grid">
+                <button type="button" data-bad="1">Cortar en dirección al cuerpo</button>
+                <button type="button" data-bad="0">Usar guante anticorte</button>
+                <button type="button" data-bad="1">Dejar el cuchillo dentro del lavaplatos con agua jabonosa</button>
+                <button type="button" data-bad="0">Llevar el cuchillo con la punta hacia abajo, pegado al cuerpo</button>
+                <button type="button" data-bad="1">Sacar la guarda de la rebanadora para limpiar más rápido</button>
+                <button type="button" data-bad="0">Desenchufar la rebanadora antes de limpiarla</button>
+              </div>
+              <p class="tap-msg" id="tap-msg">Encontradas: 0 de 3</p></div>
+            <div class="slide" data-s="2"><b>3 · ¿Qué harías?</b><p>Estás picando y el cuchillo se te resbala de la tabla.</p>
+              <div class="tap-grid one" id="sc-grid">
+                <button type="button" data-ok="0">Intento atraparlo antes de que caiga</button>
+                <button type="button" data-ok="1">Lo dejo caer y me aparto</button>
+              </div><p class="tap-msg" id="sc-msg"></p></div>
+            <div class="slide" data-s="3"><b>4 · Regla de oro</b><p>Filo lejos del cuerpo, cuchillo a la vista y máquina desenergizada antes de meter las manos. <b>Si no hay guarda, no se opera.</b></p></div>
             <div class="slide-nav"><button type="button" class="btn btn-ghost btn-sm" id="sl-prev">‹ Anterior</button><button type="button" class="btn btn-ghost btn-sm" id="sl-next">Siguiente ›</button></div>
             <div class="quiz" id="quiz" hidden>
-              <fieldset><legend>¿Cuál es el peso máximo por persona?</legend>
-                <label><input type="radio" name="qa" value="0"> 50 kg</label><label><input type="radio" name="qa" value="1"> 25 kg</label><label><input type="radio" name="qa" value="0"> No hay límite</label></fieldset>
-              <fieldset><legend>Al levantar una caja debes…</legend>
-                <label><input type="radio" name="qb" value="0"> Doblar la espalda</label><label><input type="radio" name="qb" value="1"> Doblar las rodillas y mantener la carga pegada</label></fieldset>
-              <label>Nombre (ficticio)<input id="cap-nombre" value="Camila Rojas"></label>
+              <p class="quiz-t">Evaluación · aprobación con 3 de 4 · intento <span id="cap-try">1</span></p>
+              <fieldset><legend>1. ¿Hacia dónde debe ir el filo al cortar?</legend>
+                <label><input type="radio" name="q1" value="1"> Alejado del cuerpo</label><label><input type="radio" name="q1" value="0"> Hacia el cuerpo, para tener más control</label></fieldset>
+              <fieldset><legend>2. Si un cuchillo se cae, debes…</legend>
+                <label><input type="radio" name="q2" value="0"> Atraparlo en el aire</label><label><input type="radio" name="q2" value="1"> Dejarlo caer y apartarte</label></fieldset>
+              <fieldset><legend>3. Antes de limpiar la rebanadora…</legend>
+                <label><input type="radio" name="q3" value="1"> La desenchufo, perilla en cero y guante anticorte</label><label><input type="radio" name="q3" value="0"> La apago y limpio con cuidado</label></fieldset>
+              <fieldset><legend>4. ¿Se puede operar la rebanadora sin guarda?</legend>
+                <label><input type="radio" name="q4" value="0"> Sí, con cuidado</label><label><input type="radio" name="q4" value="1"> No, nunca</label></fieldset>
+              <label class="q-name">Nombre (ficticio)<input id="cap-nombre" value="Camila Rojas"></label>
+              <p class="decl">Declaro haber realizado personalmente esta capacitación y comprendido su contenido.</p>
               <div class="sig"><canvas id="sig-cap" width="600" height="160"></canvas><button type="button" class="sig-clear" data-c="sig-cap">Borrar</button><span>Firma aquí con el dedo</span></div>
               <button class="btn btn-primary full" id="cap-send">Enviar evaluación y firma</button>
               <p class="demo-msg" id="cap-msg"></p>
             </div>
           </div>
 
-          <!-- Inspección -->
+          <!-- 3. Entrega de EPP -->
+          <div class="demo-pane" id="t-epp" hidden>
+            <h2>Entrega de EPP</h2>
+            <p class="demo-sub">Registro de entrega con firma: qué se entregó, talla, cantidad, motivo y certificación. <small>Ley 16.744 Art. 68 · DS 594 Art. 53</small></p>
+            <label>Trabajador (ficticio)<input id="epp-nombre" value="Pedro Soto"></label>
+            <label>Cargo<select id="epp-cargo"><option>Maestro de mantención</option><option>Ayudante de cocina</option><option>Bodeguero</option></select></label>
+            <label>Motivo de la entrega<select id="epp-motivo"><option>Ingreso</option><option>Reposición por desgaste</option><option>Reposición por pérdida o daño</option><option>Cambio de talla</option></select></label>
+            <div class="epp-list" id="epp-list"></div>
+            <p class="decl">Declaro haber recibido gratuitamente los elementos de protección personal indicados, en buen estado, y haber sido instruido en su uso, cuidado y reposición. Me comprometo a usarlos durante toda la tarea.</p>
+            <div class="sig"><canvas id="sig-epp" width="600" height="160"></canvas><button type="button" class="sig-clear" data-c="sig-epp">Borrar</button><span>Firma aquí con el dedo</span></div>
+            <button class="btn btn-primary full" id="epp-send">Registrar entrega</button>
+            <p class="demo-msg" id="epp-msg"></p>
+          </div>
+
+          <!-- 4. Inspección de máquina -->
           <div class="demo-pane" id="t-ins" hidden>
-            <h2>Inspección pre-uso</h2>
-            <p class="demo-sub">En terreno, el trabajador llega aquí escaneando el código QR pegado en el equipo.</p>
-            <label>Equipo<select id="ins-eq">
-              <option value="transpaleta">Transpaleta eléctrica TP-02</option>
-              <option value="rebanadora">Rebanadora industrial RB-01</option>
-              <option value="horno">Horno a gas HG-03</option></select></label>
-            <label>Operador (ficticio)<input id="ins-nombre" value="Pedro Soto"></label>
+            <h2>Inspección de máquina</h2>
+            <p class="demo-sub">Lista de verificación construida desde la matriz de riesgos. Los ítems <span class="stop-b">STOP</span> detienen la máquina. <small>Res. Ex. 341 ISP (PROSEMEH) · DS 44</small></p>
+            <label>Máquina (en terreno, se escanea el QR)<select id="ins-eq"></select></label>
+            <div class="ins-type" role="tablist" id="ins-type">
+              <button type="button" data-k="op" aria-selected="true">Operación (preuso)</button>
+              <button type="button" data-k="mant" aria-selected="false">Mantención</button>
+              <button type="button" data-k="limp" aria-selected="false">Limpieza</button>
+            </div>
+            <label>Inspector (ficticio)<input id="ins-nombre" value="Pedro Soto"></label>
+            <label class="chk"><input type="checkbox" id="ins-serie"> <span>El N° de serie <b id="ins-serie-n"></b> coincide con la máquina</span></label>
             <div id="ins-list" class="ins-list"></div>
             <button type="button" class="btn btn-ghost btn-sm" id="ins-geo">📍 Agregar ubicación (opcional)</button> <small id="ins-geo-t"></small>
+            <div class="sig"><canvas id="sig-ins" width="600" height="160"></canvas><button type="button" class="sig-clear" data-c="sig-ins">Borrar</button><span>Firma del inspector</span></div>
             <button class="btn btn-primary full" id="ins-send">Registrar inspección</button>
             <div class="ins-res" id="ins-res" hidden></div>
           </div>
 
-          <!-- Registros -->
+          <!-- 5. Registros -->
           <div class="demo-pane" id="t-reg" hidden>
-            <h2>Registros</h2>
-            <p class="demo-sub">Lo que vería la gerencia o el prevencionista: cada registro con responsable, fecha, hora y firma.</p>
+            <h2>Registros e indicadores</h2>
+            <p class="demo-sub">Lo que ve la gerencia o el prevencionista, en línea: cada registro con folio, firma, fecha, hora y código de verificación.</p>
+            <div class="kpis" id="kpis"></div>
             <div id="reg-list" class="reg-list"></div>
             <button type="button" class="btn btn-ghost btn-sm" id="reg-clear">Borrar datos de la demo</button>
           </div>
         </div>
 
+        <dialog class="comp" id="comp"><div class="comp-in" id="comp-in"></div><div class="comp-btns"><button type="button" class="btn btn-ghost btn-sm" id="comp-print">Imprimir / guardar PDF</button><button type="button" class="btn btn-primary btn-sm" id="comp-close">Cerrar</button></div></dialog>
         </div>
         <div class="demo-cta">
           <div><h4>¿Lo quieres para tu empresa?</h4><p>Lo hacemos a la medida de tu operación: tus riesgos, tus equipos, tus cargos y tu logo.</p></div>
