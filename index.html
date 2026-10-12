@@ -24,7 +24,7 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@600;700;800&family=Inter:wght@400;500;600&family=Caveat:wght@600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="assets/css/styles.css">
 
   <!-- Datos estructurados: servicio profesional + persona + sitio -->
@@ -151,7 +151,7 @@
   <header class="site-header" id="top">
     <div class="wrap header-inner">
       <a class="brand" href="index.html" aria-label="SafetyCoach, inicio">
-        <img class="brand-logo" src="assets/img/logo-safetycoach-header.png" alt="SafetyCoach" width="271" height="120">
+        <span class="brand-stack"><img class="brand-logo" src="assets/img/logo-safetycoach-header.png" alt="SafetyCoach" width="271" height="120"><span class="brand-slogan">Creamos posibilidades con seguridad</span></span>
       </a>
       <button class="nav-toggle" aria-expanded="false" aria-controls="menu">
         <span class="sr-only">Abrir menú</span><span class="bars" aria-hidden="true"></span>
@@ -159,7 +159,7 @@
       <nav id="menu" class="nav" aria-label="Principal">
         <a href="#perfiles">Para quién</a>
         <a href="#soluciones">Soluciones</a>
-        <a href="demo/">Demo</a>
+        <a class="is-new" href="demo/">Demo</a>
         <a href="#planes">Precios</a>
         <a href="mi-historia/">Mi historia</a>
         <a href="#contacto">Contacto</a>
@@ -177,9 +177,8 @@
         <div class="hero-copy">
           <p class="eyebrow">Coach de seguridad · Especialista en pymes, empresas familiares y emprendedores · Chile</p>
           <h1>Donde tú ves accidentes, <span class="hl">yo veo posibilidades.</span></h1>
-          <p class="hero-punch">¿Crees que lo hacen bien? Cada accidente es una señal, no mala suerte. Lo que hagas con ella es tu oportunidad de hacerlo mejor.</p>
-          <p class="slogan">Creamos posibilidades con seguridad.</p>
-          <p class="lead">Soy Hans, tu SafetyCoach. Si te das la oportunidad, pongo mis más de 20 años de experiencia en terreno a trabajar contigo: tú das las directrices y aprietas en lo importante; yo formo a tus líderes como lo haría un entrenador de seguridad, con herramientas digitales que facilitan el trabajo, expertos que enseñan y mediciones que muestran quién se está involucrando. Sin miedo a los cambios: los resultados los logra gente comprometida.</p>
+          <p class="hero-punch">Cada accidente es una señal, no mala suerte. Lo que hagas con ella es tu oportunidad de hacerlo mejor.</p>
+          <div class="xp xp-lead"><p class="lead">Soy Hans, tu SafetyCoach: más de 20 años en terreno, ahora a trabajar contigo.</p><div class="more"><p class="lead">Tú das las directrices y aprietas en lo importante; yo formo a tus líderes como lo haría un entrenador de seguridad, con herramientas digitales que facilitan el trabajo, expertos que enseñan y mediciones que muestran quién se está involucrando. Sin miedo a los cambios: los resultados los logra gente comprometida.</p></div></div>
           <div class="cta-row">
             <a class="btn btn-primary btn-lg" href="#contacto" data-need="Diagnóstico DS 44" data-cta="hero_diagnostico">Diagnóstico $99.000 con garantía</a>
             <a class="btn btn-ghost btn-lg" href="autodiagnostico/" data-cta="hero_autodiagnostico">Autodiagnóstico gratis (3 min)</a>
@@ -230,6 +229,19 @@
       </div>
     </section>
 
+    <!-- ===================== LO NUEVO ===================== -->
+    <section class="section nuevo" id="nuevo" aria-labelledby="nuevo-t">
+      <div class="wrap">
+        <p class="eyebrow">Lo nuevo</p>
+        <h2 id="nuevo-t">Tres formas nuevas de hacer prevención</h2>
+        <div class="nuevo-grid">
+          <a class="nv xp" href="demo/" data-cta="nuevo_digital"><span class="nv-tag">Nuevo</span><span class="nv-i" aria-hidden="true">📲</span><b>SafetyCoach Digital</b><span class="nv-p">Tu carpeta de prevención en el celular.</span><span class="more">Cápsulas con video, firma digital, diploma con QR, entrega de EPP e inspecciones con criterio STOP. Todo con folio y listo para la fiscalización. <em>Pruébala ahora →</em></span></a>
+          <a class="nv xp" href="ds-44/" data-cta="nuevo_ds44"><span class="nv-tag">DS 44</span><span class="nv-i" aria-hidden="true">🧭</span><b>Un sistema de gestión vivo</b><span class="nv-p">Que funcione en terreno, no en una carpeta.</span><span class="more">Matriz de riesgos, programa preventivo, protocolos y seguimiento con tus líderes. Y la base para optar a la rebaja de tu tasa. <em>Ver DS 44 →</em></span></a>
+          <a class="nv xp" href="ley-karin/" data-cta="nuevo_leykarin"><span class="nv-tag">Ley Karin</span><span class="nv-i" aria-hidden="true">🤝</span><b>Con mirada de coach de bienestar</b><span class="nv-p">La prevención también se construye en las relaciones.</span><span class="more">Protocolo y procedimiento en regla, más gestión de conflictos, comunicación, arquetipos de tu equipo y liderazgo preventivo. <em>Ver Ley Karin →</em></span></a>
+        </div>
+      </div>
+    </section>
+
     <!-- ===================== ESPEJO: PREGUNTAS INCÓMODAS ===================== -->
     <section class="section espejo" id="espejo" aria-labelledby="esp-t">
       <div class="wrap">
@@ -240,7 +252,7 @@
           <article><span class="esp-n">2</span><p>Si hoy llega la fiscalización, ¿cuánto te demoras en <b>evidenciar tus registros de prevención</b>? Conmigo: tu carpeta digital, y listo.</p></article>
           <article><span class="esp-n">3</span><p>¿Sabes cuánto pagas de seguro de accidentes y <b>cuánto podrías dejar de pagar</b>?</p></article>
         </div>
-        <div class="lic-alert"><p class="lic-k">Por si no lo sabías</p><p class="lic-big">Tú miras tus costos. Tu cliente no mira solo tu precio.</p><p>Para elegirte también revisa si estás limpio: <b>sin accidentes, sin denuncias, sin multas.</b> Las políticas de compra y licitación evalúan tu accidentabilidad, y hay competidores que hacen lo mismo que tú, o peor, pero llegan sin accidentes a cuestas. Y se quedan con el contrato.</p><p class="lic-sign">Te lo digo porque estuve ahí, del otro lado de la mesa. — Hans</p></div>
+        <div class="lic-alert xp"><p class="lic-k">Por si no lo sabías</p><p class="lic-big">Tú miras tus costos. Tu cliente no mira solo tu precio.</p><div class="more"><p>Para elegirte también revisa si estás limpio: <b>sin accidentes, sin denuncias, sin multas.</b> Las políticas de compra y licitación evalúan tu accidentabilidad, y hay competidores que hacen lo mismo que tú, o peor, pero llegan sin accidentes a cuestas. Y se quedan con el contrato.</p><p class="lic-sign">Te lo digo porque estuve ahí, del otro lado de la mesa. — Hans</p></div></div>
         <p class="esp-close">Si dudaste en alguna, no tienes un problema de suerte. Tienes una oportunidad de hacerlo mejor. <span>Y bájale un cambio: tus trabajadores no son dobles de riesgo.</span></p>
         <div class="cta-row">
           <a class="btn btn-primary btn-lg" href="autodiagnostico/" data-cta="espejo_autodiag">Mírate en 3 minutos, gratis</a>
@@ -258,10 +270,10 @@
         <h2 id="dif-t" class="big-quote">Un informe no cambia a nadie. Un líder comprometido lo cambia todo.</h2>
         <p class="sub">¿Cuántos informes tienes guardados que nadie lee? No vengo a sumarte otro. Vengo a acompañarte hasta que la prevención funcione.</p>
         <div class="diff-grid">
-          <article><span class="diff-n">01</span><h3>La tecnología trabaja. Tú y yo lideramos.</h3><p>Uso la tecnología a nuestro favor para concentrarme contigo, el líder, en lo importante: metas claras, presencia en terreno y conversaciones de seguridad que se notan. Soy coach certificado.</p></article>
-          <article><span class="diff-n">02</span><h3>Herramientas a tu medida, en días</h3><p>Inducciones, cápsulas e inspecciones con firma digital, hechas para tu operación. ¿De qué te sirve un software caro que nadie usa?</p></article>
-          <article><span class="diff-n">03</span><h3>Conozco el otro lado de la mesa</h3><p>Trabajé dentro de una mutualidad como asesor, director de cuenta y consultor de riesgos. Conocí más de 300 pymes por dentro y he gestionado fiscalizaciones de la DT y la SEREMI. Sé qué miran y cómo prepararte.</p></article>
-          <article><span class="diff-n">04</span><h3>Te digo la verdad, aunque incomode</h3><p>No trabajo con todas las empresas. Si no hay compromiso real de la gerencia, te lo digo antes de cobrarte un peso.</p></article>
+          <article class="xp"><span class="diff-n">01</span><h3>La tecnología trabaja. Tú y yo lideramos.</h3><div class="more"><p>Uso la tecnología a nuestro favor para concentrarme contigo, el líder, en lo importante: metas claras, presencia en terreno y conversaciones de seguridad que se notan. Soy coach certificado.</p></div></article>
+          <article class="xp"><span class="diff-n">02</span><h3>Herramientas a tu medida, en días</h3><div class="more"><p>Inducciones, cápsulas e inspecciones con firma digital, hechas para tu operación. ¿De qué te sirve un software caro que nadie usa?</p></div></article>
+          <article class="xp"><span class="diff-n">03</span><h3>Conozco el otro lado de la mesa</h3><div class="more"><p>Trabajé dentro de una mutualidad como asesor, director de cuenta y consultor de riesgos. Conocí más de 300 pymes por dentro y he gestionado fiscalizaciones de la DT y la SEREMI. Sé qué miran y cómo prepararte.</p></div></article>
+          <article class="xp"><span class="diff-n">04</span><h3>Te digo la verdad, aunque incomode</h3><div class="more"><p>No trabajo con todas las empresas. Si no hay compromiso real de la gerencia, te lo digo antes de cobrarte un peso.</p></div></article>
         </div>
         <div class="compare">
           <div><h3>Lo de siempre</h3><ul><li>Entrega documentos y matrices</li><li>Capacitación genérica</li><li>Se va cuando entrega el informe</li><li>Cumplimiento en papel</li></ul></div>
@@ -285,7 +297,7 @@
             <div class="aud-main">
               <h3>¿Cómo están tus números? Ellos hablan por ti antes que tú.</h3>
               <ul class="pa-fuera"><li>¿No tienes sistema? <b>Pa' fuera.</b></li><li>¿Tienes demandas? <b>Pa' fuera.</b></li><li>¿Enfermedades profesionales? <b>Pa' fuera.</b></li></ul>
-              <p class="aud-intro">Así de simple: la empresa principal sabe que si algo te pasa responde contigo, con <b>responsabilidad solidaria o subsidiaria</b>, y tiene tolerancia cero: no se va a arriesgar contigo si no tienes sistema. Tus números importan, pero <b>su reputación importa más</b>. Tú miras tus costos; tu mandante mira si estás limpio: sin accidentes, sin denuncias, sin multas. Y en cada licitación aparece el Chacal de la Trompeta: si tus números no están en orden, te suena la trompeta y quedas fuera.</p>
+              <div class="xp xp-inline"><p class="aud-intro short">Tu mandante no se arriesga contigo si no tienes sistema.</p><div class="more"><p class="aud-intro">Así de simple: la empresa principal sabe que si algo te pasa responde contigo, con <b>responsabilidad solidaria o subsidiaria</b>, y tiene tolerancia cero: no se va a arriesgar contigo si no tienes sistema. Tus números importan, pero <b>su reputación importa más</b>. Tú miras tus costos; tu mandante mira si estás limpio: sin accidentes, sin denuncias, sin multas. Y en cada licitación aparece el Chacal de la Trompeta: si tus números no están en orden, te suena la trompeta y quedas fuera.</p></div></div>
               <div class="aud-cols">
                 <div><h4>Lo que te quita el sueño</h4><ul class="aud-pain"><li>Auditorías del mandante y requisitos que cambian</li><li>Documentación y acreditaciones que se vencen</li><li>Trabajadores nuevos sin inducción a tiempo</li><li>Quedar fuera de una licitación por seguridad</li></ul></div>
                 <div><h4>Lo que logras conmigo</h4><ul class="aud-gain"><li>Carpeta de requisitos al día y lista para auditar</li><li>Matrices, procedimientos y protocolos de tu faena</li><li>Inducciones y permisos de trabajo digitales</li><li>Acompañamiento en las auditorías del mandante</li></ul></div>
@@ -300,8 +312,8 @@
           <div class="aud-panel" id="aud-gerencia" role="tabpanel" aria-labelledby="tab-gerencia" hidden>
             <div class="aud-main">
               <h3>Si mañana hay un accidente grave, ¿quién responde? Tú.</h3>
-              <p class="aud-intro">No necesitas ser experto en normativa. Necesitas saber, con números y no con suposiciones, si tu empresa está protegida.</p>
-              <p class="aud-tip"><b>¿Sabías que…</b> si te cursan una multa de la Dirección del Trabajo, según el tamaño de tu empresa puedes acogerte a un Programa de Asistencia al Cumplimiento (PAC) y reemplazar la multa, hasta evitarla al 100%? Te acompaño a hacerlo bien.</p>
+              <div class="xp xp-inline"><p class="aud-intro short">No necesitas ser experto en normativa: necesitas saber si estás protegido.</p><div class="more"><p class="aud-intro">No necesitas ser experto en normativa. Necesitas saber, con números y no con suposiciones, si tu empresa está protegida.</p>
+              <p class="aud-tip"><b>¿Sabías que…</b> si te cursan una multa de la Dirección del Trabajo, según el tamaño de tu empresa puedes acogerte a un Programa de Asistencia al Cumplimiento (PAC) y reemplazar la multa, hasta evitarla al 100%? Te acompaño a hacerlo bien.</p></div></div>
               <div class="aud-cols">
                 <div><h4>Lo que te quita el sueño</h4><ul class="aud-pain"><li>Un accidente grave que detenga la operación</li><li>Multas y responsabilidad legal de la gerencia</li><li>Costos del seguro que suben cada año</li><li>No saber realmente cómo estás hasta que llega la fiscalización</li></ul></div>
                 <div><h4>Lo que logras conmigo</h4><ul class="aud-gain"><li>Diagnóstico claro de tus brechas y prioridades</li><li>Cumplimiento DS&nbsp;44 demostrable ante cualquier fiscalización</li><li>Indicadores simples para decidir, en línea</li><li>Un asesor que responde cuando lo necesitas</li></ul></div>
@@ -314,7 +326,7 @@
           <div class="aud-panel" id="aud-rrhh" role="tabpanel" aria-labelledby="tab-rrhh" hidden>
             <div class="aud-main">
               <h3>Todo pasa por tu área. ¿Puedes demostrarlo hoy?</h3>
-              <p class="aud-intro">Inducciones, capacitaciones, denuncias Ley Karin y protocolos. Si no está firmado y registrado, para la autoridad no existe.</p>
+              <div class="xp xp-inline"><p class="aud-intro short">Si no está firmado y registrado, para la autoridad no existe.</p><div class="more"><p class="aud-intro">Inducciones, capacitaciones, denuncias Ley Karin y protocolos. Si no está firmado y registrado, para la autoridad no existe.</p></div></div>
               <div class="aud-cols">
                 <div><h4>Lo que te quita el sueño</h4><ul class="aud-pain"><li>Denuncias Ley Karin y cómo gestionarlas bien</li><li>Inducciones y capacitaciones sin registro ni firma</li><li>Resultados CEAL-SM que nadie sabe cómo abordar</li><li>Varios centros de trabajo con exigencias distintas</li></ul></div>
                 <div><h4>Lo que logras conmigo</h4><ul class="aud-gain"><li>Inducciones IRL y cápsulas con firma digital</li><li>Protocolo Ley Karin, investigación y seguimiento</li><li>Plan de intervención psicosocial que se ejecuta</li><li>Todo trazable, en línea y en tiempo real</li></ul></div>
@@ -327,8 +339,8 @@
           <div class="aud-panel" id="aud-pymes" role="tabpanel" aria-labelledby="tab-pymes" hidden>
             <div class="aud-main">
               <h3>¿Sabes lo que te exige la ley? ¿Seguro?</h3>
-              <p class="aud-intro">No tienes tiempo ni un experto en casa. No es excusa: improvisar con la seguridad es penca. <b>Deja de botar plata en multas y parches: mejor inviértela y protégete.</b> Sé que los recursos son escasos, por eso priorizamos con el 80/20: primero lo poco que evita la mayor parte de tus problemas. Lo hacemos juntos, sin contratar un departamento.</p>
-              <p class="aud-tip"><b>Ojo con los años impares:</b> ahí se evalúa tu tasa de cotización. Para optar a la rebaja no basta con tener menos accidentes: debes estar al día en tus cotizaciones y tener un <b>sistema de gestión de seguridad y salud en el trabajo funcionando durante todo el año previo</b> a la evaluación. <b>Empieza ya.</b> Haremos todo lo posible para que tu empresa sea candidata a la rebaja.</p>
+              <div class="xp xp-inline"><p class="aud-intro short">No tienes tiempo ni un experto en casa. No es excusa.</p><div class="more"><p class="aud-intro">No tienes tiempo ni un experto en casa. No es excusa: improvisar con la seguridad es penca. <b>Deja de botar plata en multas y parches: mejor inviértela y protégete.</b> Sé que los recursos son escasos, por eso priorizamos con el 80/20: primero lo poco que evita la mayor parte de tus problemas. Lo hacemos juntos, sin contratar un departamento.</p>
+              <p class="aud-tip"><b>Ojo con los años impares:</b> ahí se evalúa tu tasa de cotización. Para optar a la rebaja no basta con tener menos accidentes: debes estar al día en tus cotizaciones y tener un <b>sistema de gestión de seguridad y salud en el trabajo funcionando durante todo el año previo</b> a la evaluación. <b>Empieza ya.</b> Haremos todo lo posible para que tu empresa sea candidata a la rebaja.</p></div></div>
               <div class="aud-cols">
                 <div><h4>Lo que te quita el sueño</h4><ul class="aud-pain"><li>No saber qué te exige la ley según tu tamaño y rubro</li><li>Una fiscalización o multa que te tome por sorpresa</li><li>Permisos y autorizaciones sanitarias pendientes</li><li>Presupuesto acotado</li></ul></div>
                 <div><h4>Lo que logras conmigo</h4><ul class="aud-gain"><li>Plan simple y priorizado, a tu medida</li><li>Reglamento interno, matriz de riesgos y protocolos</li><li>Apoyo en trámites con la SEREMI y la DT</li><li>Visitas y seguimiento mensual</li></ul></div>
@@ -349,17 +361,7 @@
           <p class="eyebrow on-dark">Promoción · Plan Pyme Anual</p>
           <h2 id="pp-t">Tu prevencionista y coach de seguridad en terreno, <span>cada semana</span></h2>
           <p class="sub on-dark">¿Hasta cuándo vas a improvisar? Para pymes de hasta 50 trabajadores que quieren la prevención funcionando todo el año, no solo cuando llega la fiscalización.</p>
-          <ul class="pp-list">
-            <li><b>Visita semanal</b> en terreno de hasta 3 horas (4 al mes)</li>
-            <li>Diagnóstico inicial y <b>plan anual</b> priorizado</li>
-            <li>Reglamento interno, matriz de riesgos y programa preventivo (DS&nbsp;44)</li>
-            <li><b>Implementación de protocolos MINSAL</b> que te correspondan (TMERT, MMC, PREXOR, psicosocial y otros), según guía y cronograma real</li>
-            <li>Inducciones y capacitaciones con <b>firma digital</b></li>
-            <li><b>Coaching mensual a la gerencia</b>: metas, liderazgo visible y seguimiento</li>
-            <li>Reporte mensual con indicadores y <b>resultados evidenciables</b></li>
-            <li><b>Asesoría virtual</b> entre visitas: resuelves tus dudas sin esperar a la próxima semana</li>
-            <li>Apoyo ante fiscalizaciones y accidentes</li>
-          </ul>
+          <div class="xp xp-inline"><ul class="pp-list"><li><b>Visita semanal</b> en terreno de hasta 3 horas (4 al mes)</li><li>Diagnóstico inicial y <b>plan anual</b> priorizado</li><li>Reglamento interno, matriz de riesgos y programa preventivo (DS&nbsp;44)</li></ul><div class="more"><ul class="pp-list"><li><b>Implementación de protocolos MINSAL</b> que te correspondan (TMERT, MMC, PREXOR, psicosocial y otros), según guía y cronograma real</li><li>Inducciones y capacitaciones con <b>firma digital</b></li><li><b>Coaching mensual a la gerencia</b>: metas, liderazgo visible y seguimiento</li><li>Reporte mensual con indicadores y <b>resultados evidenciables</b></li><li><b>Asesoría virtual</b> entre visitas: resuelves tus dudas sin esperar a la próxima semana</li><li>Apoyo ante fiscalizaciones y accidentes</li></ul></div><p class="xp-cue-t">+ 6 beneficios más</p></div>
         </div>
         <div class="pp-card">
           <p class="pp-k">Plan Pyme Anual</p>
@@ -380,59 +382,59 @@
         <p class="sub center">Precios claros desde el primer día, sin letra chica. La pregunta no es cuánto cuesta prevenir. Es cuánto te está costando no hacerlo.</p>
         <p class="scale">Escalable a tu realidad: parte por el <b>mínimo legal</b>, avanza a un <b>sistema certificado</b> y a un <b>sistema digital</b>, o resuelve solo un <b>tema puntual</b>.</p>
         <div class="offers">
-          <article class="offer">
+          <article class="xp offer">
             <p class="tier-k">Para empezar</p>
             <h3>Diagnóstico en una sola vista</h3>
             <p class="offer-price">$99.000 <small>+ IVA</small></p>
             <p>Deja de adivinar. Te digo dónde estás y cuáles son tus brechas, en una sola vista.</p>
             <p class="offer-guarantee"><b>Garantía:</b> Si el diagnóstico no te muestra al menos 3 brechas que no marcaste en tu encuesta inicial, no lo pagas.</p>
-            <ul><li>Visita y revisión de evidencias</li><li>Brechas DS&nbsp;44 / Ley Karin en un tablero</li><li>Qué hacer primero</li></ul>
+            <div class="more"><ul><li>Visita y revisión de evidencias</li><li>Brechas DS&nbsp;44 / Ley Karin en un tablero</li><li>Qué hacer primero</li></ul></div>
             <a class="btn btn-secondary" href="#contacto" data-need="Diagnóstico DS 44" data-cta="oferta_diagnostico">Pedir diagnóstico</a>
           </article>
-          <article class="offer featured">
+          <article class="xp offer featured">
             <p class="tier-k">Recomendado</p>
             <h3>SafetyCoach en terreno</h3>
             <p class="offer-price"><small class="desde">desde</small> $549.000 <small>+ IVA / mes</small></p>
             <p>Visita semanal, coaching a la gerencia y resultados evidenciables cada mes. Para más trabajadores o centros, lo ajustamos en el diagnóstico.</p>
-            <ul><li>Implementación y visitas semanales</li><li>Indicadores y reuniones de avance</li><li>Soporte en fiscalizaciones y accidentes</li></ul>
+            <div class="more"><ul><li>Implementación y visitas semanales</li><li>Indicadores y reuniones de avance</li><li>Soporte en fiscalizaciones y accidentes</li></ul></div>
             <a class="btn btn-primary" href="#plan-pyme" data-cta="oferta_mensual">Ver el plan</a>
           </article>
-          <article class="offer">
+          <article class="xp offer">
             <p class="tier-k">Solo tecnología</p>
             <h3>Herramientas digitales</h3>
             <p class="offer-price"><small class="desde">desde</small> $99.000 <small>+ IVA por herramienta</small></p>
             <p>¿Ya tienes prevencionista y solo te falta la tecnología? Elige la herramienta y la dejo funcionando.</p>
-            <ul><li>Cápsulas con firma</li><li>Inspecciones por QR</li><li>Matrices, inducciones IRL y más</li></ul>
-            <p class="offer-note">El valor es por implementación. El uso de plataforma, servidor e inteligencia artificial se cobra aparte, según la cantidad de registros y usuarios. Te lo cotizo claro antes de partir.</p>
+            <div class="more"><ul><li>Cápsulas con firma</li><li>Inspecciones por QR</li><li>Matrices, inducciones IRL y más</li></ul>
+            <p class="offer-note">El valor es por implementación. El uso de plataforma, servidor e inteligencia artificial se cobra aparte, según la cantidad de registros y usuarios. Te lo cotizo claro antes de partir.</p></div>
             <a class="btn btn-secondary" href="#contacto" data-need="Demo digital" data-cta="oferta_digital">Pide tu demo</a>
           </article>
-          <article class="offer">
+          <article class="xp offer">
             <p class="tier-k">Contratistas</p>
             <h3>Programa para contratistas</h3>
             <p class="offer-price"><small class="desde">desde</small> $549.000 <small>+ IVA / mes</small></p>
             <p>Deja de rezar antes de cada auditoría. Cumple lo que te exige tu mandante, con todo en regla.</p>
-            <ul><li>Requisitos y documentación al día</li><li>Inducciones y permisos digitales</li><li>Acompañamiento en auditorías del mandante</li></ul>
+            <div class="more"><ul><li>Requisitos y documentación al día</li><li>Inducciones y permisos digitales</li><li>Acompañamiento en auditorías del mandante</li></ul></div>
             <a class="btn btn-secondary" href="#contacto" data-need="Programa contratistas" data-cta="oferta_contratistas">Toma tu programa</a>
           </article>
         </div>
-        <article class="offer offer-wide">
+        <article class="xp offer offer-wide">
           <div>
             <p class="tier-k">Especialidad</p>
             <h3>Implementación de protocolos MINSAL</h3>
             <p class="offer-price"><small class="desde">desde</small> $299.000 <small>+ IVA por protocolo</small></p>
             <p>TMERT, manejo manual de carga, PREXOR, riesgo psicosocial CEAL-SM, sílice, radiación UV y otros. Lo implementamos según la guía oficial y con un <b>cronograma real</b>, a tu ritmo, <b>sin estresar a tu organización</b>.</p>
           </div>
-          <ul><li>Evaluación inicial y alcance según la guía</li><li>Cronograma realista con responsables</li><li>Capacitación y registros con firma digital</li><li>Evidencia lista para la autoridad</li></ul>
+          <div class="more"><ul><li>Evaluación inicial y alcance según la guía</li><li>Cronograma realista con responsables</li><li>Capacitación y registros con firma digital</li><li>Evidencia lista para la autoridad</li></ul></div>
           <a class="btn btn-secondary" href="#contacto" data-need="Protocolos MINSAL" data-cta="oferta_protocolos">Implementar un protocolo</a>
         </article>
-        <article class="offer offer-wide seg">
+        <article class="xp offer offer-wide seg">
           <div>
             <p class="tier-k">Después del primer año</p>
             <h3>Seguimiento: que lo implementado no se caiga</h3>
             <p class="offer-price">$99.000 <small>+ IVA</small></p>
             <p>No me quedo contigo para siempre: te dejo el sistema funcionando y vuelvo a verificar que se sostenga.</p>
           </div>
-          <ul><li>Reunión con tu gente</li><li>Reunión con tus líderes</li><li>Reunión con tu gerente</li></ul>
+          <div class="more"><ul><li>Reunión con tu gente</li><li>Reunión con tus líderes</li><li>Reunión con tu gerente</li></ul></div>
           <a class="btn btn-secondary" href="#contacto" data-need="Prevención externa" data-cta="oferta_seguimiento">Agendar seguimiento</a>
         </article>
       </div>
@@ -468,7 +470,7 @@
         <p class="eyebrow on-dark">SafetyCoach Digital</p>
         <h2 id="dig-t">Seguridad superinteligente</h2>
         <p class="lead-dig">Tu experiencia, mi expertise y la tecnología, trabajando juntos por tu equipo.</p>
-        <p class="sub on-dark">¿Sigues firmando inducciones en papel que terminan en un cajón? Tú conoces tu operación. Tu equipo sabe dónde está el riesgo. Yo pongo más de 20 años en prevención. Sumamos inteligencia artificial y cocreamos herramientas simples, que tu gente usa de verdad y que dejan evidencia de tu gestión, todos los días.</p>
+        <div class="xp xp-inline"><p class="sub on-dark">¿Sigues firmando inducciones en papel que terminan en un cajón?</p><div class="more"><p class="sub on-dark">¿Sigues firmando inducciones en papel que terminan en un cajón? Tú conoces tu operación. Tu equipo sabe dónde está el riesgo. Yo pongo más de 20 años en prevención. Sumamos inteligencia artificial y cocreamos herramientas simples, que tu gente usa de verdad y que dejan evidencia de tu gestión, todos los días.</p></div></div>
         <p class="pull-dig">No se trata de tener más tecnología. Se trata de tener todo a la mano y disponible siempre, para cuidar a tu equipo.</p>
         <div class="dig-show">
           <figure><img src="assets/img/digital-irl-firma.webp" alt="Registro de inducción IRL en el celular, con módulos aprobados y firma digital del trabajador" width="1024" height="1038" loading="lazy"><figcaption>Inducción IRL con firma digital</figcaption></figure>
@@ -506,31 +508,31 @@
         <h3 class="proof-t" id="casos">Casos reales. ¿Te reconoces en alguno?</h3>
         <p class="sub small">Por confidencialidad no publico nombres de empresas ni datos internos. Te cuento el rubro, el desafío y lo que logramos.</p>
         <div class="cases">
-          <article class="case">
+          <article class="case xp">
             <p class="case-rubro">Servicios de alimentación</p>
             <p class="case-meta">Más de 20 casinos concesionados · <span>Encargada de Gestión de Personas</span></p>
-            <dl>
+            <p class="case-hl">✓ Estado de cumplimiento de todos los casinos en línea y en tiempo real, listo para cada cliente.</p>
+            <dl class="more">
               <dt>Desafío</dt><dd>Cada casino con exigencias de seguridad, registros e inducciones distintas según el cliente.</dd>
               <dt>Qué hicimos</dt><dd>Inducciones IRL y cápsulas de capacitación con firma digital, ajustadas a cada centro.</dd>
-              <dt>Resultado</dt><dd class="case-res">Estado de cumplimiento de todos los casinos en línea y en tiempo real, listo para cada cliente.</dd>
             </dl>
           </article>
-          <article class="case">
+          <article class="case xp">
             <p class="case-rubro">Industria química</p>
             <p class="case-meta">Planta productiva · casi 10 años de trabajo · <span>Gerencia de planta</span></p>
-            <dl>
+            <p class="case-hl">✓ Récord del tablero: 4 dígitos de días sin accidentes.</p>
+            <dl class="more">
               <dt>Desafío</dt><dd>Operación de alto riesgo, con exigencias de un grupo internacional.</dd>
               <dt>Qué hicimos</dt><dd>Gestión preventiva continua, liderazgo en terreno y cultura de seguridad con todo el equipo.</dd>
-              <dt>Resultado</dt><dd class="case-res">Récord del tablero: 4 dígitos de días sin accidentes.</dd>
             </dl>
           </article>
-          <article class="case">
+          <article class="case xp">
             <p class="case-rubro">Inspección y certificación</p>
             <p class="case-meta">Empresa internacional en crecimiento · <span>Experto en Prevención</span></p>
-            <dl>
+            <p class="case-hl">✓ Sistema implementado y un prevencionista respaldado para sostenerlo.</p>
+            <dl class="more">
               <dt>Desafío</dt><dd>La empresa creció y el área de prevención asumió más responsabilidades.</dd>
               <dt>Qué hicimos</dt><dd>Acompañamiento para implementar el DS&nbsp;44 y los protocolos MINSAL.</dd>
-              <dt>Resultado</dt><dd class="case-res">Sistema implementado y un prevencionista respaldado para sostenerlo.</dd>
             </dl>
           </article>
         </div>
@@ -549,8 +551,7 @@
           <p class="eyebrow">Mi historia</p>
           <h2 id="hans-t">Detrás de SafetyCoach hay una historia de prevención, quiebre y renacimiento</h2>
           <p>Durante más de 20 años protegí vidas. En BASF aprendí que los resultados extraordinarios no salen de los procedimientos: salen de líderes involucrados, hábitos que cambian y seguimiento que no se suelta. Sostuvimos <b>más de tres años sin accidentes</b>. Esa experiencia me marcó.</p>
-          <p>Después, dentro de una mutualidad, conocí más de 300 pymes por dentro. Y la vida me pasó la cuenta: un despido masivo, un quiebre personal y la pregunta incómoda de qué tenía que cambiar en mí. Hice mi propio proceso, sin atajos.</p>
-          <p>Hoy integro las dos cosas: más de 20 años de rigor técnico y cinco años de trabajo en bienestar y transformación personal. Por eso me especializo en <b>pymes, empresas familiares y emprendedores</b>, donde el dueño está en todo y cada accidente se siente en la caja y en la familia.</p>
+          <div class="xp xp-inline"><p class="xp-cue-t">+ Lee el quiebre y el renacimiento</p><div class="more"><p>Después, dentro de una mutualidad, conocí más de 300 pymes por dentro. Y la vida me pasó la cuenta: un despido masivo, un quiebre personal y la pregunta incómoda de qué tenía que cambiar en mí. Hice mi propio proceso, sin atajos.</p><p>Hoy integro las dos cosas: más de 20 años de rigor técnico y cinco años de trabajo en bienestar y transformación personal. Por eso me especializo en <b>pymes, empresas familiares y emprendedores</b>, donde el dueño está en todo y cada accidente se siente en la caja y en la familia.</p></div></div>
           <p class="hans-q"><b>Si algo aprendí es esto: no se parte de cero. Se comienza desde donde estás.</b></p>
           <p><a class="btn btn-ghost" href="mi-historia/" data-cta="hans_historia">Conoce mi historia completa →</a></p>
           <ul class="creds">
@@ -587,20 +588,20 @@
         <div class="nn">
           <h3>Mis no negociables</h3>
           <ul>
-            <li><b>Si el dueño no aparece, yo tampoco.</b> El compromiso de la gerencia no se delega.</li>
-            <li><b>La seguridad no se negocia por producción.</b> Ni un día, ni una vez.</li>
-            <li><b>Cero maquillaje.</b> No firmo papeles para la foto ni carpetas que nadie usa.</li>
-            <li><b>El seguimiento es tu compromiso.</b> Yo pongo el método y te enseño a sostenerlo.</li>
-            <li><b>Se escucha a la gente.</b> Trabajadores y clientes primero.</li>
+            <li class="xp xp-li"><b>Si el dueño no aparece, yo tampoco.</b> <span class="more">El compromiso de la gerencia no se delega.</span></li>
+            <li class="xp xp-li"><b>La seguridad no se negocia por producción.</b> <span class="more">Ni un día, ni una vez.</span></li>
+            <li class="xp xp-li"><b>Cero maquillaje.</b> <span class="more">No firmo papeles para la foto ni carpetas que nadie usa.</span></li>
+            <li class="xp xp-li"><b>El seguimiento es tu compromiso.</b> <span class="more">Yo pongo el método y te enseño a sostenerlo.</span></li>
+            <li class="xp xp-li"><b>Se escucha a la gente.</b> <span class="more">Trabajadores y clientes primero.</span></li>
           </ul>
           <p class="nn-match">Y te lo digo de frente: <b>no me quiero quedar contigo para siempre.</b> En un año te dejo el sistema implementado y funcionando, sigo con nuevas empresas y vuelvo para los seguimientos. Si hacemos match, le damos hasta que dure el amor y la pasión.</p>
         </div>
         <h3 class="cw-h">Palabra de coach: tu empresa hoy refleja cómo eres. ¿Quieres crecer? Hazlo desde adentro.</h3>
         <div class="cw-grid">
-          <article><b>Lo más importante</b><p>Tu capital humano y tu cliente. Escúchalos y cuídalos. Lo demás viene por añadidura.</p></article>
-          <article><b>Invierte inteligente</b><p>Sé que los recursos son escasos. Prioriza y usa el 80/20: primero lo poco que resuelve la mayor parte.</p></article>
-          <article><b>Toma el timón</b><p>Vas a tener que hacer ajustes, direccionar y actuar en consecuencia. Sé consecuente y pragmático.</p></article>
-          <article><b>El seguimiento es tu compromiso</b><p>Yo pongo el método, las herramientas y la información siempre a la mano. Y te enseño a sostener el seguimiento.</p></article>
+          <article class="xp"><b>Lo más importante</b><p class="more">Tu capital humano y tu cliente. Escúchalos y cuídalos. Lo demás viene por añadidura.</p></article>
+          <article class="xp"><b>Invierte inteligente</b><p class="more">Sé que los recursos son escasos. Prioriza y usa el 80/20: primero lo poco que resuelve la mayor parte.</p></article>
+          <article class="xp"><b>Toma el timón</b><p class="more">Vas a tener que hacer ajustes, direccionar y actuar en consecuencia. Sé consecuente y pragmático.</p></article>
+          <article class="xp"><b>El seguimiento es tu compromiso</b><p class="more">Yo pongo el método, las herramientas y la información siempre a la mano. Y te enseño a sostener el seguimiento.</p></article>
         </div>
         <p class="cw-warn"><b>Advertencia:</b> después del diagnóstico vas a tener toda la información para tomar decisiones a conciencia. Ya no te vas a poder hacer el loco ni mirar para el lado.</p>
         <div class="match" role="group" aria-label="¿Hacemos match?">

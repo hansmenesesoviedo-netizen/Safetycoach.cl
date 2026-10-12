@@ -1276,3 +1276,44 @@ body.frame-zoom::after { content: ""; position: fixed; inset: 0; background: rgb
 .guia-cta p { color: #E6ECF3; }
 .guia-cta b { color: var(--yellow); }
 .slogan { display: inline-block; font: 800 1rem var(--font-h); letter-spacing: .04em; color: var(--navy); background: var(--yellow); padding: 6px 14px; border-radius: 999px; margin: 0 0 14px; }
+
+/* Eslogan manuscrito bajo el logo */
+.brand-stack { display: inline-flex; flex-direction: column; align-items: flex-start; line-height: 1; }
+.brand-stack .brand-logo { height: 46px; }
+.brand-slogan { font: 700 1.05rem/1 'Caveat', 'Segoe Script', 'Bradley Hand', 'Comic Sans MS', cursive; color: #1E7B4F; margin: -2px 0 0 4px; white-space: nowrap; position: relative; padding-bottom: 3px; }
+.brand-slogan::after { content: ""; position: absolute; left: 0; right: 6%; bottom: 0; height: 3px; border-radius: 3px; background: var(--yellow); transform: rotate(-1deg); }
+@media (max-width: 520px) { .brand-stack .brand-logo { height: 38px; } .brand-slogan { font-size: .86rem; } }
+
+/* ---------- Menos es más: lo importante a la vista, el resto se expande al pasar ---------- */
+.xp { position: relative; transition: transform .25s ease, box-shadow .25s ease, border-color .25s; }
+.xp .more { display: block; max-height: 0; overflow: hidden; opacity: 0; transition: max-height .45s ease, opacity .3s ease, margin .3s; margin-top: 0; }
+.xp:hover .more, .xp:focus-within .more, .xp.open .more { max-height: 900px; opacity: 1; margin-top: 8px; }
+.xp-li .more { display: inline; max-height: none; opacity: 0; transition: opacity .3s; }
+.xp-li:hover .more, .xp-li.open .more { opacity: 1; }
+.xp-cue { position: absolute; top: 12px; right: 12px; width: 24px; height: 24px; border-radius: 50%; display: grid; place-items: center; font: 700 15px/1 var(--font-b); background: var(--bg-alt); color: var(--navy); transition: transform .3s, background .3s; pointer-events: none; }
+.xp:hover > .xp-cue, .xp.open > .xp-cue { transform: rotate(45deg); background: var(--yellow); }
+.xp-cue-t { font-size: .85rem; font-weight: 700; color: var(--green-d); margin: 6px 0 0; cursor: pointer; }
+.on-dark + .more, .plan-pyme .xp-cue-t, .filtro .xp-cue-t, .digital .xp-cue-t { color: var(--yellow); }
+.xp:hover .xp-cue-t, .xp.open .xp-cue-t { display: none; }
+.xp-inline .more { margin-top: 0; }
+.diff-grid article.xp:hover, .offer.xp:hover, .case.xp:hover, .nv:hover, .cw-grid article.xp:hover { transform: translateY(-4px); box-shadow: 0 18px 34px -18px rgba(11,31,58,.35); }
+.case-hl { font-weight: 700; color: var(--green-d); margin: 8px 0 0; }
+.aud-intro.short { font-weight: 600; color: var(--navy); }
+.xp-lead .lead { margin-bottom: 0; }
+.xp-lead .more .lead { margin-top: 0; }
+.lic-alert.xp .more p { margin-top: 0; }
+/* Lo nuevo */
+.nuevo { padding-top: clamp(36px, 5vw, 56px); padding-bottom: clamp(36px, 5vw, 56px); }
+.nuevo h2 { font-size: clamp(1.5rem, 3vw, 2.1rem); }
+.nuevo-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-top: 18px; }
+.nv { display: flex; flex-direction: column; gap: 4px; text-decoration: none; color: var(--ink); background: #fff; border: 1px solid var(--line); border-radius: 18px; padding: 22px; min-height: 170px; }
+.nv b { font: 800 1.2rem var(--font-h); color: var(--navy); }
+.nv .nv-p { color: var(--muted); }
+.nv .nv-i { font-size: 1.6rem; }
+.nv-tag { align-self: flex-start; font: 800 .7rem var(--font-b); letter-spacing: .1em; text-transform: uppercase; background: #E8622C; color: #fff; border-radius: 999px; padding: 3px 9px; }
+.nv .more { font-size: .94rem; }
+.nv .more em { display: block; font-style: normal; font-weight: 700; color: var(--green-d); margin-top: 6px; }
+.nav a.is-new::after { content: "Nuevo"; margin-left: 5px; font: 800 .6rem var(--font-b); background: #E8622C; color: #fff; border-radius: 999px; padding: 1px 5px; vertical-align: top; }
+@media (max-width: 860px) { .nuevo-grid { grid-template-columns: 1fr; } }
+@media (hover: none) { .xp .more { transition: max-height .35s ease, opacity .25s; } }
+@media (prefers-reduced-motion: reduce) { .xp, .xp .more { transition: none; } }

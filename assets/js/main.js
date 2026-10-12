@@ -176,6 +176,31 @@
     });
   });
 
+  // ---------- Bloques expandibles: lo importante a la vista, el resto al pasar o tocar ----------
+  var touch = window.matchMedia && window.matchMedia('(hover: none)').matches;
+  var seen = {};
+  document.querySelectorAll('.xp').forEach(function (el, i) {
+    if (!el.classList.contains('xp-inline') && !el.classList.contains('xp-li') && !el.classList.contains('xp-lead') && !el.querySelector(':scope > .xp-cue')) {
+      var cue = document.createElement('span'); cue.className = 'xp-cue'; cue.setAttribute('aria-hidden', 'true'); cue.textContent = '+'; el.appendChild(cue);
+    }
+    if ((el.classList.contains('xp-inline') || el.classList.contains('xp-lead')) && !el.querySelector('.xp-cue-t')) {
+      var t = document.createElement('p'); t.className = 'xp-cue-t'; t.textContent = '+ Ver más'; el.appendChild(t);
+    }
+    if (!el.matches('a, button') && !el.querySelector('a, button, input, select')) el.tabIndex = 0;
+    var id = el.dataset.cta || (el.querySelector('h3, b') ? el.querySelector('h3, b').textContent.trim().slice(0, 40) : 'bloque-' + i);
+    function opened() { if (!seen[id]) { seen[id] = true; track('expandir', { bloque: id }); } }
+    el.addEventListener('mouseenter', opened);
+    el.addEventListener('focusin', opened);
+    el.addEventListener('click', function (e) {
+      if (!touch) return;
+      if (el.classList.contains('open') || !e.target.closest('a, button, input, select, label')) {
+        if (!e.target.closest('a, button, input, select, label')) { el.classList.toggle('open'); opened(); }
+      } else if (el.matches('a') && !el.classList.contains('open')) {
+        e.preventDefault(); el.classList.add('open'); opened();
+      }
+    });
+  });
+
   // ---------- Formularios: validación + envío ----------
   // Por defecto el formulario se envía de forma nativa (Netlify Forms lo captura).
   // Para usar otro servicio (Formspree, CRM, Make/Zapier), define data-endpoint="https://..." en el <form>:
