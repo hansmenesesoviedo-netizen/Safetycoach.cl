@@ -94,12 +94,12 @@ PAGES = [
         "need": "Plan Pyme anual",
         "cta": "Quiero el Plan Pyme",
         "blocks": [
-            ("Promoción: Plan Pyme Anual", "<div class='pp-mini'><p class='pp-price'><span class='pp-cur'>$</span>556.000<small>+ IVA / mes</small></p><p>Pymes de hasta 50 trabajadores en Santiago · contrato anual con pago mensual. Incluye <b>visita semanal en terreno de hasta 3 horas</b> (AM o PM según disponibilidad) y <b>coaching mensual a la gerencia</b>.</p><p class='pp-per'><b>Solo 5 cupos.</b></p></div>"),
+            ("Promoción: Plan Pyme Anual", "<div class='pp-mini'><p class='pp-price'><span class='pp-cur'>$</span>549.000<small>+ IVA / mes</small></p><p>Pymes de hasta 50 trabajadores en Santiago · contrato anual con pago mensual. Incluye <b>visita semanal en terreno de hasta 3 horas</b> (AM o PM según disponibilidad) y <b>coaching mensual a la gerencia</b>.</p><p class='pp-per'><b>Solo 5 cupos.</b></p></div>"),
             ("Lo que incluye", "<ul class='checks'><li>Diagnóstico y plan priorizado</li><li>Reglamento interno, matriz de riesgos y programa preventivo</li><li>Protocolos MINSAL que te correspondan</li><li>Inducciones y capacitaciones con firma digital</li><li>Apoyo en trámites ante la SEREMI y la Dirección del Trabajo</li><li>Visitas y seguimiento mensual</li></ul>"),
             ("Por qué funciona para una pyme", "<p>Pagas solo lo que necesitas, sin sueldos fijos. Tienes a alguien con más de 20 años de experiencia que conoce tu operación y responde cuando lo necesitas.</p>"),
         ],
         "faq": [
-            ("¿Cuánto cuesta?", "Para pymes de hasta 50 trabajadores, el Plan Pyme Anual cuesta $556.000 + IVA al mes, con visita semanal en Santiago (solo 5 cupos). Si tienes más trabajadores o centros, lo ajustamos en el diagnóstico."),
+            ("¿Cuánto cuesta?", "Para pymes de hasta 50 trabajadores, el Plan Pyme Anual cuesta $549.000 + IVA al mes, con visita semanal en Santiago (solo 5 cupos). Si tienes más trabajadores o centros, lo ajustamos en el diagnóstico."),
             ("Tengo muy pocos trabajadores, ¿igual debo cumplir?", "Sí, hay obligaciones que aplican a todas las empresas. Lo que cambia es la forma y la cantidad de exigencias. Te digo exactamente cuáles te corresponden."),
         ],
         "testi": None,

@@ -868,3 +868,15 @@ details p { padding: 0 22px 18px; margin: 0; color: var(--muted); }
 .hero-punch { font: 700 clamp(1.1rem, 2.2vw, 1.35rem)/1.4 var(--font-h); color: #C0392B; margin: 0 0 14px; }
 .offer .offer-price { font: 800 1.5rem var(--font-h); color: var(--navy); margin: 2px 0 8px; }
 .offer .offer-price small { font: 600 .82rem var(--font-b); color: var(--muted); }
+.hans-q { border-left: 4px solid var(--yellow); padding: 10px 16px; background: rgba(245,205,48,.12); border-radius: 0 10px 10px 0; font-size: 1.05rem; }
+
+/* Espejo: preguntas incómodas */
+.espejo { background: #0B1F3A; color: #fff; }
+.espejo h2 { color: #fff; font-size: clamp(1.8rem, 4vw, 2.6rem); max-width: 22ch; }
+.esp-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; margin: 28px 0 22px; }
+.esp-grid article { border: 1px solid rgba(255,255,255,.18); border-radius: 18px; padding: 24px; background: rgba(255,255,255,.04); }
+.esp-grid p { margin: 0; font-size: 1.08rem; line-height: 1.5; color: #E6ECF3; }
+.esp-grid b { color: var(--yellow); }
+.esp-n { display: inline-grid; place-items: center; width: 38px; height: 38px; border-radius: 50%; background: var(--yellow); color: #0B1F3A; font: 800 1.1rem var(--font-h); margin-bottom: 14px; }
+.esp-close { font: 700 clamp(1.1rem, 2.2vw, 1.35rem)/1.4 var(--font-h); color: #fff; margin: 0 0 20px; }
+@media (max-width: 800px) { .esp-grid { grid-template-columns: 1fr; } }
