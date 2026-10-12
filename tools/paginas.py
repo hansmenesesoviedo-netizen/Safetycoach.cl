@@ -19,40 +19,46 @@ WA = ("https://wa.me/56932304800?text=Hola%20Hans%2C%20llegu%C3%A9%20a%20SafetyC
 PAGES = [
     {
         "slug": "ds-44",
+        "close": '¿Vas a seguir cumpliendo en papel o vas a gestionar de verdad?',
+        "questions": ['¿Tu matriz de riesgos la conoce el supervisor que está en terreno, o solo quien la hizo?', '¿Tu programa preventivo tiene responsables con nombre y plazos que se cumplen?', 'Si mañana un fiscalizador le pregunta a un trabajador por sus riesgos, ¿qué respondería?'],
+        "punch": 'Un sistema que solo existe en papel no evita ningún accidente.',
         "title": "Diagnóstico e implementación DS 44 | SafetyCoach",
         "desc": "Asesoría para cumplir el DS 44 en Chile: diagnóstico de brechas, matriz de riesgos, programa preventivo, capacitación y preparación para fiscalización. Hans Meneses, SafetyCoach.",
         "eyebrow": "DS 44 · Gestión preventiva",
-        "h1": "DS 44: cumple, demuéstralo y deja de depender de una carpeta",
-        "lead": "El DS 44 cambió la forma en que las empresas en Chile deben gestionar la prevención. Te ayudo a saber qué te exige según tu tamaño y rubro, qué te falta y cómo implementarlo con tu equipo, con evidencia lista para cualquier fiscalización.",
+        "h1": "Tienes la carpeta del DS 44. ¿Y tu gente sabe lo que dice?",
+        "lead": "El DS 44 no se cumple con documentos: se cumple gestionando. Te digo qué te exige según tu tamaño y rubro, qué te falta, y lo implementamos con tus líderes y tu equipo, con evidencia lista para cualquier fiscalización.",
         "img": "terreno-bodega.webp",
         "need": "Diagnóstico DS 44",
-        "cta": "Solicitar diagnóstico DS 44",
+        "cta": "Quiero saber dónde estoy · $99.000",
         "blocks": [
             ("¿Qué es el DS 44?", "<p>Es el reglamento sobre gestión preventiva de los riesgos laborales, vigente desde febrero de 2025, que reemplazó a los antiguos DS 40 y DS 54. Pone el foco en que la empresa <b>gestione</b> sus riesgos de forma continua, no solo en tener documentos.</p>"),
             ("Lo que normalmente se revisa", "<ul class='checks'><li>Política de seguridad y salud en el trabajo</li><li>Matriz de identificación de peligros y evaluación de riesgos</li><li>Programa de trabajo preventivo con responsables y plazos</li><li>Información de riesgos y capacitación a los trabajadores</li><li>Plan de emergencias</li><li>Organización preventiva: comité paritario, encargado o departamento según tamaño</li><li>Investigación de accidentes y seguimiento de medidas</li></ul>"),
-            ("Cómo lo trabajamos", "<ol class='steps'><li><b>Diagnóstico</b> de brechas con visita y revisión de evidencias.</li><li><b>Hoja de ruta</b> priorizada: qué hacer primero y qué puede esperar.</li><li><b>Implementación</b> con tus jefaturas y trabajadores, no solo documentos.</li><li><b>Registros digitales</b> de inducciones, capacitaciones e inspecciones.</li><li><b>Seguimiento</b> con indicadores y simulación de fiscalización.</li></ol>"),
+            ("Cómo lo hacemos funcionar", "<ol class='steps'><li><b>Diagnóstico</b> de brechas con visita y revisión de evidencias.</li><li><b>Hoja de ruta</b> priorizada: qué hacer primero y qué puede esperar.</li><li><b>Implementación</b> con tus jefaturas y trabajadores. Los documentos son el resultado, no el objetivo.</li><li><b>Registros digitales</b> de inducciones, capacitaciones e inspecciones.</li><li><b>Seguimiento</b> con indicadores y simulación de fiscalización.</li></ol>"),
         ],
         "faq": [
             ("¿El DS 44 aplica a mi empresa?", "Aplica a las empresas y entidades empleadoras en Chile. Lo que cambia según el número de trabajadores y el rubro es cómo se organiza la prevención (comité paritario, departamento de prevención, etc.). En el diagnóstico revisamos exactamente qué te corresponde."),
-            ("¿Cuánto demora el diagnóstico?", "Normalmente entre 1 y 2 semanas, según el tamaño y la cantidad de centros de trabajo. Tiene un valor fijo que acordamos antes de empezar."),
-            ("Ya tengo prevencionista, ¿me sirve?", "Sí. Apoyo a tu prevencionista para ordenar el sistema, priorizar y dejar evidencia digital, sin reemplazarlo."),
+            ("¿Cuánto demora el diagnóstico?", "Normalmente entre 1 y 2 semanas, según el tamaño y la cantidad de centros de trabajo. El diagnóstico en una sola vista cuesta $99.000 + IVA."),
+            ("Ya tengo prevencionista, ¿me sirve?", "Sí. Un prevencionista solo no puede estar en todas partes. Lo apoyo para ordenar el sistema, priorizar y dejar evidencia digital, sin reemplazarlo."),
         ],
         "testi": None,
     },
     {
         "slug": "ley-karin",
+        "close": '¿Vas a esperar la primera denuncia para ordenar tu casa?',
+        "questions": ['¿Tus trabajadores saben cómo y dónde denunciar, sin miedo?', 'Si hoy llega una denuncia, ¿sabes qué hacer en las primeras 24 horas?', '¿Puedes demostrar, con firma y fecha, que capacitaste a todo tu equipo?'],
+        "punch": 'Decir que son una familia no basta. La familia se cuida, y lo demuestra.',
         "title": "Ley Karin para empresas: protocolo, denuncias e investigación | SafetyCoach",
         "desc": "Implementación de la Ley Karin (Ley 21.643) en tu empresa: protocolo de prevención, canal de denuncias, investigación, medidas de resguardo y registros digitales.",
         "eyebrow": "Ley Karin · Ley 21.643",
-        "h1": "Ley Karin: prevenir, responder bien y dejar todo respaldado",
-        "lead": "Una denuncia mal gestionada puede convertirse en un problema legal y en un quiebre del clima laboral. Te acompaño a tener el protocolo, el procedimiento y los registros en orden, y a actuar con criterio cuando llega una denuncia.",
+        "h1": "Ley Karin: la denuncia va a llegar. ¿Tu empresa está preparada?",
+        "lead": "Una denuncia mal gestionada se transforma en un problema legal y en un quiebre del clima que cuesta años reparar. Te acompaño a tener el protocolo, el procedimiento y los registros en orden, y a actuar con criterio cuando llega el momento.",
         "img": "taller-riesgos-2.webp",
         "need": "Ley Karin",
-        "cta": "Necesito apoyo con Ley Karin",
+        "cta": "Quiero mi Ley Karin en orden",
         "blocks": [
             ("¿Qué exige la Ley Karin?", "<p>La Ley 21.643, vigente desde agosto de 2024, obliga a los empleadores a prevenir, investigar y sancionar el acoso laboral, el acoso sexual y la violencia en el trabajo. Entre otras cosas, pide un <b>protocolo de prevención</b>, un <b>procedimiento de investigación</b> y <b>medidas de resguardo</b> para las personas involucradas.</p>"),
             ("Lo que implementamos contigo", "<ul class='checks'><li>Protocolo de prevención basado en la evaluación de riesgos psicosociales</li><li>Actualización del reglamento interno</li><li>Canal y procedimiento de denuncia claros</li><li>Apoyo en la investigación y en las medidas de resguardo</li><li>Cápsulas de capacitación con videos y firma digital del trabajador</li><li>Seguimiento y registros listos ante la Dirección del Trabajo</li></ul>"),
-            ("Si ya recibiste una denuncia", "<p>Lo primero es actuar dentro de los plazos y resguardar a las personas. Conversemos de inmediato: te oriento sobre los pasos y los registros que debes dejar.</p>"),
+            ("¿Ya recibiste una denuncia?", "<p>No improvises. Lo primero es actuar dentro de los plazos y resguardar a las personas. Escríbeme hoy: te oriento sobre los pasos y los registros que debes dejar.</p>"),
         ],
         "faq": [
             ("¿Toda empresa debe tener protocolo Ley Karin?", "Sí, la ley aplica a todos los empleadores. El alcance del protocolo y del procedimiento se ajusta al tamaño y la realidad de cada empresa."),
@@ -63,11 +69,14 @@ PAGES = [
     },
     {
         "slug": "fiscalizaciones",
+        "close": '¿Prefieres prepararte ahora o explicar después por qué no lo hiciste?',
+        "questions": ['Si hoy entra un fiscalizador, ¿cuánto te demoras en mostrar inducciones, matrices y registros?', '¿Las observaciones de la última fiscalización están corregidas, o solo pagaste la multa?', 'Si ocurre un accidente grave, ¿tu equipo sabe qué hacer en la primera hora?'],
+        "punch": 'He estado del otro lado de la mesa. Sé lo que miran y cómo prepararte.',
         "title": "Fiscalizaciones, accidentes graves y trámites SEREMI | SafetyCoach",
         "desc": "Apoyo ante fiscalizaciones de la Dirección del Trabajo y SEREMI de Salud, accidentes graves, programas de asistencia al cumplimiento (PAC), autorizaciones sanitarias y calificación industrial.",
         "eyebrow": "Fiscalizaciones y trámites",
-        "h1": "Cuando llega la autoridad, no estás solo",
-        "lead": "Un accidente grave, una visita de la Inspección del Trabajo o de la SEREMI de Salud, una multa o un permiso sanitario pendiente. Te acompaño a responder con orden, corregir lo que corresponde y dejar evidencia de que tu empresa gestiona.",
+        "h1": "La fiscalización no avisa. ¿Tu empresa está lista hoy?",
+        "lead": "Un accidente grave, una visita de la Inspección del Trabajo o de la SEREMI de Salud, una multa o un permiso sanitario pendiente. Cuando llega la autoridad no estás solo: te acompaño a responder con orden, corregir lo que corresponde y demostrar que tu empresa gestiona.",
         "img": "fiscalizacion-dt.webp",
         "need": "Auditoría/fiscalización",
         "cta": "Tengo una fiscalización o un accidente grave",
@@ -85,18 +94,21 @@ PAGES = [
     },
     {
         "slug": "pymes",
+        "close": '¿Hasta cuándo vas a improvisar con lo más importante que tienes: tu gente?',
+        "questions": ['¿Tienes reglamento interno, matriz de riesgos y programa preventivo al día?', '¿Cuántas horas al mes le dedicas tú a la seguridad? ¿Y cuántas deberías?', 'Si mañana se accidenta alguien de tu equipo, ¿cuánto le cuesta a tu negocio?'],
+        "punch": 'Ser pyme no te hace menos responsable. Te hace más vulnerable.',
         "title": "Prevencionista externo para pymes | SafetyCoach",
         "desc": "Prevención de riesgos para pymes que no tienen departamento de prevención: diagnóstico, reglamento interno, matriz de riesgos, protocolos, trámites y visitas mensuales.",
         "eyebrow": "Pymes · Prevención externa",
-        "h1": "Tu prevencionista externo, sin contratar un departamento",
-        "lead": "Sabes que tienes que cumplir, pero no tienes tiempo ni un experto en casa. Te digo qué es urgente según tu tamaño y rubro, y lo hacemos juntos, con un plan mensual a tu medida.",
+        "h1": "¿Sabes lo que te exige la ley? ¿Seguro?",
+        "lead": "No tienes tiempo ni un experto en casa. No es excusa: tu coach y prevencionista externo, sin contratar un departamento. Te digo qué es urgente según tu tamaño y rubro, y lo hacemos juntos, cada semana.",
         "img": "terreno-cocina.webp",
         "need": "Plan Pyme anual",
-        "cta": "Quiero el Plan Pyme",
+        "cta": "Quiero uno de los 5 cupos",
         "blocks": [
             ("Promoción: Plan Pyme Anual", "<div class='pp-mini'><p class='pp-price'><span class='pp-cur'>$</span>549.000<small>+ IVA / mes</small></p><p>Pymes de hasta 50 trabajadores en Santiago · contrato anual con pago mensual. Incluye <b>visita semanal en terreno de hasta 3 horas</b> (AM o PM según disponibilidad) y <b>coaching mensual a la gerencia</b>.</p><p class='pp-per'><b>Solo 5 cupos.</b></p></div>"),
             ("Lo que incluye", "<ul class='checks'><li>Diagnóstico y plan priorizado</li><li>Reglamento interno, matriz de riesgos y programa preventivo</li><li>Protocolos MINSAL que te correspondan</li><li>Inducciones y capacitaciones con firma digital</li><li>Apoyo en trámites ante la SEREMI y la Dirección del Trabajo</li><li>Visitas y seguimiento mensual</li></ul>"),
-            ("Por qué funciona para una pyme", "<p>Pagas solo lo que necesitas, sin sueldos fijos. Tienes a alguien con más de 20 años de experiencia que conoce tu operación y responde cuando lo necesitas.</p>"),
+            ("Por qué funciona para una pyme", "<p>Pagas solo lo que necesitas, sin sueldos fijos. Tienes a alguien con más de 20 años de experiencia, que conoció más de 300 pymes por dentro desde una mutualidad, conoce tu operación y responde cuando lo necesitas.</p>"),
         ],
         "faq": [
             ("¿Cuánto cuesta?", "Para pymes de hasta 50 trabajadores, el Plan Pyme Anual cuesta $549.000 + IVA al mes, con visita semanal en Santiago (solo 5 cupos). Si tienes más trabajadores o centros, lo ajustamos en el diagnóstico."),
@@ -106,14 +118,17 @@ PAGES = [
     },
     {
         "slug": "sistemas-de-gestion",
+        "close": '¿Vas a seguir mirando cómo otros ganan los contratos que podrían ser tuyos?',
+        "questions": ['¿Cuántas licitaciones has perdido, o ni siquiera postulaste, por no tener un sistema de gestión?', '¿Tu prevención funcionaría igual si tu prevencionista se va mañana?', '¿Sabes que en los años impares puedes optar a rebajar tu tasa de cotización?'],
+        "punch": 'La certificación no es el trofeo. Es la prueba de que tu sistema funciona.',
         "title": "Implementación de sistemas de gestión y certificación PEC / GPS | SafetyCoach",
         "desc": "Implementa tu sistema de gestión de seguridad y salud en el trabajo y certifícate en el programa de tu organismo administrador (Mutual de Seguridad, ACHS, IST, ISL). Desde el nivel básico.",
         "eyebrow": "Sistemas de gestión · Certificaciones",
-        "h1": "Implementa tu sistema de gestión y certifícalo con tu mutualidad",
-        "lead": "Un sistema de gestión ordena tu prevención, te prepara para clientes y licitaciones exigentes y es la base para certificarte en el programa de tu organismo administrador. Te acompaño desde el nivel básico hasta el siguiente.",
+        "h1": "Tus clientes ya piden un sistema de gestión. ¿Tú lo tienes?",
+        "lead": "Un sistema de gestión ordena tu prevención, te abre la puerta a clientes y licitaciones exigentes y es la base para certificarte con tu organismo administrador. Partimos por el nivel básico y no nos detenemos ahí.",
         "img": "taller-riesgos-3.webp",
         "need": "Sistema de gestión",
-        "cta": "Quiero implementar mi sistema de gestión",
+        "cta": "Quiero certificar mi empresa",
         "blocks": [
             ("Certificaciones que puedes lograr", "<div class='seals'><img src='../assets/img/sello-pec-mutual.webp' alt='Sello PEC Empresa Estándar, Mutual de Seguridad' width='200' height='265' loading='lazy'><img src='../assets/img/sello-gps-achs.webp' alt='Certificado de nivel de desarrollo preventivo GPS, ACHS' width='564' height='222' loading='lazy'></div><p>Cada organismo administrador tiene su propio programa y niveles. Por ejemplo, el <b>PEC</b> de Mutual de Seguridad (con niveles como <b>Empresa Estándar</b>) o el <b>GPS</b> de ACHS, que certifica tu nivel de desarrollo preventivo. IST e ISL también tienen sus programas. <b>Partimos por el nivel básico</b> y avanzamos.</p><p class='note'>Las certificaciones las otorga tu organismo administrador. SafetyCoach te acompaña a cumplir sus requisitos; las imágenes son referenciales.</p>"),
             ("Cómo lo implementamos", "<ol class='steps'><li><b>Diagnóstico</b> frente a los requisitos del programa de tu mutualidad.</li><li><b>Plan de implementación</b> con responsables y plazos realistas.</li><li><b>Documentos y registros</b>, en formato digital y trazable.</li><li><b>Auditoría interna</b> para llegar preparados.</li><li><b>Postulación</b> y acompañamiento en la auditoría del organismo.</li><li><b>Mantención</b> y paso al siguiente nivel.</li></ol>"),
@@ -128,21 +143,24 @@ PAGES = [
     },
     {
         "slug": "contratistas",
+        "close": '¿Vas a seguir perdiendo contratos por algo que se puede resolver?',
+        "questions": ['¿Cuántos contratos estás dejando pasar por no tener la seguridad en regla?', '¿Tu documentación y tus acreditaciones están al día hoy, no la próxima semana?', '¿Tus trabajadores nuevos entran a faena con su inducción firmada?'],
+        "punch": 'Deja de rezar antes de cada auditoría.',
         "title": "Cumplimiento de contratistas y programa para mandantes | SafetyCoach",
         "desc": "Apoyo a empresas contratistas para cumplir los estándares de su mandante, y programa para mandantes: requisitos unificados, inducciones digitales y control de cumplimiento por contratista.",
         "eyebrow": "Contratistas y mandantes",
-        "h1": "Contratistas que cumplen y mandantes que lo pueden ver",
-        "lead": "Al contratista le exigen demostrar que trabaja seguro. Al mandante le cuesta controlar a decenas de contratistas. Trabajo con ambos lados para que el cumplimiento sea simple, digital y verificable.",
+        "h1": "Tu mandante no te pregunta si cumples. Te pide que lo demuestres.",
+        "lead": "Al contratista le exigen demostrar que trabaja seguro. Al mandante le cuesta controlar a decenas de contratistas. Trabajo con ambos lados para que el cumplimiento sea simple, digital y verificable, y deje de ser un dolor de cabeza antes de cada auditoría.",
         "img": "trabajo-altura.webp",
-        "need": "Auditoría/fiscalización",
-        "cta": "Conversemos sobre contratistas",
+        "need": "Programa contratistas",
+        "cta": "Toma tu programa · $549.000/mes",
         "blocks": [
-            ("Si eres contratista", "<ul class='checks'><li>Revisión de los requisitos de tu mandante</li><li>Matrices, procedimientos y protocolos de tu faena</li><li>Documentación y acreditaciones al día</li><li>Inducciones y permisos de trabajo digitales</li><li>Preparación para las auditorías del mandante</li></ul>"),
+            ("Si eres contratista: programa por $549.000 + IVA al mes", "<ul class='checks'><li>Revisión de los requisitos de tu mandante</li><li>Matrices, procedimientos y protocolos de tu faena</li><li>Documentación y acreditaciones al día</li><li>Inducciones y permisos de trabajo digitales</li><li>Preparación para las auditorías del mandante</li></ul>"),
             ("Si eres mandante: programa para contratistas", "<ul class='checks'><li>Un estándar común de seguridad para todos tus contratistas</li><li>Inducción digital con firma antes de entrar a tus instalaciones</li><li>Inspecciones y permisos por QR</li><li>Reporte de cumplimiento por contratista, en línea</li><li>Acompañamiento a los contratistas que más lo necesitan</li></ul>"),
         ],
         "faq": [
             ("¿El programa sirve si tengo contratistas pequeños?", "Sí. Está pensado para que hasta el contratista más pequeño pueda cumplir con herramientas simples desde el celular."),
-            ("¿Quién paga el programa?", "Se puede estructurar de distintas formas: lo financia el mandante, cada contratista o un modelo mixto. Lo definimos juntos."),
+            ("¿Quién paga el programa?", "Si eres contratista, tu programa cuesta $549.000 + IVA al mes. Si eres mandante, se puede estructurar de distintas formas: lo financia el mandante, cada contratista o un modelo mixto. Lo definimos juntos."),
         ],
         "testi": None,
     },
@@ -179,7 +197,9 @@ def render(p, shell):
     svc_ld = {"@context": "https://schema.org", "@type": "Service", "name": p["h1"], "description": p["desc"],
               "url": url, "areaServed": {"@type": "Country", "name": "Chile"},
               "provider": {"@type": "ProfessionalService", "name": "SafetyCoach", "url": SITE + "/"}}
-    blocks = "\n".join(f'          <article class="svc-block"><h2>{t}</h2>{b}</article>' for t, b in p["blocks"])
+    qs = "".join(f"<li>{q}</li>" for q in p["questions"])
+    espejo = f'          <article class="svc-block svc-espejo"><h2>Antes de seguir, responde con honestidad</h2><ol>{qs}</ol><p>Si dudaste en alguna, no tienes un problema de suerte. Tienes una oportunidad de hacerlo mejor.</p></article>\n'
+    blocks = espejo + "\n".join(f'          <article class="svc-block"><h2>{t}</h2>{b}</article>' for t, b in p["blocks"])
     faq = "\n".join(f"        <details><summary>{q}</summary><p>{a}</p></details>" for q, a in p["faq"])
     testi = ""
     if p["testi"]:
@@ -216,6 +236,7 @@ def render(p, shell):
         <p class="crumbs"><a href="../index.html">Inicio</a> › {p['eyebrow']}</p>
         <p class="eyebrow">{p['eyebrow']}</p>
         <h1>{p['h1']}</h1>
+        <p class="hero-punch">{p['punch']}</p>
         <p class="lead">{p['lead']}</p>
         <div class="cta-row">
           <a class="btn btn-primary btn-lg" href="{contact}" data-cta="svc_{p['slug']}">{p['cta']}</a>
@@ -231,8 +252,8 @@ def render(p, shell):
         <aside class="svc-side">
           {testi}
           <div class="svc-diag">
-            <h3>¿No sabes por dónde empezar?</h3>
-            <p>12 preguntas simples para dueños y RR.HH. Descubre en 3 minutos qué tan preparada está tu empresa.</p>
+            <h3>¿Te atreves a mirarte al espejo?</h3>
+            <p>12 preguntas simples para dueños y RR.HH. En 3 minutos sabrás qué tan preparada está tu empresa. Gratis.</p>
             <a class="btn btn-secondary" href="../autodiagnostico/" data-cta="svc_autodiag_{p['slug']}">Hacer autodiagnóstico</a>
           </div>
         </aside>
@@ -240,8 +261,9 @@ def render(p, shell):
     </section>
     <section class="section alt">
       <div class="wrap narrow">
-        <h2 class="h-center">Preguntas frecuentes</h2>
+        <h2 class="h-center">Lo que te estás preguntando</h2>
 {faq}
+        <p class="svc-close">{p['close']}</p>
         <div class="cta-row center">
           <a class="btn btn-primary btn-lg" href="{contact}" data-cta="svc_final_{p['slug']}">{p['cta']}</a>
         </div>

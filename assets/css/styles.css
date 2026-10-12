@@ -880,3 +880,12 @@ details p { padding: 0 22px 18px; margin: 0; color: var(--muted); }
 .esp-n { display: inline-grid; place-items: center; width: 38px; height: 38px; border-radius: 50%; background: var(--yellow); color: #0B1F3A; font: 800 1.1rem var(--font-h); margin-bottom: 14px; }
 .esp-close { font: 700 clamp(1.1rem, 2.2vw, 1.35rem)/1.4 var(--font-h); color: #fff; margin: 0 0 20px; }
 @media (max-width: 800px) { .esp-grid { grid-template-columns: 1fr; } }
+
+/* Páginas de servicio: preguntas de conciencia y cierre */
+.svc-espejo { background: #0B1F3A; color: #fff; border-radius: 18px; padding: 26px 28px; }
+.svc-espejo h2 { color: #fff; }
+.svc-espejo ol { margin: 0 0 14px; padding-left: 22px; display: grid; gap: 10px; }
+.svc-espejo li { color: #E6ECF3; font-size: 1.04rem; }
+.svc-espejo li::marker { color: var(--yellow); font-weight: 800; }
+.svc-espejo p { color: var(--yellow); font-weight: 700; margin: 0; }
+.svc-close { text-align: center; font: 800 clamp(1.2rem, 2.6vw, 1.6rem)/1.35 var(--font-h); color: var(--navy); margin: 28px auto 4px; max-width: 32ch; }
