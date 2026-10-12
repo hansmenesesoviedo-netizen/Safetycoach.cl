@@ -1204,3 +1204,6 @@ body.frame-zoom::after { content: ""; position: fixed; inset: 0; background: rgb
 .brechas-n.full { color: #C0392B; }
 @media (max-width: 900px) { .cw-grid { grid-template-columns: 1fr 1fr; } }
 @media (max-width: 560px) { .cw-grid { grid-template-columns: 1fr; } }
+.offer-wide { margin-top: 14px; display: grid; grid-template-columns: 1.4fr 1fr auto; gap: 18px 28px; align-items: center; border-left: 4px solid var(--yellow); }
+.offer-wide ul { margin: 0; }
+@media (max-width: 900px) { .offer-wide { grid-template-columns: 1fr; } }

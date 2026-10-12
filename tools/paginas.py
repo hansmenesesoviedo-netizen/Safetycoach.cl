@@ -82,7 +82,7 @@ PAGES = [
         "cta": "Tengo una fiscalización o un accidente grave",
         "blocks": [
             ("Inspección del Trabajo", "<ul class='checks'><li>Fiscalizaciones tras accidentes del trabajo graves</li><li>Antecedentes, medidas correctivas y seguimiento de lo observado</li><li>Programas de asistencia al cumplimiento (PAC) para corregir en vez de solo pagar la multa</li></ul>"),
-            ("SEREMI de Salud", "<ul class='checks'><li>Fiscalizaciones y verificaciones</li><li>Nuevas autorizaciones sanitarias y actualizaciones</li><li>Calificación industrial y ambiental</li><li>Protocolos MINSAL: TMERT, MMC, PREXOR, riesgos psicosociales y otros</li></ul>"),
+            ("SEREMI de Salud", "<ul class='checks'><li>Fiscalizaciones y verificaciones</li><li>Nuevas autorizaciones sanitarias y actualizaciones</li><li>Calificación industrial y ambiental</li><li>Implementación de protocolos MINSAL (TMERT, MMC, PREXOR, riesgos psicosociales y otros), desde $299.000 + IVA por protocolo, según guía y cronograma real, sin estresar a tu organización</li></ul>"),
             ("Ante un accidente grave", "<p>Las primeras horas son clave: suspender la faena, notificar a la autoridad y resguardar la información. Contáctame de inmediato y te oriento en los pasos.</p>"),
         ],
         "faq": [
@@ -106,8 +106,8 @@ PAGES = [
         "need": "Plan Pyme anual",
         "cta": "Quiero uno de los 5 cupos",
         "blocks": [
-            ("Promoción: Plan Pyme Anual", "<div class='pp-mini'><p class='pp-price'><span class='pp-desde'>desde</span><span class='pp-cur'>$</span>549.000<small>+ IVA / mes</small></p><p>Pymes de hasta 50 trabajadores en Santiago · contrato anual con pago mensual. Incluye <b>visita semanal en terreno de hasta 3 horas</b> (AM o PM según disponibilidad), <b>asesoría virtual entre visitas</b> y <b>coaching mensual a la gerencia</b>.</p><p class='pp-per'><b>Solo 5 cupos.</b> Cuando se llenan, se cierra la promoción.</p></div>"),
-            ("Lo que incluye", "<ul class='checks'><li>Diagnóstico y plan priorizado</li><li>Reglamento interno, matriz de riesgos y programa preventivo</li><li>Protocolos MINSAL que te correspondan</li><li>Inducciones y capacitaciones con firma digital</li><li>Apoyo en trámites ante la SEREMI y la Dirección del Trabajo</li><li>Visitas y seguimiento mensual</li></ul>"),
+            ("Promoción: Plan Pyme Anual", "<div class='pp-mini'><p class='pp-price'><span class='pp-desde'>desde</span><span class='pp-cur'>$</span>549.000<small>+ IVA / mes</small></p><p>Pymes de hasta 50 trabajadores en Santiago · contrato anual con pago mensual. Incluye <b>visita semanal en terreno de hasta 3 horas</b> (AM o PM según disponibilidad), <b>asesoría virtual entre visitas</b>, <b>implementación de protocolos MINSAL</b> y <b>coaching mensual a la gerencia</b>.</p><p class='pp-per'><b>Solo 5 cupos.</b> Cuando se llenan, se cierra la promoción.</p></div>"),
+            ("Lo que incluye", "<ul class='checks'><li>Diagnóstico y plan priorizado</li><li>Reglamento interno, matriz de riesgos y programa preventivo</li><li>Implementación de los protocolos MINSAL que te correspondan, con cronograma real</li><li>Inducciones y capacitaciones con firma digital</li><li>Apoyo en trámites ante la SEREMI y la Dirección del Trabajo</li><li>Visitas y seguimiento mensual</li></ul>"),
             ("Por qué funciona para una pyme", "<p>Pagas solo lo que necesitas, sin sueldos fijos. Tienes a alguien con más de 20 años de experiencia, que conoció más de 300 pymes por dentro desde una mutualidad, conoce tu operación y responde cuando lo necesitas.</p>"),
         ],
         "faq": [
