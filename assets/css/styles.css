@@ -889,3 +889,12 @@ details p { padding: 0 22px 18px; margin: 0; color: var(--muted); }
 .svc-espejo li::marker { color: var(--yellow); font-weight: 800; }
 .svc-espejo p { color: var(--yellow); font-weight: 700; margin: 0; }
 .svc-close { text-align: center; font: 800 clamp(1.2rem, 2.6vw, 1.6rem)/1.35 var(--font-h); color: var(--navy); margin: 28px auto 4px; max-width: 32ch; }
+
+/* Garantía y alerta de licitaciones */
+.offer .offer-guarantee { background: #EAF6EC; color: #1E6B2E; border-radius: 10px; padding: 8px 12px; font-size: .86rem; }
+.esp-guarantee { margin: 14px 0 0; color: #CFE9D4; font-size: .98rem; }
+.esp-guarantee b, .lic-k { color: var(--yellow); }
+.lic-alert { border: 2px solid var(--yellow); border-radius: 18px; padding: 20px 24px; margin: 0 0 22px; background: rgba(245,205,48,.08); }
+.lic-alert p { margin: 0; color: #fff; font-size: 1.05rem; line-height: 1.55; }
+.lic-alert .lic-k { font: 800 .78rem var(--font-b); letter-spacing: .12em; text-transform: uppercase; margin-bottom: 6px; }
+.lic-inline { border-left: 4px solid #C0392B; padding: 12px 16px; background: #FDF1EF; border-radius: 0 10px 10px 0; }

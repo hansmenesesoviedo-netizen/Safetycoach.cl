@@ -37,7 +37,7 @@ PAGES = [
         ],
         "faq": [
             ("¿El DS 44 aplica a mi empresa?", "Aplica a las empresas y entidades empleadoras en Chile. Lo que cambia según el número de trabajadores y el rubro es cómo se organiza la prevención (comité paritario, departamento de prevención, etc.). En el diagnóstico revisamos exactamente qué te corresponde."),
-            ("¿Cuánto demora el diagnóstico?", "Normalmente entre 1 y 2 semanas, según el tamaño y la cantidad de centros de trabajo. El diagnóstico en una sola vista cuesta $99.000 + IVA."),
+            ("¿Cuánto demora el diagnóstico?", "Normalmente entre 1 y 2 semanas, según el tamaño y la cantidad de centros de trabajo. El diagnóstico en una sola vista cuesta $99.000 + IVA, con garantía: si no te muestra al menos 3 brechas que no conocías, no lo pagas."),
             ("Ya tengo prevencionista, ¿me sirve?", "Sí. Un prevencionista solo no puede estar en todas partes. Lo apoyo para ordenar el sistema, priorizar y dejar evidencia digital, sin reemplazarlo."),
         ],
         "testi": None,
@@ -119,7 +119,7 @@ PAGES = [
     {
         "slug": "sistemas-de-gestion",
         "close": '¿Vas a seguir mirando cómo otros ganan los contratos que podrían ser tuyos?',
-        "questions": ['¿Cuántas licitaciones has perdido, o ni siquiera postulaste, por no tener un sistema de gestión?', '¿Tu prevención funcionaría igual si tu prevencionista se va mañana?', '¿Sabes que en los años impares puedes optar a rebajar tu tasa de cotización?'],
+        "questions": ['¿Cuántas licitaciones has perdido por tu tasa de accidentes o por no tener un sistema de gestión, sin saberlo?', '¿Tu prevención funcionaría igual si tu prevencionista se va mañana?', '¿Sabes que en los años impares puedes optar a rebajar tu tasa de cotización?'],
         "punch": 'La certificación no es el trofeo. Es la prueba de que tu sistema funciona.',
         "title": "Implementación de sistemas de gestión y certificación PEC / GPS | SafetyCoach",
         "desc": "Implementa tu sistema de gestión de seguridad y salud en el trabajo y certifícate en el programa de tu organismo administrador (Mutual de Seguridad, ACHS, IST, ISL). Desde el nivel básico.",
@@ -144,7 +144,7 @@ PAGES = [
     {
         "slug": "contratistas",
         "close": '¿Vas a seguir perdiendo contratos por algo que se puede resolver?',
-        "questions": ['¿Cuántos contratos estás dejando pasar por no tener la seguridad en regla?', '¿Tu documentación y tus acreditaciones están al día hoy, no la próxima semana?', '¿Tus trabajadores nuevos entran a faena con su inducción firmada?'],
+        "questions": ['¿Sabes cuál es tu tasa de accidentes y cómo la ve tu mandante cuando evalúa proveedores?', '¿Tu documentación y tus acreditaciones están al día hoy, no la próxima semana?', '¿Tus trabajadores nuevos entran a faena con su inducción firmada?'],
         "punch": 'Deja de rezar antes de cada auditoría.',
         "title": "Cumplimiento de contratistas y programa para mandantes | SafetyCoach",
         "desc": "Apoyo a empresas contratistas para cumplir los estándares de su mandante, y programa para mandantes: requisitos unificados, inducciones digitales y control de cumplimiento por contratista.",
@@ -155,6 +155,7 @@ PAGES = [
         "need": "Programa contratistas",
         "cta": "Toma tu programa · $549.000/mes",
         "blocks": [
+            ("Por si no lo sabías", "<p class='lic-inline'><b>Te pueden estar dejando fuera por tu tasa de accidentes.</b> Las políticas de compra y licitación de muchos mandantes evalúan la accidentabilidad de sus proveedores. Hay competidores que hacen lo mismo que tú, o peor, pero llegan sin accidentes a cuestas. Y se quedan con el contrato.</p>"),
             ("Si eres contratista: programa por $549.000 + IVA al mes", "<ul class='checks'><li>Revisión de los requisitos de tu mandante</li><li>Matrices, procedimientos y protocolos de tu faena</li><li>Documentación y acreditaciones al día</li><li>Inducciones y permisos de trabajo digitales</li><li>Preparación para las auditorías del mandante</li></ul>"),
             ("Si eres mandante: programa para contratistas", "<ul class='checks'><li>Un estándar común de seguridad para todos tus contratistas</li><li>Inducción digital con firma antes de entrar a tus instalaciones</li><li>Inspecciones y permisos por QR</li><li>Reporte de cumplimiento por contratista, en línea</li><li>Acompañamiento a los contratistas que más lo necesitan</li></ul>"),
         ],
