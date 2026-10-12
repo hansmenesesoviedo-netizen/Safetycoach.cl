@@ -37,7 +37,7 @@ PAGES = [
             ("¿Cuánto demora el diagnóstico?", "Normalmente entre 1 y 2 semanas, según el tamaño y la cantidad de centros de trabajo. Tiene un valor fijo que acordamos antes de empezar."),
             ("Ya tengo prevencionista, ¿me sirve?", "Sí. Apoyo a tu prevencionista para ordenar el sistema, priorizar y dejar evidencia digital, sin reemplazarlo."),
         ],
-        "testi": ("Nuestra empresa creció y me dieron más responsabilidades. Hans me ayudó a implementar el DS 44 y los protocolos.", "Patricio Abarca · Experto en Prevención, Alex Stewart International"),
+        "testi": None,
     },
     {
         "slug": "ley-karin",
@@ -59,7 +59,7 @@ PAGES = [
             ("¿Cómo demuestro que capacité a mis trabajadores?", "Con cápsulas digitales que registran quién las vio, su evaluación y su firma. Queda evidencia con fecha y hora."),
             ("¿Pueden investigar una denuncia por nosotros?", "Te acompaño en el proceso y en las medidas de resguardo. Revisamos en cada caso cuál es la mejor forma de llevar la investigación según lo que establece la ley."),
         ],
-        "testi": ("Tenemos más de 20 casinos concesionados con exigencias distintas. Con Hans y sus sistemas digitales sabemos cómo estamos, en tiempo real, y cumplimos a nuestros clientes.", "Cecilia Gallardo · Encargada de Gestión de Personas, Food Chef"),
+        "testi": None,
     },
     {
         "slug": "fiscalizaciones",
@@ -81,7 +81,7 @@ PAGES = [
             ("¿Me ayudan a abrir un local con autorización sanitaria?", "Sí. Te acompaño en los requisitos y trámites ante la SEREMI de Salud para nuevas autorizaciones o actualizaciones."),
             ("¿SafetyCoach trabaja para la autoridad?", "No. SafetyCoach es una asesoría independiente que acompaña a las empresas en sus gestiones ante estos organismos."),
         ],
-        "testi": ("Junto a SafetyCoach logramos nuestro sueño: abrir nuestro restaurante en Pirque, Onde Skinners, con todos los permisos y autorizaciones sanitarias de la SEREMI.", "Alex Skinner · Restaurante Onde Skinners, Pirque"),
+        "testi": None,
     },
     {
         "slug": "pymes",
@@ -102,7 +102,7 @@ PAGES = [
             ("¿Cuánto cuesta?", "Para pymes de hasta 50 trabajadores y un centro de trabajo, el Plan Pyme Anual cuesta $556.000 + IVA al mes, con visita semanal en Santiago (solo 5 cupos). Con más centros, lo ajustamos en el diagnóstico."),
             ("Tengo muy pocos trabajadores, ¿igual debo cumplir?", "Sí, hay obligaciones que aplican a todas las empresas. Lo que cambia es la forma y la cantidad de exigencias. Te digo exactamente cuáles te corresponden."),
         ],
-        "testi": ("Junto a SafetyCoach logramos nuestro sueño: abrir nuestro restaurante en Pirque, Onde Skinners, con todos los permisos y autorizaciones sanitarias de la SEREMI.", "Alex Skinner · Restaurante Onde Skinners, Pirque"),
+        "testi": None,
     },
     {
         "slug": "sistemas-de-gestion",
@@ -124,7 +124,7 @@ PAGES = [
             ("¿SafetyCoach entrega la certificación?", "No. La certificación la otorga tu organismo administrador (Mutual de Seguridad, ACHS, IST o ISL) después de su auditoría. Yo te acompaño a cumplir los requisitos y a llegar preparado."),
             ("¿Cuánto demora?", "Depende de tu tamaño y de tu punto de partida. En el diagnóstico estimamos el plazo con un plan concreto."),
         ],
-        "testi": ("Nuestra empresa creció y me dieron más responsabilidades. Hans me ayudó a implementar el DS 44 y los protocolos.", "Patricio Abarca · Experto en Prevención, Alex Stewart International"),
+        "testi": None,
     },
     {
         "slug": "contratistas",
