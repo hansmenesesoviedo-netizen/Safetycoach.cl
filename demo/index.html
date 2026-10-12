@@ -59,6 +59,98 @@
           <p class="demo-warn">Esta es una demostración. Los datos que ingreses se guardan solo en este navegador y no se envían a nadie.</p>
         </div>
 
+        <section class="vitrina" id="vitrina" aria-labelledby="vit-t">
+          <div class="vit-copy">
+            <p class="eyebrow">Pruébalo ahora · dentro del celular</p>
+            <h2 id="vit-t">Cápsulas digitales con <span>firma digital</span> y diploma</h2>
+            <p>Así lo vive tu trabajador: elige la cápsula, mira el video, responde, completa sus datos, firma con el dedo y recibe su <b>diploma con código QR</b> de verificación. Todo queda registrado para tu empresa.</p>
+            <ol class="vit-steps"><li>Elige una opción en la carátula</li><li>Presiona el video</li><li>Responde 3 preguntas</li><li>Completa tus datos y firma</li><li>Descarga tu diploma con QR</li></ol>
+            <p class="vit-note">Ejemplo activo: cápsula Ley Karin. Empresa y datos ficticios; tu versión lleva tu logo, tus riesgos y tus videos.</p>
+          </div>
+          <div class="frame" id="frame">
+            <img class="frame-img" src="../assets/img/frame-capsula.webp" alt="Mano sosteniendo un celular con una cápsula digital de SafetyCoach" width="590" height="870" fetchpriority="high">
+            <div class="frame-screen"><div class="app" id="app">
+
+              <!-- Carátula: multi opciones -->
+              <div class="scr on" data-scr="home">
+                <div class="app-top"><span class="logo-ph">TU LOGO</span><div><b>Tu empresa</b><small>Programa de prevención digital</small></div></div>
+                <p class="app-k">● DS 44 · Programa digital</p>
+                <h3 class="app-h">¿Qué quieres <em>probar?</em></h3>
+                <div class="opt-grid">
+                  <button type="button" class="opt live" data-go="cover"><span class="opt-i">🎬</span><b>Cápsula con video</b><small>Ley Karin · diploma con QR</small><em>Prueba ahora</em></button>
+                  <button type="button" class="opt" data-soon="irl"><span class="opt-i">✍️</span><b>Registro IRL</b><small>Ingreso con firma digital</small></button>
+                  <button type="button" class="opt" data-soon="epp"><span class="opt-i">🦺</span><b>Entrega de EPP</b><small>Talla, norma y firma</small></button>
+                  <button type="button" class="opt" data-soon="ins"><span class="opt-i">🔧</span><b>Inspección MEHM</b><small>Operación · STOP</small></button>
+                </div>
+                <p class="app-toast" id="app-toast" hidden></p>
+              </div>
+
+              <!-- Portada de la cápsula -->
+              <div class="scr" data-scr="cover">
+                <div class="app-bar"><button type="button" class="app-back" data-go="home">‹</button><span>CÁPSULA LK-01 · 1/4</span><span class="app-pct">0%</span></div>
+                <div class="cover-hero">
+                  <p class="app-k">● Ley 21.643 · Ley Karin</p>
+                  <span class="pro">★ CÁPSULA PRO</span>
+                  <h3 class="app-h big">Comunícate<br>con <em>respeto</em></h3>
+                  <i class="rule"></i>
+                  <p class="app-p">Qué es el acoso laboral, cómo prevenirlo y dónde denunciar. Video, preguntas y diploma.</p>
+                  <div class="stats"><div><b>1</b><span>Video</span></div><div><b>3</b><span>Preguntas</span></div><div><b>5'</b><span>Duración</span></div><div><b>60%</b><span>Mínimo aprobación</span></div></div>
+                  <button type="button" class="app-cta" data-go="video">Comenzar módulo →</button>
+                </div>
+              </div>
+
+              <!-- Video -->
+              <div class="scr" data-scr="video">
+                <div class="app-bar"><button type="button" class="app-back" data-go="cover">‹</button><span>S2 · VIDEO</span><span class="app-pct">25%</span></div>
+                <h4 class="app-sec">Módulo — Ley Karin</h4>
+                <div class="vid" id="vid" data-id="w9JTHkaXcSE">
+                  <button type="button" class="vid-play" id="vid-play" aria-label="Reproducir video"><img src="https://i.ytimg.com/vi/w9JTHkaXcSE/hqdefault.jpg" alt="" loading="lazy"><span>▶</span></button>
+                </div>
+                <p class="vid-cap">Ley 21.643 (Ley Karin) — Comunícate con respeto · <a href="https://youtu.be/w9JTHkaXcSE" target="_blank" rel="noopener">Ver en YouTube ↗</a></p>
+                <p class="app-p small" id="vid-msg">Presiona el video para comenzar.</p>
+                <button type="button" class="app-cta" id="vid-next" disabled>Continuar →</button>
+              </div>
+
+              <!-- Preguntas -->
+              <div class="scr" data-scr="quiz">
+                <div class="app-bar"><button type="button" class="app-back" data-go="video">‹</button><span>S3 · EVALUACIÓN</span><span class="app-pct">50%</span></div>
+                <h4 class="app-sec">Responde (mínimo 60%)</h4>
+                <div class="aq" data-q="1"><p>1. Burlas reiteradas a un compañero, ¿pueden ser acoso laboral?</p><button type="button" data-v="1">Sí</button><button type="button" data-v="0">No, es solo humor</button></div>
+                <div class="aq" data-q="2"><p>2. Si presencias una situación de acoso, debes…</p><button type="button" data-v="0">No meterte</button><button type="button" data-v="1">Informarlo por el canal de denuncia</button></div>
+                <div class="aq" data-q="3"><p>3. ¿La Ley Karin aplica también a la violencia de clientes o terceros?</p><button type="button" data-v="1">Sí</button><button type="button" data-v="0">No</button></div>
+                <p class="app-p small" id="quiz-msg"></p>
+                <button type="button" class="app-cta" id="quiz-next">Ver resultado →</button>
+              </div>
+
+              <!-- Datos y firma -->
+              <div class="scr" data-scr="datos">
+                <div class="app-bar"><button type="button" class="app-back" data-go="quiz">‹</button><span>S4 · TUS DATOS</span><span class="app-pct">75%</span></div>
+                <h4 class="app-sec">Completa tus datos y firma</h4>
+                <form class="app-form" id="app-form" novalidate>
+                  <label>Nombre completo<input name="nombre" required autocomplete="name"></label>
+                  <label>RUT<input name="rut" required placeholder="12.345.678-9"></label>
+                  <div class="two"><label>Cargo<input name="cargo" required autocomplete="organization-title"></label><label>Empresa<input name="empresa" required autocomplete="organization"></label></div>
+                  <label>Correo (te enviamos el diploma)<input type="email" name="correo" required autocomplete="email"></label>
+                  <div class="app-sig"><canvas id="sig-app" width="600" height="180"></canvas><button type="button" id="sig-app-clear">Borrar</button><span>Firma con el dedo</span></div>
+                  <label class="app-chk"><input type="checkbox" name="consentimiento" required> Acepto que SafetyCoach me contacte por esta demo.</label>
+                  <p class="app-p small" id="form-msg"></p>
+                  <button type="submit" class="app-cta">Firmar y obtener diploma →</button>
+                </form>
+              </div>
+
+              <!-- Diploma -->
+              <div class="scr" data-scr="diploma">
+                <div class="app-bar"><button type="button" class="app-back" data-go="home">⌂</button><span>DIPLOMA · 100%</span><span class="app-pct ok">✓</span></div>
+                <div class="dip-wrap"><div id="dip-mini"></div></div>
+                <div class="dip-btns"><button type="button" class="app-cta" id="dip-open">Descargar diploma (PDF)</button><button type="button" class="app-ghost" data-go="home">Volver a la carátula</button></div>
+              </div>
+
+            </div></div>
+            <button type="button" class="frame-full" id="frame-full">⤢ Ver en grande</button>
+          </div>
+        </section>
+        <div class="dip-print" id="dip-print" hidden></div>
+
         <div class="gate" id="gate">
           <h2>Para ver la demo, cuéntame de tu empresa</h2>
           <p>Así te muestro lo que más sirve a tu operación. Toma 1 minuto.</p>
@@ -254,6 +346,8 @@
   </form>
 
   <script src="../assets/js/main.js" defer></script>
+  <script src="../assets/js/vendor/qrcode.js" defer></script>
+  <script src="../assets/js/vitrina.js" defer></script>
   <script src="../assets/js/demo.js" defer></script>
 </body>
 </html>
