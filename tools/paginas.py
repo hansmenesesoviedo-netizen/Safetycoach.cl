@@ -37,7 +37,7 @@ PAGES = [
         ],
         "faq": [
             ("¿El DS 44 aplica a mi empresa?", "Aplica a las empresas y entidades empleadoras en Chile. Lo que cambia según el número de trabajadores y el rubro es cómo se organiza la prevención (comité paritario, departamento de prevención, etc.). En el diagnóstico revisamos exactamente qué te corresponde."),
-            ("¿Cuánto demora el diagnóstico?", "Normalmente entre 1 y 2 semanas, según el tamaño y la cantidad de centros de trabajo. El diagnóstico en una sola vista cuesta $99.000 + IVA, con garantía: si no te muestra al menos 3 brechas que no conocías, no lo pagas."),
+            ("¿Cuánto demora el diagnóstico?", "Normalmente entre 1 y 2 semanas, según el tamaño y la cantidad de centros de trabajo. El diagnóstico en una sola vista cuesta $99.000 + IVA, con garantía: si no te muestra al menos 3 brechas que no marcaste en tu encuesta inicial, no lo pagas."),
             ("Ya tengo prevencionista, ¿me sirve?", "Sí. Un prevencionista solo no puede estar en todas partes. Lo apoyo para ordenar el sistema, priorizar y dejar evidencia digital, sin reemplazarlo."),
         ],
         "testi": None,
@@ -70,7 +70,7 @@ PAGES = [
     {
         "slug": "fiscalizaciones",
         "close": '¿Prefieres prepararte ahora o explicar después por qué no lo hiciste?',
-        "questions": ['Si hoy entra un fiscalizador, ¿cuánto te demoras en mostrar inducciones, matrices y registros?', '¿Las observaciones de la última fiscalización están corregidas, o solo pagaste la multa?', 'Si ocurre un accidente grave, ¿tu equipo sabe qué hacer en la primera hora?'],
+        "questions": ['Si hoy entra un fiscalizador, ¿cuánto te demoras en evidenciar tus registros de prevención? Conmigo: tu carpeta digital, y listo.', '¿Las observaciones de la última fiscalización están corregidas, o solo pagaste la multa?', 'Si ocurre un accidente grave, ¿tu equipo sabe qué hacer en la primera hora?'],
         "punch": 'He estado del otro lado de la mesa. Sé lo que miran y cómo prepararte.',
         "title": "Fiscalizaciones, accidentes graves y trámites SEREMI | SafetyCoach",
         "desc": "Apoyo ante fiscalizaciones de la Dirección del Trabajo y SEREMI de Salud, accidentes graves, programas de asistencia al cumplimiento (PAC), autorizaciones sanitarias y calificación industrial.",
@@ -86,7 +86,7 @@ PAGES = [
             ("Ante un accidente grave", "<p>Las primeras horas son clave: suspender la faena, notificar a la autoridad y resguardar la información. Contáctame de inmediato y te oriento en los pasos.</p>"),
         ],
         "faq": [
-            ("¿Qué hago si me cursaron una multa?", "Revisamos lo observado, corregimos y ordenamos la evidencia. Según el caso, existen alternativas para corregir la infracción y reducir el impacto de la multa."),
+            ("¿Qué hago si me cursaron una multa?", "No la pagues sin antes revisar tus opciones. Según el tamaño de tu empresa, puedes acogerte a un Programa de Asistencia al Cumplimiento (PAC) y reemplazar la multa, hasta evitarla al 100%. Revisamos lo observado, corregimos y ordenamos la evidencia."),
             ("¿Me ayudan a abrir un local con autorización sanitaria?", "Sí. Te acompaño en los requisitos y trámites ante la SEREMI de Salud para nuevas autorizaciones o actualizaciones."),
             ("¿SafetyCoach trabaja para la autoridad?", "No. SafetyCoach es una asesoría independiente que acompaña a las empresas en sus gestiones ante estos organismos."),
         ],
@@ -119,7 +119,7 @@ PAGES = [
     {
         "slug": "sistemas-de-gestion",
         "close": '¿Vas a seguir mirando cómo otros ganan los contratos que podrían ser tuyos?',
-        "questions": ['¿Cuántas licitaciones has perdido por tu tasa de accidentes o por no tener un sistema de gestión, sin saberlo?', '¿Tu prevención funcionaría igual si tu prevencionista se va mañana?', '¿Sabes que en los años impares puedes optar a rebajar tu tasa de cotización?'],
+        "questions": ['¿Cuántas licitaciones has perdido por tu tasa de accidentes o por no tener un sistema de gestión, sin saberlo?', '¿Tu prevención funcionaría igual si tu prevencionista se va mañana?', '¿Sabes que en los años impares se evalúa tu tasa de cotización? Ten un sistema, baja tus accidentes y prepárate antes.'],
         "punch": 'La certificación no es el trofeo. Es la prueba de que tu sistema funciona.',
         "title": "Implementación de sistemas de gestión y certificación PEC / GPS | SafetyCoach",
         "desc": "Implementa tu sistema de gestión de seguridad y salud en el trabajo y certifícate en el programa de tu organismo administrador (Mutual de Seguridad, ACHS, IST, ISL). Desde el nivel básico.",
