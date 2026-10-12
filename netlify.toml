@@ -2,10 +2,21 @@
 [build]
   publish = "."
 
+# Imágenes: caché de 1 día. CSS y JS: siempre se revisa la versión nueva.
 [[headers]]
-  for = "/assets/*"
+  for = "/assets/img/*"
   [headers.values]
     Cache-Control = "public, max-age=86400"
+
+[[headers]]
+  for = "/assets/css/*"
+  [headers.values]
+    Cache-Control = "public, max-age=0, must-revalidate"
+
+[[headers]]
+  for = "/assets/js/*"
+  [headers.values]
+    Cache-Control = "public, max-age=0, must-revalidate"
 
 [[headers]]
   for = "/*"

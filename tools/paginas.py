@@ -177,7 +177,7 @@ def page_shell(index_html, prefix="../"):
         j = index_html.index(end, i) + len(end)
         return index_html[i:j]
     parts = {
-        "head_links": grab('<link rel="icon"', 'styles.css">'),
+        "head_links": grab('<link rel="icon"', 'styles.css?v=20261012">'),
         "svg": grab('<svg width="0"', "</svg>"),
         "header": grab('<header class="site-header"', "</header>"),
         "footer": grab('<footer class="site-footer"', "</footer>"),
@@ -276,7 +276,7 @@ def render(p, shell):
   </main>
   {shell['footer']}
   {shell['wa']}
-  <script src="../assets/js/main.js" defer></script>
+  <script src="../assets/js/main.js?v=20261012" defer></script>
 </body>
 </html>
 """
@@ -428,7 +428,7 @@ def render_autodiag(shell):
   </main>
   {shell['footer']}
   {shell['wa']}
-{RESULT_FORM}  <script src="../assets/js/main.js" defer></script>
+{RESULT_FORM}  <script src="../assets/js/main.js?v=20261012" defer></script>
   <script>
   (function () {{
     var GAPS = {gaps_js};
@@ -558,7 +558,7 @@ def render_liderazgo(shell):
   </main>
   {shell['footer']}
   {shell['wa']}
-{RESULT_FORM}  <script src="../assets/js/main.js" defer></script>
+{RESULT_FORM}  <script src="../assets/js/main.js?v=20261012" defer></script>
   <script>
   (function () {{
     var F = {fjs};
@@ -858,10 +858,10 @@ def render_demo(shell):
     </section>
   </main>
   """ + shell['footer'] + shell['wa'] + RESULT_FORM + """
-  <script src="../assets/js/main.js" defer></script>
-  <script src="../assets/js/vendor/qrcode.js" defer></script>
-  <script src="../assets/js/vitrina.js" defer></script>
-  <script src="../assets/js/demo.js" defer></script>
+  <script src="../assets/js/main.js?v=20261012" defer></script>
+  <script src="../assets/js/vendor/qrcode.js?v=20261012" defer></script>
+  <script src="../assets/js/vitrina.js?v=20261012" defer></script>
+  <script src="../assets/js/demo.js?v=20261012" defer></script>
 </body>
 </html>
 """
@@ -968,7 +968,7 @@ def render_historia(shell):
     </div>
   </main>
   """ + shell['footer'] + shell['wa'] + """
-  <script src="../assets/js/main.js" defer></script>
+  <script src="../assets/js/main.js?v=20261012" defer></script>
 </body>
 </html>
 """
@@ -1060,7 +1060,7 @@ def render_guia(g, shell):
   </main>
   {shell['footer']}
   {shell['wa']}
-  <script src="../../assets/js/main.js" defer></script>
+  <script src="../../assets/js/main.js?v=20261012" defer></script>
 </body>
 </html>
 """
