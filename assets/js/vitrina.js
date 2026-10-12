@@ -5,7 +5,28 @@
   var app = document.getElementById('app');
   if (!app) return;
   function $(id) { return document.getElementById(id); }
+  var fit = null;
+  var SC_LOGO = (function () { try { return new URL('../img/logo-safetycoach.png', document.currentScript.src).href; } catch (e) { return '../assets/img/logo-safetycoach.png'; } })();
   function esc(t) { var d = document.createElement('div'); d.textContent = t == null ? '' : String(t); return d.innerHTML; }
+
+  // ---------- Escenarios: cocina, bodega y fábrica (misma app, distinto fondo) ----------
+  var SCENES = {
+    cocina: { img: 'frame-cocina.webp', alt: 'Mano sosteniendo un celular en una cocina industrial', box: [23.05, 7.82, 53.9, 73.79] },
+    bodega: { img: 'frame-bodega.webp', alt: 'Mano sosteniendo un celular en una bodega', box: [22.5, 13.56, 52.7, 68.4] },
+    fabrica: { img: 'frame-fabrica.webp', alt: 'Mano sosteniendo un celular en un taller de fábrica', box: [22.5, 10.34, 53.2, 72.2] }
+  };
+  var frameImg = $('frame-img'), base = frameImg.getAttribute('src').replace(/frame-[a-z]+\.webp$/, '');
+  function scene(name) {
+    var s = SCENES[name]; if (!s) return;
+    frameImg.src = base + s.img; frameImg.alt = s.alt;
+    var b = s.box, scr = app.parentElement.style;
+    scr.left = b[0] + '%'; scr.top = b[1] + '%'; scr.width = b[2] + '%'; scr.height = b[3] + '%';
+    $('frame').dataset.scene = name;
+    document.querySelectorAll('.scenes button').forEach(function (x) { x.setAttribute('aria-pressed', String(x.dataset.scene === name)); });
+    if (typeof fit === 'function') setTimeout(fit, 0);
+  }
+  document.querySelectorAll('.scenes button').forEach(function (b) { b.addEventListener('click', function () { scene(b.dataset.scene); }); });
+  Object.keys(SCENES).forEach(function (k) { var i = new Image(); i.src = base + SCENES[k].img; });
 
   // ---------- Navegación entre pantallas ----------
   function go(name) {
@@ -14,9 +35,10 @@
     if (window.dataLayer) window.dataLayer.push({ event: 'vitrina_paso', paso: name });
   }
   app.addEventListener('click', function (e) {
-    var b = e.target.closest('[data-go]'); if (b) { go(b.dataset.go); return; }
+    var b = e.target.closest('[data-go]'); if (b) { if (b.dataset.go === 'cover') scene('bodega'); go(b.dataset.go); return; }
     var s = e.target.closest('[data-soon]');
     if (s) {
+      scene(s.dataset.soon === 'ins' ? 'fabrica' : s.dataset.soon === 'epp' ? 'bodega' : 'cocina');
       var t = $('app-toast'); t.hidden = false;
       t.innerHTML = 'Este ejemplo está en la <a href="#gate">demo completa</a>, más abajo. Aquí puedes probar la cápsula con video.';
     }
@@ -98,7 +120,7 @@
   function diplomaHTML(p) {
     var url = location.origin + location.pathname + '?verificar=' + encodeURIComponent(p.code);
     return '<article class="dip">' +
-      '<header class="dip-h"><span class="dip-logo">TU LOGO</span><div><b>' + esc(p.empresa.toUpperCase()) + '</b><small>Programa de prevención · Organismo administrador</small></div></header>' +
+      '<header class="dip-h"><span class="dip-logo">TU LOGO</span><div><b>' + esc(p.empresa.toUpperCase()) + '</b><small>Programa de prevención · Organismo administrador</small></div><img class="dip-sc" src="' + SC_LOGO + '" alt="SafetyCoach"></header>' +
       '<i class="dip-rule"></i><h5>DIPLOMA DE CAPACITACIÓN</h5><p class="dip-s">Se certifica que</p>' +
       '<p class="dip-n">' + esc(p.nombre) + '</p><p class="dip-m">RUT ' + esc(p.rut) + ' · ' + esc(p.cargo) + ' · ' + esc(p.empresa) + '</p>' +
       '<p class="dip-s">Aprobó satisfactoriamente el módulo</p><p class="dip-mod">LK-01 — LEY KARIN: COMUNÍCATE CON RESPETO</p>' +
@@ -119,10 +141,10 @@
 
   // ---------- Escala: la app se diseña a 360 px y se ajusta a la pantalla del celular ----------
   var screen = app.parentElement;
-  function fit() {
+  fit = function () {
     var w = screen.clientWidth, h = screen.clientHeight, k = w / 360;
     app.style.transform = 'scale(' + k + ')'; app.style.width = '360px'; app.style.height = (h / k) + 'px';
-  }
+  };
   if (window.ResizeObserver) new ResizeObserver(fit).observe(screen); else window.addEventListener('resize', fit);
   fit();
 

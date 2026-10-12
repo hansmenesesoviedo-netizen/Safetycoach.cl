@@ -1057,7 +1057,7 @@ details p { padding: 0 22px 18px; margin: 0; color: var(--muted); }
 .vit-note { font-size: .86rem; color: var(--muted); background: var(--bg-alt); border-radius: 10px; padding: 10px 12px; }
 .frame { position: relative; width: 100%; max-width: 520px; justify-self: center; border-radius: 22px; overflow: hidden; box-shadow: 0 30px 60px -30px rgba(0,0,0,.6); }
 .frame-img { display: block; width: 100%; height: auto; }
-.frame-screen { position: absolute; left: 23.05%; top: 7.82%; width: 53.9%; height: 73.79%; overflow: hidden; border-radius: 6px; background: #0F1116; }
+.frame-screen { position: absolute; left: 23.05%; top: 7.82%; width: 53.9%; height: 73.79%; overflow: hidden; border-radius: 6px 6px 14px 14px; background: #0F1116; }
 .frame-full { position: absolute; right: 10px; bottom: 10px; border: 0; border-radius: 999px; padding: 7px 12px; background: rgba(11,31,58,.85); color: #fff; font: 700 .78rem var(--font-b); cursor: pointer; }
 body.frame-zoom .frame { position: fixed; inset: 0; margin: auto; z-index: 90; width: min(96vw, calc(96vh * 590 / 870)); max-width: none; height: auto; }
 body.frame-zoom::after { content: ""; position: fixed; inset: 0; background: rgba(5,12,24,.85); z-index: 80; }
@@ -1161,3 +1161,17 @@ body.frame-zoom::after { content: ""; position: fixed; inset: 0; background: rgb
   body.printing-dip #dip-print { display: block !important; position: absolute; left: 0; top: 0; width: 100%; }
   body.printing-dip #dip-print .dip { width: 360px; margin: 0 auto; transform: scale(1.4); transform-origin: top center; border: 1px solid #ccc; }
 }
+
+/* Logo SafetyCoach en la esquina opuesta al logo del cliente */
+.sc-corner { height: 34px; width: auto; margin-left: auto; flex: none; }
+.app-top .sc-corner.dark { background: #fff; border-radius: 6px; padding: 3px 5px; height: 36px; }
+.app-top > div { min-width: 0; }
+.fc-h { grid-template-columns: auto 1fr auto auto; }
+.sh-sc { height: 40px; width: auto; align-self: start; }
+.f7-h .sh-sc { margin-left: auto; }
+.dip-h .dip-sc { height: 30px; width: auto; margin-left: auto; flex: none; }
+.frame-wrap { display: grid; gap: 10px; justify-items: center; width: 100%; }
+.scenes { display: flex; gap: 6px; align-items: center; flex-wrap: wrap; justify-content: center; font-size: .85rem; color: var(--muted); }
+.scenes button { border: 1px solid var(--line); background: #fff; color: var(--navy); border-radius: 999px; padding: 6px 14px; font: 700 .85rem var(--font-b); cursor: pointer; }
+.scenes button[aria-pressed="true"] { background: var(--navy); color: #fff; border-color: var(--navy); }
+.frame-img { transition: opacity .25s; }

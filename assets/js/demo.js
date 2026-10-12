@@ -5,6 +5,7 @@
   var KEY = 'sc-demo-registros-v4';
   var CO = 'Demo Pyme SpA', RUT = '76.000.000-0', CO_UP = 'DEMO PYME SPA';
   var RELATOR = 'Encargado de Prevención · SafetyCoach';
+  var SC_LOGO = (function () { try { return new URL('../img/logo-safetycoach.png', document.currentScript.src).href; } catch (e) { return '../assets/img/logo-safetycoach.png'; } })();
 
   function load() { try { return JSON.parse(localStorage.getItem(KEY)) || null; } catch (e) { return null; } }
   function save(list) { memory = list; try { localStorage.setItem(KEY, JSON.stringify(list)); } catch (e) { /* modo privado */ } }
@@ -279,13 +280,14 @@
 
   // ---------- Hojas: mismo formato que el entregable real ----------
   function logo() { return '<div class="sh-logo">TU LOGO</div>'; }
+  function scLogo() { return '<img class="sh-sc" src="' + SC_LOGO + '" alt="SafetyCoach">'; }
   function sheetFC(r) {
     var d = day(r.fecha), kv = r.kv.map(function (x) { return '<tr><th>' + esc(x[0]) + '</th><td>' + esc(x[1] === 'hoy' ? d : x[1]) + '</td></tr>'; }).join('');
     var list = r.list ? '<h4>' + esc(r.list.t) + '</h4><ul class="sh-list">' + r.list.items.map(function (i) { return '<li>✓ ' + esc(i) + '</li>'; }).join('') + '</ul>' : '';
     var tbl = r.table ? '<h4>' + esc(r.table.t) + '</h4><table class="sh-t"><thead><tr>' + r.table.head.map(function (h) { return '<th>' + esc(h) + '</th>'; }).join('') + '</tr></thead><tbody>' +
       r.table.rows.map(function (row) { return '<tr>' + row.map(function (c) { return '<td>' + esc(c) + '</td>'; }).join('') + '</tr>'; }).join('') + '</tbody></table>' : '';
     return '<article class="sheet fc"><header class="fc-h">' + logo() + '<div class="fc-t"><h3>' + esc(r.titulo) + '</h3><p>' + esc(CO) + ' · RUT ' + RUT + ' · ' + esc(r.norma) + '</p></div>' +
-      '<div class="fc-r"><b>' + esc(r.code) + '</b><span>v1.1 · Folio: ' + esc(r.folio) + '</span><span>' + d + '</span></div></header>' +
+      '<div class="fc-r"><b>' + esc(r.code) + '</b><span>v1.1 · Folio: ' + esc(r.folio) + '</span><span>' + d + '</span></div>' + scLogo() + '</header>' +
       '<table class="sh-kv">' + kv + '</table>' + list + tbl + '<div class="sh-decl">' + r.decl + '</div>' +
       '<div class="sh-sign"><div><img src="' + r.firma + '" alt="Firma"><span>Firma Persona Trabajadora</span></div><div>' + (r.relator ? '<i class="sh-line"></i><span>' + RELATOR + '</span>' : '<i class="sh-line"></i>') + '</div></div>' +
       '<p class="sh-val">Firma validada · ' + esc(r.fecha) + ' · hash ' + esc(r.hash.slice(0, 16)) + '…</p>' +
@@ -299,7 +301,7 @@
       return t + '<table class="f7-t"><thead><tr><th>#</th><th>Ítem</th><th>Estado</th><th>Hallazgo</th><th>Acción correctiva</th><th>Plazo</th></tr></thead><tbody>' +
         r.secs[k].map(function (x) { return '<tr><td>' + x[0] + '</td><td>' + esc(x[1]) + '</td><td class="st ' + (x[2] === 'Conforme' ? 'c' : x[2] === 'N/A' ? 'na' : 'nc') + '">' + esc(x[2]) + '</td><td>' + esc(x[3]) + '</td><td>' + esc(x[4]) + '</td><td>' + esc(x[5]) + '</td></tr>'; }).join('') + '</tbody></table>';
     }
-    return '<article class="sheet f7"><header class="f7-h">' + logo() + '<div><h3>' + esc(r.titulo) + '</h3><p>' + esc(CO) + ' · RUT ' + RUT + ' | Código: ' + esc(r.code) + ' · ' + esc(r.norma) + '</p></div></header>' +
+    return '<article class="sheet f7"><header class="f7-h">' + logo() + '<div><h3>' + esc(r.titulo) + '</h3><p>' + esc(CO) + ' · RUT ' + RUT + ' | Código: ' + esc(r.code) + ' · ' + esc(r.norma) + '</p></div>' + scLogo() + '</header>' +
       '<div class="f7-box"><div><span>Máquina / equipo</span><b>' + esc(r.maq) + '</b></div><div><span>N° de serie / máquina</span><b>' + esc(r.serie) + '</b></div><div><span>Nombre y apellido</span><b>' + esc(r.nombre) + '</b></div><div><span>Fecha</span><b>' + d + '</b></div></div>' +
       '<p class="f7-meta"><b>Código:</b> ' + esc(r.code) + ' &nbsp; <b>Operador habitual:</b> ' + esc(r.hab) + ' &nbsp; <b>Actividad realizada:</b> ' + esc(r.actividad) + (r.geo ? ' &nbsp; <b>Ubicación:</b> ' + esc(r.geo) : '') + '</p>' +
       sec('op') + sec('mant') + sec('limp') +

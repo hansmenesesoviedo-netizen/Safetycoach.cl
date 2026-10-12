@@ -67,13 +67,15 @@
             <ol class="vit-steps"><li>Elige una opción en la carátula</li><li>Presiona el video</li><li>Responde 3 preguntas</li><li>Completa tus datos y firma</li><li>Descarga tu diploma con QR</li></ol>
             <p class="vit-note">Ejemplo activo: cápsula Ley Karin. Empresa y datos ficticios; tu versión lleva tu logo, tus riesgos y tus videos.</p>
           </div>
-          <div class="frame" id="frame">
-            <img class="frame-img" src="../assets/img/frame-capsula.webp" alt="Mano sosteniendo un celular con una cápsula digital de SafetyCoach" width="590" height="870" fetchpriority="high">
+          <div class="frame-wrap">
+          <div class="scenes" role="group" aria-label="Escenario"><span>Escenario:</span><button type="button" data-scene="cocina" aria-pressed="true">Cocina</button><button type="button" data-scene="bodega" aria-pressed="false">Bodega</button><button type="button" data-scene="fabrica" aria-pressed="false">Fábrica</button></div>
+          <div class="frame" id="frame" data-scene="cocina">
+            <img class="frame-img" id="frame-img" src="../assets/img/frame-cocina.webp" alt="Mano sosteniendo un celular en una cocina industrial" width="590" height="870" fetchpriority="high">
             <div class="frame-screen"><div class="app" id="app">
 
               <!-- Carátula: multi opciones -->
               <div class="scr on" data-scr="home">
-                <div class="app-top"><span class="logo-ph">TU LOGO</span><div><b>Tu empresa</b><small>Programa de prevención digital</small></div></div>
+                <div class="app-top"><span class="logo-ph">TU LOGO</span><div><b>Tu empresa</b><small>Programa de prevención digital</small></div><img class="sc-corner dark" src="../assets/img/logo-safetycoach.png" alt="SafetyCoach" width="643" height="285"></div>
                 <p class="app-k">● DS 44 · Programa digital</p>
                 <h3 class="app-h">¿Qué quieres <em>probar?</em></h3>
                 <div class="opt-grid">
@@ -148,6 +150,7 @@
             </div></div>
             <button type="button" class="frame-full" id="frame-full">⤢ Ver en grande</button>
           </div>
+          </div>
         </section>
         <div class="dip-print" id="dip-print" hidden></div>
 
@@ -195,7 +198,7 @@
         </div>
 
         <div class="phone">
-          <div class="phone-co"><span class="logo-ph">TU LOGO</span><p>Demo Pyme SpA<small>RUT 76.000.000-0 · empresa ficticia</small></p></div>
+          <div class="phone-co"><span class="logo-ph">TU LOGO</span><p>Demo Pyme SpA<small>RUT 76.000.000-0 · empresa ficticia</small></p><img class="sc-corner" src="../assets/img/logo-safetycoach.png" alt="SafetyCoach" width="643" height="285"></div>
 
           <!-- 1. Ingreso -->
           <div class="demo-pane" id="t-irl">
