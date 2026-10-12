@@ -151,7 +151,7 @@ PAGES = [
         "desc": "Apoyo a empresas contratistas para cumplir los estándares de su mandante, y programa para mandantes: requisitos unificados, inducciones digitales y control de cumplimiento por contratista.",
         "eyebrow": "Contratistas y mandantes",
         "h1": "Tu mandante no te pregunta si cumples. Te pide que lo demuestres.",
-        "lead": "¿No tienes sistema? Pa' fuera. ¿Demandas o enfermedades profesionales? Pa' fuera. La empresa principal responde contigo de forma solidaria o subsidiaria y tiene tolerancia cero: tus números importan, pero su reputación importa más. Al contratista le exigen demostrar que trabaja seguro. Al mandante le cuesta controlar a decenas de contratistas. Trabajo con ambos lados para que el cumplimiento sea simple, digital y verificable, y deje de ser un dolor de cabeza antes de cada auditoría.",
+        "lead": "No seas huevón: ¿no tienes sistema? Pa' fuera. ¿Demandas o enfermedades profesionales? Pa' fuera. La empresa principal responde contigo de forma solidaria o subsidiaria y tiene tolerancia cero: tus números importan, pero su reputación importa más. Y en cada licitación aparece el Chacal de la Trompeta. Al contratista le exigen demostrar que trabaja seguro. Al mandante le cuesta controlar a decenas de contratistas. Trabajo con ambos lados para que el cumplimiento sea simple, digital y verificable, y deje de ser un dolor de cabeza antes de cada auditoría.",
         "img": "trabajo-altura.webp",
         "need": "Programa contratistas",
         "cta": "Toma tu programa · desde $549.000/mes",
@@ -186,7 +186,7 @@ def page_shell(index_html, prefix="../"):
         v = re.sub(r'(href|src)="assets/', rf'\1="{prefix}assets/', v)
         v = re.sub(r'href="#(?!faro)', f'href="{prefix}index.html#', v)
         v = v.replace('href="index.html"', f'href="{prefix}index.html"')
-        v = re.sub(r'href="(ds-44|ley-karin|fiscalizaciones|pymes|contratistas|sistemas-de-gestion|autodiagnostico|liderazgo|demo)/"', rf'href="{prefix}\1/"', v)
+        v = re.sub(r'href="(ds-44|ley-karin|fiscalizaciones|pymes|contratistas|sistemas-de-gestion|autodiagnostico|liderazgo|demo|mi-historia)/"', rf'href="{prefix}\1/"', v)
         parts[k] = v
     return parts
 
@@ -865,6 +865,112 @@ def render_demo(shell):
 </html>
 """
 
+HISTORIA = """
+        <section class="story-ch"><h2>El héroe sin capa</h2>
+          <p>Soy Hans Meneses, prevencionista, coach y consultor en prevención de riesgos, liderazgo y cultura preventiva, con más de 20 años de experiencia.</p>
+          <p>Durante mucho tiempo me vi como un héroe sin capa. Mi pega era proteger vidas, anticiparme a los peligros y lograr que cada persona volviera sana a su casa. Lo hacía con convicción y con una exigencia brutal.</p>
+          <p>Hasta que descubrí una verdad incómoda: <b>podía cuidar a todos y, al mismo tiempo, dejar de cuidar lo esencial de mi propia vida.</b> Penca, pero real.</p>
+        </section>
+        <section class="story-ch with-img"><div><h2>BASF: la prevención tenía que ir más allá</h2>
+          <p>En BASF enfrenté el desafío que marcó mi carrera: avanzar hacia el cero accidentes. Y aprendí que no basta con procedimientos, capacitaciones ni carpetas. Si los líderes no se involucran y los hábitos no cambian, el papel no protege a nadie.</p>
+          <p>Hicimos cosas concretas: <b>tolerancia cero frente a riesgos críticos, rondas inspectivas, evidencias visuales, seguimiento riguroso y planes de acción con pocas prioridades, pero bien definidas.</b> La seguridad entró en las decisiones de todos los niveles, desde quien ejecutaba la tarea hasta la gerencia y la dirección corporativa.</p>
+          <p class="story-hit">Resultado: más de tres años sin accidentes. Rompimos el récord del tablero: cuatro dígitos.</p>
+          <p>Esa experiencia es parte de mi sello: con prioridades claras, liderazgo, controles y seguimiento constante, los resultados se sostienen.</p></div>
+          <figure><img src="../assets/img/planta-aislapol.webp" alt="Hans Meneses junto al tablero de días sin accidentes en Aislapol, grupo BASF" width="1195" height="896" loading="lazy" style="object-position:70% 50%"><figcaption>El tablero que llegó a cuatro dígitos.</figcaption></figure>
+        </section>
+        <section class="story-ch"><h2>Mutual de Seguridad: el otro lado de la mesa</h2>
+          <p>Después llegué a una mutualidad como asesor, director de cuenta y consultor de riesgos. Conocí más de 300 pymes por dentro, conversé con sus dueños y gerencias y vi cómo se evalúa a una empresa cuando las cosas salen mal.</p>
+          <p>Pero mientras aprendía a proteger a otros, me quedaba la lección más personal de todas.</p>
+        </section>
+        <section class="story-ch dark"><h2>El quiebre</h2>
+          <p>Durante años puse casi toda mi energía en trabajar, responder y proveer. Sin darme cuenta, el trabajo se comió espacios que necesitaban mi presencia, mi tiempo y mi atención.</p>
+          <p>Después llegó un despido masivo, el quiebre de mi matrimonio y relaciones que me obligaron a mirarme de verdad. No fue solo un problema laboral o personal: fue el derrumbe de mi forma de entender la vida y mi identidad.</p>
+          <p class="story-hit">Dejé de preguntarme quién tenía la culpa y empecé a preguntarme qué tenía que reconocer y transformar en mí.</p>
+        </section>
+        <section class="story-ch"><h2>La noche más oscura del alma</h2>
+          <p>Decidí hacer un proceso de transformación profundo, con la misma determinación con la que enfrentaba los desafíos de seguridad. Coaching, exploración emocional, respiración consciente, meditación, PNL y otras prácticas de bienestar. Revisé mis patrones, mis relaciones, mis creencias y mis decisiones.</p>
+          <p>No fue mágico ni de un día para otro. Hubo que mirar lo incómodo, asumir mi parte y dejar de esconderme detrás del trabajo y de los logros. Cambiar no es negar lo vivido ni cargar con toda la culpa: es reconocer lo que te corresponde, aprender y decidir qué vas a hacer distinto.</p>
+          <p>Ahí la imagen del ave fénix se volvió real. No se trataba de volver a ser el mismo. Se trataba de renacer con más conciencia.</p>
+        </section>
+        <section class="story-ch"><h2>De mi proceso al servicio</h2>
+          <p>Lo que aprendí despertó las ganas de acompañar a otros. Empecé a guiar procesos de bienestar y transformación personal, con las herramientas que estudié y practiqué. Conocí historias muy duras y aprendí que cada persona es distinta y que no hay una técnica que lo resuelva todo.</p>
+          <p class="story-note">No atribuyo a mis herramientas la curación de enfermedades ni prometo resultados que no se pueden garantizar. Acompaño procesos de autoconocimiento y bienestar, y respeto siempre la necesidad de atención médica o psicológica cuando corresponde.</p>
+        </section>
+        <section class="story-ch"><h2>SafetyCoach renace</h2>
+          <p>Hoy llevo todo esto a una nueva etapa de SafetyCoach. Conservo la base de dos décadas: prevención de riesgos, gestión, experiencia con empresas y la convicción de que los resultados salen de acciones concretas y sostenidas. Y le sumo una mirada más profunda sobre las personas, el liderazgo, la comunicación y los factores humanos.</p>
+          <p>No basta con diseñar un buen sistema. Hay que lograr que funcione en la realidad, que los responsables se involucren y que las medidas se mantengan. <b>No vendo soluciones mágicas.</b> La prevención no cambia de la noche a la mañana: requiere método, compromiso, seguimiento y mejora continua.</p>
+        </section>
+        <section class="story-ch"><h2>Yo Puedo Sanarme</h2>
+          <p>En paralelo, a través de Yo Puedo Sanarme desarrollo mi faceta de coach de bienestar: acompaño procesos de autoconocimiento, exploración emocional y transformación personal. SafetyCoach trabaja con empresas; Yo Puedo Sanarme, con personas. Los dos nacen del mismo propósito.</p>
+        </section>
+        <section class="story-ch phoenix"><h2>El ave fénix</h2>
+          <p>No reniego del profesional que fui, ni de mis errores, mis logros o lo que me trajo hasta aquí. Lo integro todo. Ya no quiero ser el héroe sin capa que protege a todos mientras se olvida de sí mismo.</p>
+          <p class="story-hit">Soy Hans Meneses. No comienzo desde cero: renazco con todo lo aprendido.</p>
+          <p class="story-claim">SafetyCoach: experiencia que protege, liderazgo que transforma y prevención que se sostiene.</p>
+        </section>
+"""
+
+PUENTE = """
+        <section class="bridge">
+          <p class="eyebrow">Para tu empresa</p>
+          <h2>La prevención también se construye en las relaciones humanas</h2>
+          <p>Los conflictos, la mala comunicación y los roles poco claros desgastan el clima y a los equipos. Si no los abordas a tiempo, terminan en licencias, denuncias o gente que se va.</p>
+          <div class="bridge-grid">
+            <article><b>Ley Karin y prevención del acoso y la violencia</b><p>Difusión, formación, liderazgo y medidas organizacionales, respetando los procedimientos legales.</p></article>
+            <article><b>Gestión de conflictos</b><p>Herramientas para reconocer tensiones, facilitar conversaciones y resolver desacuerdos.</p></article>
+            <article><b>Conoce tu arquetipo y el de tu equipo</b><p>Autoconocimiento y estilos de comunicación. Herramienta de exploración, no diagnóstico psicológico.</p></article>
+            <article><b>Comunicación y liderazgo preventivo</b><p>Expectativas claras, retroalimentación y relaciones laborales más sanas.</p></article>
+            <article><b>Bienestar y factores psicosociales</b><p>Acciones complementarias para entornos saludables y medidas preventivas.</p></article>
+          </div>
+          <p class="story-note">Estas actividades complementan, pero no reemplazan, la evaluación de riesgos psicosociales, las medidas organizacionales exigibles ni los procedimientos formales que establece la normativa.</p>
+        </section>
+"""
+
+
+def render_historia(shell):
+    return """<!doctype html>
+<html lang="es-CL">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Mi historia: del héroe sin capa al ave fénix | Hans Meneses · SafetyCoach</title>
+  <meta name="description" content="La historia de Hans Meneses: más de 20 años en prevención de riesgos, más de tres años sin accidentes en BASF, el quiebre personal y el renacimiento de SafetyCoach.">
+  <link rel="canonical" href="https://www.safetycoach.cl/mi-historia/">
+  <meta name="theme-color" content="#0B1F3A">
+  <meta property="og:type" content="profile">
+  <meta property="og:title" content="Mi historia: del héroe sin capa al ave fénix · Hans Meneses">
+  <meta property="og:image" content="https://www.safetycoach.cl/assets/img/og-safetycoach.jpg">
+  """ + shell['head_links'] + """
+</head>
+<body>
+  <a class="skip" href="#contenido">Saltar al contenido</a>
+  """ + shell['svg'] + shell['header'] + """
+  <main id="contenido">
+    <section class="story-hero">
+      <div class="wrap story-hero-in">
+        <div>
+          <p class="crumbs"><a href="../index.html">Inicio</a> › Mi historia</p>
+          <p class="eyebrow">Mi historia</p>
+          <h1>Del héroe sin capa al <span>ave fénix</span></h1>
+          <p class="lead">Durante años protegí a otros. Hasta que la vida me enseñó que también tenía que aprender a cuidarme.</p>
+        </div>
+        <img src="../assets/img/hans-retrato.webp" alt="Hans Meneses, fundador de SafetyCoach" width="800" height="1000">
+      </div>
+    </section>
+    <div class="wrap narrow story">""" + HISTORIA + PUENTE + """
+      <div class="story-cta">
+        <h2>¿Hacemos match?</h2>
+        <p>Yo elijo con quién trabajo. Si tú también eliges hacerlo distinto, conversemos.</p>
+        <div class="cta-row center"><a class="btn btn-primary btn-lg" href="../index.html#contacto" data-cta="historia_contacto">Conversemos</a><a class="btn btn-ghost btn-lg" href="../autodiagnostico/" data-cta="historia_autodiag">Hacer el autodiagnóstico</a></div>
+      </div>
+    </div>
+  </main>
+  """ + shell['footer'] + shell['wa'] + """
+  <script src="../assets/js/main.js" defer></script>
+</body>
+</html>
+"""
+
 
 def main():
     index_html = (ROOT / "index.html").read_text(encoding="utf-8")
@@ -881,6 +987,10 @@ def main():
     out = ROOT / "liderazgo" / "index.html"
     out.parent.mkdir(exist_ok=True)
     out.write_text(render_liderazgo(shell), encoding="utf-8")
+    print("ok", out.relative_to(ROOT))
+    out = ROOT / "mi-historia" / "index.html"
+    out.parent.mkdir(exist_ok=True)
+    out.write_text(render_historia(shell), encoding="utf-8")
     print("ok", out.relative_to(ROOT))
     out = ROOT / "autodiagnostico" / "index.html"
     out.parent.mkdir(exist_ok=True)
