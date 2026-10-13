@@ -1317,3 +1317,16 @@ body.frame-zoom::after { content: ""; position: fixed; inset: 0; background: rgb
 @media (max-width: 860px) { .nuevo-grid { grid-template-columns: 1fr; } }
 @media (hover: none) { .xp .more { transition: max-height .35s ease, opacity .25s; } }
 @media (prefers-reduced-motion: reduce) { .xp, .xp .more { transition: none; } }
+
+/* Programa para prevencionistas (sección digital) */
+.pro { margin-top: 26px; display: grid; grid-template-columns: 1fr auto; gap: 6px 24px; align-items: center; background: rgba(255,255,255,.06); border: 1px solid rgba(255,255,255,.2); border-left: 4px solid #E8622C; border-radius: 18px; padding: 22px 26px; }
+.pro h3 { color: #fff; margin: 8px 0 4px; font-size: clamp(1.2rem, 2.4vw, 1.5rem); }
+.pro-p { color: #C9D6E6; margin: 0; }
+.pro-list { grid-column: 1 / 2; list-style: none; padding: 0; color: #E6ECF3; font-size: .95rem; }
+.pro-list li { padding: 3px 0 3px 22px; position: relative; }
+.pro-list li::before { content: "✓"; position: absolute; left: 0; color: var(--yellow); font-weight: 800; }
+.pro-cta { grid-column: 2; grid-row: 1; white-space: nowrap; }
+.pro:hover { border-color: rgba(255,255,255,.4); border-left-color: #E8622C; }
+@media (max-width: 760px) { .pro { grid-template-columns: 1fr; } .pro-cta { grid-column: 1; grid-row: auto; justify-self: start; } }
+.digital .pro .pro-p { font: 400 1rem/1.5 var(--font-b); color: #C9D6E6; }
+.digital .pro .pro-list li { font: 400 .95rem/1.5 var(--font-b); }
