@@ -29,7 +29,7 @@ PAGES = [
         "lead": "El DS 44 no se cumple con documentos: se cumple gestionando. Te digo qué te exige según tu tamaño y rubro, qué te falta, y lo implementamos con tus líderes y tu equipo, con evidencia lista para cualquier fiscalización.",
         "img": "terreno-bodega.webp",
         "need": "Diagnóstico DS 44",
-        "cta": "Quiero saber dónde estoy · $99.000",
+        "cta": "Quiero saber dónde estoy",
         "blocks": [
             ("¿Qué es el DS 44?", "<p>Es el reglamento sobre gestión preventiva de los riesgos laborales, vigente desde febrero de 2025, que reemplazó a los antiguos DS 40 y DS 54. Pone el foco en que la empresa <b>gestione</b> sus riesgos de forma continua, no solo en tener documentos.</p>"),
             ("Lo que normalmente se revisa", "<ul class='checks'><li>Política de seguridad y salud en el trabajo</li><li>Matriz de identificación de peligros y evaluación de riesgos</li><li>Programa de trabajo preventivo con responsables y plazos</li><li>Información de riesgos y capacitación a los trabajadores</li><li>Plan de emergencias</li><li>Organización preventiva: comité paritario, encargado o departamento según tamaño</li><li>Investigación de accidentes y seguimiento de medidas</li></ul>"),
@@ -37,7 +37,7 @@ PAGES = [
         ],
         "faq": [
             ("¿El DS 44 aplica a mi empresa?", "Aplica a las empresas y entidades empleadoras en Chile. Lo que cambia según el número de trabajadores y el rubro es cómo se organiza la prevención (comité paritario, departamento de prevención, etc.). En el diagnóstico revisamos exactamente qué te corresponde."),
-            ("¿Cuánto demora el diagnóstico?", "Normalmente entre 1 y 2 semanas, según el tamaño y la cantidad de centros de trabajo. El diagnóstico en una sola vista cuesta $99.000 + IVA, con garantía: si no te muestra al menos 3 brechas que no marcaste en tu encuesta inicial, no lo pagas."),
+            ("¿Cuánto demora el diagnóstico?", "Normalmente entre 1 y 2 semanas, según el tamaño y la cantidad de centros de trabajo. Antes, el autodiagnóstico y la primera conversación son gratis."),
             ("Ya tengo prevencionista, ¿me sirve?", "Sí. Un prevencionista solo no puede estar en todas partes. Lo apoyo para ordenar el sistema, priorizar y dejar evidencia digital, sin reemplazarlo."),
         ],
         "testi": None,
@@ -1053,8 +1053,8 @@ def render_guia(g, shell):
       <p class="lead">{g['lead']}</p>
 {g['body']}
       <div class="guia-cta">
-        <p><b>¿Quieres saber dónde está tu empresa?</b> Haz el autodiagnóstico gratis o pide el diagnóstico en una sola vista: $99.000 con garantía.</p>
-        <div class="cta-row"><a class="btn btn-primary" href="../../index.html?necesidad=Diagn%C3%B3stico%20DS%2044#contacto" data-cta="guia_{g['slug']}">Diagnóstico $99.000</a><a class="btn btn-light" href="../../autodiagnostico/" data-cta="guia_autodiag_{g['slug']}">Autodiagnóstico gratis</a></div>
+        <p><b>¿Quieres saber dónde está tu empresa?</b> Haz el autodiagnóstico gratis y agenda tu primera conversación, también sin costo.</p>
+        <div class="cta-row"><a class="btn btn-primary" href="../../autodiagnostico/" data-cta="guia_autodiag_{g['slug']}">Autodiagnóstico gratis</a><a class="btn btn-light" href="../../index.html?necesidad=Diagn%C3%B3stico%20DS%2044#contacto" data-cta="guia_{g['slug']}">Primera conversación gratis</a></div>
       </div>
       <p class="note">Contenido informativo. Los requisitos específicos se verifican según el tipo de empresa, su actividad y su número de trabajadores.</p>
     </article>

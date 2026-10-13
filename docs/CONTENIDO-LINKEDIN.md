@@ -61,12 +61,12 @@ Y si algo aprendí: no se parte de cero. Se comienza desde donde estás.
 
 **0–5 s** (a cámara, en terreno): "Crees que lo hacen bien. Tus accidentes dicen otra cosa."
 
-**5–20 s**: "Soy Hans Meneses. Más de 20 años en prevención. En BASF sostuvimos más de tres años sin accidentes. Después conocí más de 300 pymes por dentro."
+**5–20 s**: "Soy Hans Meneses. Más de 20 años en prevención, más de 100 empresas asesoradas y más de 300 pymes conocidas por dentro."
 
 **20–40 s**: "Te hago tres preguntas: ¿cuándo fue la última vez que tu gerencia dio una directriz clara de seguridad? ¿Cuánto te demoras en mostrar tus registros si llega la fiscalización? ¿Sabes cuánto podrías dejar de pagar de seguro?"
 
 **40–55 s**: "Si dudaste en alguna, no tienes un problema de suerte. Tienes una oportunidad de hacerlo mejor."
 
-**55–60 s**: "Diagnóstico en una sola vista, $99.000, con garantía. safetycoach.cl. ¿Hacemos match?"
+**55–60 s**: "Autodiagnóstico gratis en 3 minutos y primera conversación sin costo. safetycoach.cl. ¿Hacemos match?"
 
 Consejos: grábalo con el celular en horizontal, con luz de frente, en una planta o bodega real. Subtítulos siempre (la mayoría lo ve sin sonido).

@@ -1330,3 +1330,7 @@ body.frame-zoom::after { content: ""; position: fixed; inset: 0; background: rgb
 @media (max-width: 760px) { .pro { grid-template-columns: 1fr; } .pro-cta { grid-column: 1; grid-row: auto; justify-self: start; } }
 .digital .pro .pro-p { font: 400 1rem/1.5 var(--font-b); color: #C9D6E6; }
 .digital .pro .pro-list li { font: 400 .95rem/1.5 var(--font-b); }
+.offer.free { border-color: var(--green); }
+.offer.free .offer-price { color: var(--green-d); }
+.big-stat { flex-wrap: wrap; }
+.big-stat span { flex: 1 1 260px; min-width: 0; }
