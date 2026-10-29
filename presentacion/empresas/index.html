@@ -1,0 +1,418 @@
+<!doctype html>
+<html lang="es-CL">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>SafetyCoach · Presentación | Hans Meneses</title>
+  <meta name="description" content="Presentación de 5 minutos de SafetyCoach para empresas, para un grupo pequeño: diapositivas, guion y señales de mente, cuerpo y emoción.">
+  <meta name="robots" content="noindex">
+  <meta name="theme-color" content="#0B1F3A">
+  <link rel="icon" href="../../assets/img/favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="../../assets/img/logo-safetycoach.png">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@600;700;800&family=Inter:wght@400;500;600&family=Caveat:wght@600;700&display=swap" rel="stylesheet">
+  <style>
+    /* Presentación: página independiente, mismos colores del sitio. */
+    :root {
+      --navy: #0B1F3A; --navy-2: #13325C; --sky: #2FA8E0; --green: #3BA54A;
+      --yellow: #F5CD30; --ink: #142236; --muted: #55657A; --line: #E3E8EF;
+      --font-h: "Manrope", system-ui, sans-serif; --font-b: "Inter", system-ui, sans-serif;
+      --font-m: "Caveat", cursive;
+    }
+    *, *::before, *::after { box-sizing: border-box; }
+    html, body { margin: 0; height: 100%; }
+    body { font-family: var(--font-b); color: #fff; background: var(--navy); overflow: hidden; }
+    button { font: inherit; }
+
+    /* ---------- Diapositivas ---------- */
+    .deck { position: fixed; inset: 0; bottom: var(--notes-h, 0px); transition: bottom .25s; }
+    .slide {
+      position: absolute; inset: 0; display: flex; flex-direction: column; justify-content: center;
+      padding: 6vh 8vw; opacity: 0; visibility: hidden; transition: opacity .45s, transform .45s;
+      transform: translateY(12px);
+      background: radial-gradient(120% 90% at 85% 10%, var(--navy-2) 0%, var(--navy) 60%);
+    }
+    .slide.on { opacity: 1; visibility: visible; transform: none; }
+    .slide.light { background: #fff; color: var(--ink); }
+    .slide.light h2, .slide.light .big { color: var(--navy); }
+    .kicker { font-family: var(--font-h); font-weight: 700; font-size: clamp(.8rem, 1.5vw, 1.05rem);
+      letter-spacing: .14em; text-transform: uppercase; color: var(--yellow); margin: 0 0 2vh; }
+    .light .kicker { color: var(--green); }
+    .big { font-family: var(--font-h); font-weight: 800; line-height: 1.08; letter-spacing: -.02em;
+      font-size: clamp(2rem, 6vw, 5rem); margin: 0; max-width: 18ch; }
+    .mid { font-family: var(--font-h); font-weight: 700; line-height: 1.2;
+      font-size: clamp(1.3rem, 3.2vw, 2.6rem); margin: 0; max-width: 24ch; }
+    .sub { font-size: clamp(1rem, 2vw, 1.5rem); color: #C9D6E8; margin: 3vh 0 0; max-width: 40ch; line-height: 1.45; }
+    .light .sub { color: var(--muted); }
+    .hand { font-family: var(--font-m); color: var(--yellow); font-size: clamp(1.6rem, 3.6vw, 3rem); margin: 3vh 0 0; }
+    .light .hand { color: var(--green); }
+    .hl { color: var(--yellow); }
+    .light .hl { color: var(--green); }
+    .logo { width: clamp(150px, 18vw, 240px); margin-bottom: 4vh; }
+
+    .truths { display: grid; gap: 2vh; margin: 0; padding: 0; list-style: none; max-width: 900px; }
+    .truths li { display: flex; gap: 1.2rem; align-items: baseline; font-family: var(--font-h); font-weight: 700;
+      font-size: clamp(1.1rem, 2.8vw, 2.2rem); line-height: 1.25; opacity: .18; transition: opacity .4s; }
+    .truths li.shown { opacity: 1; }
+    .truths li b { color: var(--yellow); font-size: .8em; min-width: 1.4em; }
+    .truths li.twist { color: var(--yellow); }
+
+    .pillars { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2.4vw; margin-top: 5vh; max-width: 1200px; }
+    .pillars div { border-top: 4px solid var(--green); padding-top: 1.6vh; }
+    .pillars h3 { font-family: var(--font-h); font-size: clamp(1.05rem, 2.2vw, 1.8rem); margin: 0 0 .6vh; color: var(--navy); }
+    .pillars p { margin: 0; color: var(--muted); font-size: clamp(.9rem, 1.5vw, 1.2rem); line-height: 1.4; }
+    .stats { display: flex; gap: 6vw; margin-top: 5vh; flex-wrap: wrap; }
+    .stats strong { display: block; font-family: var(--font-h); font-weight: 800; color: var(--yellow); font-size: clamp(2.2rem, 6vw, 4.6rem); line-height: 1; }
+    .stats span { color: #C9D6E8; font-size: clamp(.9rem, 1.6vw, 1.2rem); }
+    .close-row { display: flex; gap: 6vw; align-items: center; flex-wrap: wrap; margin-top: 5vh; }
+    .qr { background: #fff; padding: 12px; border-radius: 12px; width: clamp(130px, 17vw, 220px); }
+    .qr svg { width: 100%; height: auto; display: block; }
+    .qr-cap { font-size: clamp(.9rem, 1.5vw, 1.15rem); color: #C9D6E8; margin-top: 1.2vh; }
+
+    .live { display: grid; grid-template-columns: 1.2fr 1fr; gap: 4vw; align-items: center; max-width: 1200px; }
+    .live img { width: 100%; max-height: 62vh; object-fit: contain; border-radius: 16px; }
+    @media (max-width: 760px) { .live { grid-template-columns: 1fr; } .live img { max-height: 34vh; } }
+
+    /* ---------- Barra inferior ---------- */
+    .bar { position: fixed; left: 0; right: 0; bottom: var(--notes-h, 0px); display: flex; align-items: center; gap: 10px;
+      padding: 8px 14px; z-index: 5; transition: bottom .25s, opacity .3s; opacity: .35; }
+    .bar:hover, .bar:focus-within, body.notes .bar { opacity: 1; }
+    .bar button { background: rgba(255,255,255,.1); color: #fff; border: 1px solid rgba(255,255,255,.2);
+      border-radius: 8px; padding: 6px 12px; cursor: pointer; font-size: 14px; }
+    .bar button:hover { background: rgba(255,255,255,.2); }
+    .light-on .bar button { color: var(--navy); background: rgba(11,31,58,.06); border-color: rgba(11,31,58,.18); }
+    .progress { flex: 1; height: 4px; background: rgba(255,255,255,.15); border-radius: 4px; overflow: hidden; }
+    .light-on .progress { background: rgba(11,31,58,.12); }
+    .progress i { display: block; height: 100%; width: 0; background: var(--yellow); transition: width .3s; }
+    .count { font-size: 14px; font-variant-numeric: tabular-nums; min-width: 3.5em; text-align: right; }
+    .light-on .count { color: var(--navy); }
+
+    /* ---------- Notas del orador ---------- */
+    body.notes { --notes-h: 46vh; }
+    .notes-panel { position: fixed; left: 0; right: 0; bottom: 0; height: 46vh; background: #F5F7FA; color: var(--ink);
+      transform: translateY(100%); transition: transform .25s; z-index: 6; display: grid;
+      grid-template-columns: 1.5fr 1fr; overflow: hidden; border-top: 4px solid var(--yellow); }
+    body.notes .notes-panel { transform: none; }
+    .np-script { padding: 16px 22px; overflow-y: auto; font-size: 18px; line-height: 1.55; }
+    .np-script .np-head { display: flex; justify-content: space-between; align-items: baseline; gap: 10px; margin-bottom: 8px; }
+    .np-script h4 { margin: 0; font-family: var(--font-h); color: var(--navy); font-size: 16px; text-transform: uppercase; letter-spacing: .08em; }
+    .np-time { font-family: var(--font-h); font-weight: 800; font-size: 22px; color: var(--navy); font-variant-numeric: tabular-nums; }
+    .np-time.late { color: #C62828; }
+    .np-time small { font-size: 13px; color: var(--muted); font-weight: 600; }
+    .np-script p { margin: 0 0 .7em; }
+    .np-script em { color: var(--muted); font-style: normal; font-size: .85em; background: #E7ECF3; padding: 1px 6px; border-radius: 4px; }
+    .np-cues { padding: 16px 20px; overflow-y: auto; background: #fff; border-left: 1px solid var(--line); }
+    .cue { margin: 0 0 12px; font-size: 15px; line-height: 1.45; }
+    .cue b { display: block; font-family: var(--font-h); font-size: 12px; letter-spacing: .1em; text-transform: uppercase; margin-bottom: 2px; }
+    .cue.mente b { color: #1F6FB2; } .cue.cuerpo b { color: var(--green); } .cue.emocion b { color: #C77D00; }
+    .cue.humor b { color: #8E44AD; }
+    .help { font-size: 13px; color: var(--muted); border-top: 1px solid var(--line); padding-top: 10px; margin-top: 6px; }
+    .help kbd { background: #EEF2F7; border: 1px solid var(--line); border-radius: 4px; padding: 0 5px; font-size: 12px; }
+
+    /* ---------- Modo guion (para leer o imprimir): ?modo=guion ---------- */
+    body.guion { overflow: auto; background: #fff; color: var(--ink); }
+    body.guion .deck, body.guion .bar, body.guion .notes-panel { display: none; }
+    .script-view { display: none; max-width: 860px; margin: 0 auto; padding: 32px 20px 60px; }
+    body.guion .script-view { display: block; }
+    .script-view h1 { font-family: var(--font-h); color: var(--navy); font-size: clamp(1.7rem, 4vw, 2.4rem); margin: 0 0 .3em; }
+    .script-view .lead { color: var(--muted); margin: 0 0 1.5em; }
+    .script-view section { border-top: 2px solid var(--line); padding: 20px 0; break-inside: avoid; }
+    .script-view h2 { font-family: var(--font-h); color: var(--navy); font-size: 1.25rem; margin: 0 0 .5em; display: flex; gap: 12px; align-items: baseline; flex-wrap: wrap; }
+    .script-view h2 span { color: var(--green); font-size: .9rem; }
+    .script-view .sv-cues { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 10px 18px;
+      background: var(--bg-alt, #F5F7FA); border-radius: 10px; padding: 12px 14px; margin-top: 10px; }
+    .script-view .tips { background: var(--navy); color: #fff; border-radius: 14px; padding: 20px 22px; margin: 0 0 24px; }
+    .script-view .tips h2 { color: var(--yellow); }
+    .script-view .tips ul { margin: 0; padding-left: 1.1em; line-height: 1.6; }
+    .script-view .tips li { margin-bottom: 4px; }
+    .script-view .actions { display: flex; gap: 10px; flex-wrap: wrap; margin-bottom: 24px; }
+    .script-view .actions a, .script-view .actions button { background: var(--navy); color: #fff; border: 0; border-radius: 10px;
+      padding: 10px 16px; text-decoration: none; cursor: pointer; font-size: 15px; }
+    .script-view .actions .alt { background: #fff; color: var(--navy); border: 1px solid var(--navy); }
+    @media print { .script-view .actions { display: none; } .script-view .tips { color: #000; background: #fff; border: 2px solid #000; } .script-view .tips h2 { color: #000; } }
+
+    @media (max-width: 760px) {
+      .pillars { grid-template-columns: 1fr; gap: 2vh; margin-top: 3vh; }
+      .notes-panel { grid-template-columns: 1fr; }
+      .np-cues { border-left: 0; border-top: 1px solid var(--line); }
+      body.notes { --notes-h: 55vh; } .notes-panel { height: 55vh; }
+      .slide { padding: 6vh 16px; }
+      .bar .hide-sm { display: none; }
+    }
+  </style>
+</head>
+<body>
+
+<main class="deck" id="deck" aria-live="polite">
+
+  <!-- 1. Gancho -->
+  <section class="slide">
+    <img class="logo" src="../../../assets/img/logo-safetycoach.png" alt="SafetyCoach">
+    <p class="big">¿Quién de ustedes llegó sano al trabajo hoy?</p>
+    <p class="hand">…¿y quién se va a ir sano a la casa?</p>
+  </section>
+
+  <!-- 2. Dos certezas y una que descoloca -->
+  <section class="slide">
+    <p class="kicker">Tres cosas sobre mí</p>
+    <ol class="truths" id="truths">
+      <li><b>1</b>Llevo más de 20 años en prevención de riesgos.</li>
+      <li><b>2</b>En BASF el tablero de días sin accidentes llegó a cuatro dígitos.</li>
+      <li class="twist"><b>3</b>No le trabajo a todas las empresas.</li>
+    </ol>
+  </section>
+
+  <!-- 3. El problema -->
+  <section class="slide light">
+    <p class="kicker">Lo que veo en las empresas</p>
+    <p class="big">¿Cuántos informes tienen guardados que <span class="hl">nadie lee?</span></p>
+    <p class="sub">Tu cliente no mira solo tu precio: mira si estás limpio. Sin accidentes, sin denuncias, sin multas. Si no, te suena la trompeta y quedas fuera.</p>
+  </section>
+
+  <!-- 4. La idea central -->
+  <section class="slide">
+    <p class="kicker">SafetyCoach</p>
+    <p class="big">Donde tú ves accidentes, <span class="hl">yo veo posibilidades.</span></p>
+    <p class="sub">Un informe no cambia a nadie. Un líder comprometido lo cambia todo.</p>
+  </section>
+
+  <!-- 5. Cómo lo hago -->
+  <section class="slide light">
+    <p class="kicker">Cómo lo hago</p>
+    <p class="mid">No soy el asesor que entrega una carpeta y se va. Soy el coach que se queda.</p>
+    <div class="pillars">
+      <div><h3>Líderes</h3><p>Formo a tus jefaturas como un entrenador: metas claras, terreno y conversaciones de seguridad.</p></div>
+      <div><h3>Digital</h3><p>Tu carpeta de prevención en el celular. Firma, folio y lista para la fiscalización.</p></div>
+      <div><h3>Personas</h3><p>DS 44, Ley Karin y bienestar: la prevención también se construye en las relaciones.</p></div>
+    </div>
+  </section>
+
+  <!-- 6. Momento en vivo -->
+  <section class="slide">
+    <p class="kicker">Si hoy llega la fiscalización…</p>
+    <div class="live">
+      <div>
+        <p class="mid">¿Cuánto te demoras en mostrar tus registros?</p>
+        <p class="hand">Yo me demoro esto.</p>
+      </div>
+      <img src="../../../assets/img/digital-irl-firma.webp" alt="Inducción con firma digital en el celular">
+    </div>
+  </section>
+
+  <!-- 7. Prueba -->
+  <section class="slide">
+    <p class="kicker">Y no lo digo yo</p>
+    <div class="stats">
+      <div><strong>+20</strong><span>años en terreno</span></div>
+      <div><strong>+100</strong><span>empresas asesoradas</span></div>
+      <div><strong>+300</strong><span>pymes conocidas por dentro</span></div>
+    </div>
+    <p class="sub">Estuve del otro lado de la mesa, en una mutualidad. Conozco las preguntas del examen.</p>
+  </section>
+
+  <!-- 8. Cierre -->
+  <section class="slide">
+    <p class="kicker">Mi invitación</p>
+    <p class="mid">Tus trabajadores no son dobles de riesgo.<br><span class="hl">Mírate en 3 minutos, gratis.</span></p>
+    <div class="close-row">
+      <div><div class="qr" id="qr" aria-label="Código QR al autodiagnóstico"></div><p class="qr-cap">safetycoach.cl/autodiagnostico</p></div>
+      <div><p class="hand" style="margin:0">Hans, tu SafetyCoach</p><p class="sub" style="margin-top:.6vh">Creamos posibilidades con seguridad<br>+56 9 3230 4800 · hans@safetycoach.cl</p></div>
+    </div>
+  </section>
+
+</main>
+
+<nav class="bar" aria-label="Controles">
+  <button id="prev" aria-label="Anterior">←</button>
+  <button id="next" aria-label="Siguiente">→</button>
+  <div class="progress"><i id="prog"></i></div>
+  <span class="count" id="count">1/8</span>
+  <button id="btnNotes">Notas (N)</button>
+  <button id="btnFull" class="hide-sm">Pantalla completa (F)</button>
+  <button id="btnGuion" class="hide-sm">Guion</button>
+</nav>
+
+<aside class="notes-panel" aria-label="Notas del orador">
+  <div class="np-script">
+    <div class="np-head"><h4 id="npTitle"></h4><span class="np-time" id="npTime">0:00 <small>/ 5:00</small></span></div>
+    <div id="npText"></div>
+  </div>
+  <div class="np-cues">
+    <div id="npCues"></div>
+    <p class="help"><kbd>→</kbd> <kbd>espacio</kbd> avanzar · <kbd>←</kbd> volver · <kbd>N</kbd> notas · <kbd>T</kbd> reiniciar reloj · <kbd>F</kbd> pantalla completa. El reloj parte cuando avanzas la primera vez.</p>
+  </div>
+</aside>
+
+<div class="script-view" id="scriptView"></div>
+
+<script src="../../assets/js/vendor/qrcode.js"></script>
+<script>
+(function () {
+  // Guion: tiempo de salida de cada diapositiva (segundos desde el inicio) y señales
+  // de mente (qué digo), cuerpo (postura, manos, rostro), emoción (qué siento) y humor.
+  var NOTES = [
+    { t: 'Gancho', end: 25,
+      say: '<em>Antes de hablar: camina al centro, planta los pies, mira a dos personas y quédate en silencio 3 segundos.</em></p><p>«Levanten la mano quienes llegaron sanos al trabajo hoy.» <em>levanta tú la mano primero</em></p><p>«Bien. Ahora la difícil: ¿quién se va a ir sano a la casa?» <em>pausa</em> «Tranquilos, no es una fiscalización.» <em>sonríe</em> «Esa pregunta es mi trabajo.»',
+      mente: 'Abrir con una pregunta, no con tu nombre. Cada uno se la contesta por dentro.',
+      cuerpo: 'Mano arriba, de pie, sin atril. Pies al ancho de hombros. Nada en las manos.',
+      emocion: 'Curiosidad tranquila. Tú sabes la respuesta, ellos todavía no.',
+      humor: '«Tranquilos, no es una fiscalización»: la primera risa.' },
+    { t: 'Dos certezas y una que descoloca', end: 70,
+      say: '«Soy Hans Meneses. Les voy a contar tres cosas de mí.»</p><p>«Uno: llevo más de veinte años en prevención de riesgos.» <em>→</em></p><p>«Dos: en BASF el tablero de días sin accidentes llegó a cuatro dígitos. Más de tres años sin un accidente.» <em>→</em></p><p>«Y tres…» <em>pausa larga</em> «…no le trabajo a todas las empresas. Si el gerente no se compromete, se lo digo antes de cobrarle un peso.»',
+      mente: 'Cada → revela una frase. Las dos primeras dan autoridad; la tercera rompe la idea de «otro vendedor más».',
+      cuerpo: 'Cuenta con los dedos: 1, 2… y en el 3 baja la mano y da un paso hacia el grupo.',
+      emocion: 'Orgullo sereno en 1 y 2. En el 3, firmeza tranquila: dices una verdad, no un desafío.',
+      humor: 'Si alguien se ríe nervioso: «tranquilos, a ustedes ya los estoy evaluando».' },
+    { t: 'El problema', end: 115,
+      say: '<em>Cambia el tono: complicidad.</em> «Una pregunta honesta: ¿cuántos informes de prevención tienen guardados en un cajón, que nadie lee?» <em>gesto de cerrar un cajón, espera</em></p><p>«Mientras tanto, su cliente no mira solo el precio. Mira si están limpios: sin accidentes, sin denuncias, sin multas. Y en cada licitación aparece el Chacal de la Trompeta: si sus números no están en orden, les suena la trompeta y quedan fuera.»',
+      mente: 'El dolor del cliente: papeles que no protegen y contratos que se pierden.',
+      cuerpo: 'Gesto de cajón que se cierra con «nadie lee». Imita la trompeta con la mano.',
+      emocion: 'Complicidad: «a todos nos ha pasado». No es reto, es espejo.',
+      humor: 'El Chacal de la Trompeta. En Chile lo van a pillar al tiro.' },
+    { t: 'La idea central', end: 140,
+      say: '<em>Silencio. Un paso al frente.</em> «Donde ustedes ven accidentes, yo veo posibilidades.» <em>pausa</em> «Cada accidente es una señal, no mala suerte.»</p><p>«Porque un informe no cambia a nadie. Un líder comprometido lo cambia todo.»',
+      mente: 'Tu frase de marca. Dila una vez, lento, y no la expliques.',
+      cuerpo: 'Paso al frente en «yo veo posibilidades». Mano al pecho en «líder comprometido».',
+      emocion: 'Convicción. Aquí sí puedes subir la voz un punto.',
+      humor: '—' },
+    { t: 'Cómo lo hago', end: 180,
+      say: '«No soy el asesor que entrega una carpeta y se va. Soy el coach que se queda. Tres cosas:»</p><p>«Uno, líderes: formo a sus jefaturas como lo haría un entrenador. Dos, digital: su carpeta de prevención en el celular. Tres, personas: DS 44, Ley Karin y bienestar, porque la prevención también se construye en las relaciones.»',
+      mente: 'Tres pilares, tres dedos. El detalle va en la conversación después.',
+      cuerpo: 'Cuenta con los dedos. En «digital», toca el bolsillo donde tienes el celular: lo vas a sacar ahora.',
+      emocion: 'Entusiasmo práctico, como quien muestra una herramienta que le encanta.',
+      humor: '«¿De qué te sirve un software caro que nadie usa?»' },
+    { t: 'Momento en vivo', end: 225,
+      say: '«Una pregunta: si hoy llega la fiscalización, ¿cuánto se demoran en mostrar sus registros?» <em>espera respuestas</em></p><p><em>Alguien dirá «un par de días» u otro «mejor no pregunte». Sonríe.</em></p><p><em>Saca el celular con la demo abierta y muéstralo de cerca: inducción firmada, entrega de EPP, inspección, todo con folio.</em> «Yo me demoro esto.»',
+      mente: 'Que lo vean, no que lo escuchen. Es la prueba de lo que haces.',
+      cuerpo: 'Acércate al grupo con el celular. Pásalo a quien esté más cerca si hay confianza.',
+      emocion: 'Orgullo simple y juguetón: «miren lo que tengo».',
+      humor: '«Mejor no pregunte» es tu risa gratis: aprovéchala.' },
+    { t: 'Prueba', end: 255,
+      say: '«Y no lo digo yo: más de veinte años, más de cien empresas asesoradas y más de trescientas pymes conocidas por dentro.»</p><p>«Trabajé en una mutualidad, del otro lado de la mesa. Conozco las preguntas del examen… y sé cómo prepararlos.»',
+      mente: 'Credibilidad rápida. Las cifras se leen solas; no las repitas todas si vas justo.',
+      cuerpo: 'Postura firme, hombros abiertos. Señala la pantalla y vuelve a mirarlos.',
+      emocion: 'Seguridad tranquila, sin presumir.',
+      humor: '«Conozco las preguntas del examen.»' },
+    { t: 'Cierre', end: 300,
+      say: '«Les dejo una idea y una invitación. La idea: sus trabajadores no son dobles de riesgo.» <em>sonríe</em></p><p>«La invitación: escaneen este código. Son tres minutos, gratis, y van a saber dónde están parados.»</p><p>«Soy Hans, su SafetyCoach. Creamos posibilidades con seguridad. Gracias.» <em>silencio, sonrisa, no te muevas 3 segundos</em>',
+      mente: 'Una acción concreta: el QR. Nada de «cualquier cosa me escriben».',
+      cuerpo: 'Muestra el QR en tu celular a quien esté más cerca. Al final, quieto y mirando.',
+      emocion: 'Gratitud. Termina igual que empezaste: en silencio y presente.',
+      humor: '«Dobles de riesgo» deja una sonrisa al final.' }
+  ];
+
+  var TIPS = [
+    'Somos 10 en una sala: no es un escenario, es una conversación de pie. Acércate; dos o tres pasos hacia el grupo valen más que cualquier diapositiva.',
+    'Mente: una idea por diapositiva. Si se te olvida el texto, di la frase grande de la pantalla y sigue.',
+    'Cuerpo: pies firmes, manos visibles y abiertas, nada en los bolsillos (salvo el celular, que sale en el momento en vivo). Mira a una persona por frase.',
+    'Rostro y emociones: sonrisa al inicio y al final; firmeza en el «tres»; complicidad en el problema; convicción en tu frase; entusiasmo con el celular.',
+    'Voz: baja y lenta para lo importante; las pausas son tu mejor recurso. Tres segundos de silencio parecen eternos para ti y perfectos para ellos.',
+    'Humor: dos certezas y una que descoloca. El humor libera la tensión justo después de un golpe; nunca a costa de alguien.',
+    'El momento del celular es el corazón de la charla: llega con la demo abierta (safetycoach.cl/demo) y el brillo de pantalla al máximo.',
+    'Ensaya con cronómetro tres veces en voz alta. Si pasas de 5:00, recorta la prueba, no el cierre.'
+  ];
+
+  var slides = Array.prototype.slice.call(document.querySelectorAll('.slide'));
+  var truths = Array.prototype.slice.call(document.querySelectorAll('#truths li'));
+  var TRUTHS_SLIDE = 1;
+  var i = 0, step = 0, startedAt = null;
+  var $ = function (id) { return document.getElementById(id); };
+
+  function cues(n) {
+    return ['mente', 'cuerpo', 'emocion', 'humor'].map(function (k) {
+      var label = { mente: 'Mente', cuerpo: 'Cuerpo y rostro', emocion: 'Emoción', humor: 'Humor' }[k];
+      return '<p class="cue ' + k + '"><b>' + label + '</b>' + n[k] + '</p>';
+    }).join('');
+  }
+  function fmt(s) { s = Math.max(0, Math.round(s)); return Math.floor(s / 60) + ':' + ('0' + s % 60).slice(-2); }
+
+  function render() {
+    slides.forEach(function (s, k) { s.classList.toggle('on', k === i); });
+    truths.forEach(function (li, k) { li.classList.toggle('shown', k < step); });
+    document.body.classList.toggle('light-on', slides[i].classList.contains('light'));
+    $('count').textContent = (i + 1) + '/' + slides.length;
+    $('prog').style.width = ((i + 1) / slides.length * 100) + '%';
+    var n = NOTES[i];
+    $('npTitle').textContent = (i + 1) + '. ' + n.t + ' · terminar en ' + fmt(n.end);
+    $('npText').innerHTML = '<p>' + n.say + '</p>';
+    $('npCues').innerHTML = cues(n);
+    tick();
+    try { history.replaceState(null, '', location.pathname + location.search + '#' + (i + 1)); } catch (e) {}
+  }
+
+  function next() {
+    if (startedAt === null) startedAt = Date.now();
+    if (i === TRUTHS_SLIDE && step < truths.length) { step++; return render(); }
+    if (i < slides.length - 1) { i++; step = i === TRUTHS_SLIDE ? 0 : step; render(); }
+  }
+  function prev() {
+    if (i === TRUTHS_SLIDE && step > 0) { step--; return render(); }
+    if (i > 0) { i--; if (i === TRUTHS_SLIDE) step = truths.length; render(); }
+  }
+
+  function tick() {
+    var el = $('npTime');
+    var s = startedAt === null ? 0 : (Date.now() - startedAt) / 1000;
+    el.innerHTML = fmt(s) + ' <small>/ 5:00</small>';
+    el.classList.toggle('late', s > NOTES[i].end + 10);
+  }
+  setInterval(tick, 1000);
+
+  function toggleNotes() { document.body.classList.toggle('notes'); }
+  function full() {
+    if (!document.fullscreenElement) { if (document.documentElement.requestFullscreen) document.documentElement.requestFullscreen(); }
+    else if (document.exitFullscreen) document.exitFullscreen();
+  }
+
+  $('next').onclick = next; $('prev').onclick = prev;
+  $('btnNotes').onclick = toggleNotes; $('btnFull').onclick = full;
+  $('btnGuion').onclick = function () { location.href = '?modo=guion'; };
+
+  document.addEventListener('keydown', function (e) {
+    if (e.metaKey || e.ctrlKey || e.altKey) return;
+    var k = e.key;
+    if (k === 'ArrowRight' || k === ' ' || k === 'PageDown' || k === 'Enter') { e.preventDefault(); next(); }
+    else if (k === 'ArrowLeft' || k === 'PageUp' || k === 'Backspace') { e.preventDefault(); prev(); }
+    else if (k === 'n' || k === 'N') toggleNotes();
+    else if (k === 'f' || k === 'F') full();
+    else if (k === 't' || k === 'T') { startedAt = Date.now(); tick(); }
+  });
+
+  // Deslizar en el celular o la tablet.
+  var x0 = null;
+  $('deck').addEventListener('touchstart', function (e) { x0 = e.touches[0].clientX; }, { passive: true });
+  $('deck').addEventListener('touchend', function (e) {
+    if (x0 === null) return;
+    var dx = e.changedTouches[0].clientX - x0; x0 = null;
+    if (Math.abs(dx) > 40) (dx < 0 ? next : prev)();
+  });
+  $('deck').addEventListener('click', function (e) { if (e.target.closest('a, button')) return; next(); });
+
+  // QR al autodiagnóstico.
+  if (typeof window.qrcode === 'function') {
+    var q = window.qrcode(0, 'M'); q.addData('https://www.safetycoach.cl/autodiagnostico/'); q.make();
+    $('qr').innerHTML = q.createSvgTag({ cellSize: 4, margin: 0, scalable: true });
+  }
+
+  // Modo guion: todo en una página para leer en el celular o imprimir.
+  var html = '<h1>SafetyCoach · 5 minutos</h1>' +
+    '<p class="lead">SafetyCoach · Hans Meneses · para empresas · grupo pequeño, unas 10 personas. Cada bloque dice qué decir y cómo: mente, cuerpo y rostro, emoción y humor.</p>' +
+    '<div class="actions"><a href="./">Ver diapositivas</a><button class="alt" onclick="window.print()">Imprimir guion</button></div>' +
+    '<div class="tips"><h2>Antes de entrar</h2><ul>' + TIPS.map(function (t) { return '<li>' + t + '</li>'; }).join('') + '</ul></div>';
+  var from = 0;
+  NOTES.forEach(function (n, k) {
+    html += '<section><h2>' + (k + 1) + '. ' + n.t + ' <span>' + fmt(from) + ' – ' + fmt(n.end) + '</span></h2><p>' + n.say + '</p><div class="sv-cues">' + cues(n) + '</div></section>';
+    from = n.end;
+  });
+  $('scriptView').innerHTML = html;
+
+  if (/modo=guion/.test(location.search)) document.body.classList.add('guion');
+  var h = parseInt(location.hash.slice(1), 10);
+  if (h >= 1 && h <= slides.length) { i = h - 1; if (i === TRUTHS_SLIDE) step = 0; }
+  render();
+})();
+</script>
+</body>
+</html>
