@@ -1,0 +1,431 @@
+<!doctype html>
+<html lang="es-CL">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Coach de bienestar · Presentación | Hans Meneses</title>
+  <meta name="description" content="Presentación de 5 minutos de Hans Meneses, coach de bienestar, para un grupo pequeño: diapositivas, guion y señales de mente, cuerpo y emoción.">
+  <meta name="robots" content="noindex">
+  <meta name="theme-color" content="#0B1F3A">
+  <link rel="icon" href="../assets/img/favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="../assets/img/logo-safetycoach.png">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@600;700;800&family=Inter:wght@400;500;600&family=Caveat:wght@600;700&display=swap" rel="stylesheet">
+  <style>
+    /* Presentación: página independiente, mismos colores del sitio. */
+    :root {
+      --navy: #0B1F3A; --navy-2: #13325C; --sky: #2FA8E0; --green: #3BA54A;
+      --yellow: #F5CD30; --ink: #142236; --muted: #55657A; --line: #E3E8EF;
+      --font-h: "Manrope", system-ui, sans-serif; --font-b: "Inter", system-ui, sans-serif;
+      --font-m: "Caveat", cursive;
+    }
+    *, *::before, *::after { box-sizing: border-box; }
+    html, body { margin: 0; height: 100%; }
+    body { font-family: var(--font-b); color: #fff; background: var(--navy); overflow: hidden; }
+    button { font: inherit; }
+
+    /* ---------- Diapositivas ---------- */
+    .deck { position: fixed; inset: 0; bottom: var(--notes-h, 0px); transition: bottom .25s; }
+    .slide {
+      position: absolute; inset: 0; display: flex; flex-direction: column; justify-content: center;
+      padding: 6vh 8vw; opacity: 0; visibility: hidden; transition: opacity .45s, transform .45s;
+      transform: translateY(12px);
+      background: radial-gradient(120% 90% at 85% 10%, var(--navy-2) 0%, var(--navy) 60%);
+    }
+    .slide.on { opacity: 1; visibility: visible; transform: none; }
+    .slide.light { background: #fff; color: var(--ink); }
+    .slide.light h2, .slide.light .big { color: var(--navy); }
+    .kicker { font-family: var(--font-h); font-weight: 700; font-size: clamp(.8rem, 1.5vw, 1.05rem);
+      letter-spacing: .14em; text-transform: uppercase; color: var(--yellow); margin: 0 0 2vh; }
+    .light .kicker { color: var(--green); }
+    .big { font-family: var(--font-h); font-weight: 800; line-height: 1.08; letter-spacing: -.02em;
+      font-size: clamp(2rem, 6vw, 5rem); margin: 0; max-width: 18ch; }
+    .mid { font-family: var(--font-h); font-weight: 700; line-height: 1.2;
+      font-size: clamp(1.3rem, 3.2vw, 2.6rem); margin: 0; max-width: 24ch; }
+    .sub { font-size: clamp(1rem, 2vw, 1.5rem); color: #C9D6E8; margin: 3vh 0 0; max-width: 40ch; line-height: 1.45; }
+    .light .sub { color: var(--muted); }
+    .hand { font-family: var(--font-m); color: var(--yellow); font-size: clamp(1.6rem, 3.6vw, 3rem); margin: 3vh 0 0; }
+    .light .hand { color: var(--green); }
+    .hl { color: var(--yellow); }
+    .light .hl { color: var(--green); }
+    .logo { width: clamp(150px, 18vw, 240px); margin-bottom: 4vh; }
+
+    .truths { display: grid; gap: 2vh; margin: 0; padding: 0; list-style: none; max-width: 900px; }
+    .truths li { display: flex; gap: 1.2rem; align-items: baseline; font-family: var(--font-h); font-weight: 700;
+      font-size: clamp(1.1rem, 2.8vw, 2.2rem); line-height: 1.25; opacity: .18; transition: opacity .4s; }
+    .truths li.shown { opacity: 1; }
+    .truths li b { color: var(--yellow); font-size: .8em; min-width: 1.4em; }
+    .truths li.twist { color: var(--yellow); }
+
+    .pillars { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2.4vw; margin-top: 5vh; max-width: 1200px; }
+    .pillars div { border-top: 4px solid var(--green); padding-top: 1.6vh; }
+    .pillars h3 { font-family: var(--font-h); font-size: clamp(1.05rem, 2.2vw, 1.8rem); margin: 0 0 .6vh; color: var(--navy); }
+    .pillars p { margin: 0; color: var(--muted); font-size: clamp(.9rem, 1.5vw, 1.2rem); line-height: 1.4; }
+    .stats { display: flex; gap: 6vw; margin-top: 5vh; flex-wrap: wrap; }
+    .stats strong { display: block; font-family: var(--font-h); font-weight: 800; color: var(--yellow); font-size: clamp(2.2rem, 6vw, 4.6rem); line-height: 1; }
+    .stats span { color: #C9D6E8; font-size: clamp(.9rem, 1.6vw, 1.2rem); }
+    .close-row { display: flex; gap: 6vw; align-items: center; flex-wrap: wrap; margin-top: 5vh; }
+    .qr { background: #fff; padding: 12px; border-radius: 12px; width: clamp(130px, 17vw, 220px); }
+    .qr svg { width: 100%; height: auto; display: block; }
+    .qr-cap { font-size: clamp(.9rem, 1.5vw, 1.15rem); color: #C9D6E8; margin-top: 1.2vh; }
+
+    .breath { display: flex; justify-content: center; margin: 2vh 0; }
+    .breath-circle { width: clamp(180px, 34vh, 340px); aspect-ratio: 1; border-radius: 50%; cursor: pointer;
+      display: flex; align-items: center; justify-content: center; text-align: center; padding: 1rem;
+      font-family: var(--font-h); font-weight: 700; font-size: clamp(1rem, 2.4vw, 1.7rem);
+      background: radial-gradient(circle, rgba(59,165,74,.55) 0%, rgba(59,165,74,.15) 70%);
+      border: 3px solid var(--green); transform: scale(.7); transition: transform 1s ease; }
+    .breath-circle.in { transform: scale(1); transition-duration: 4s; }
+    .breath-circle.hold { transform: scale(1); }
+    .breath-circle.out { transform: scale(.7); transition-duration: 6s; }
+
+    /* ---------- Barra inferior ---------- */
+    .bar { position: fixed; left: 0; right: 0; bottom: var(--notes-h, 0px); display: flex; align-items: center; gap: 10px;
+      padding: 8px 14px; z-index: 5; transition: bottom .25s, opacity .3s; opacity: .35; }
+    .bar:hover, .bar:focus-within, body.notes .bar { opacity: 1; }
+    .bar button { background: rgba(255,255,255,.1); color: #fff; border: 1px solid rgba(255,255,255,.2);
+      border-radius: 8px; padding: 6px 12px; cursor: pointer; font-size: 14px; }
+    .bar button:hover { background: rgba(255,255,255,.2); }
+    .light-on .bar button { color: var(--navy); background: rgba(11,31,58,.06); border-color: rgba(11,31,58,.18); }
+    .progress { flex: 1; height: 4px; background: rgba(255,255,255,.15); border-radius: 4px; overflow: hidden; }
+    .light-on .progress { background: rgba(11,31,58,.12); }
+    .progress i { display: block; height: 100%; width: 0; background: var(--yellow); transition: width .3s; }
+    .count { font-size: 14px; font-variant-numeric: tabular-nums; min-width: 3.5em; text-align: right; }
+    .light-on .count { color: var(--navy); }
+
+    /* ---------- Notas del orador ---------- */
+    body.notes { --notes-h: 46vh; }
+    .notes-panel { position: fixed; left: 0; right: 0; bottom: 0; height: 46vh; background: #F5F7FA; color: var(--ink);
+      transform: translateY(100%); transition: transform .25s; z-index: 6; display: grid;
+      grid-template-columns: 1.5fr 1fr; overflow: hidden; border-top: 4px solid var(--yellow); }
+    body.notes .notes-panel { transform: none; }
+    .np-script { padding: 16px 22px; overflow-y: auto; font-size: 18px; line-height: 1.55; }
+    .np-script .np-head { display: flex; justify-content: space-between; align-items: baseline; gap: 10px; margin-bottom: 8px; }
+    .np-script h4 { margin: 0; font-family: var(--font-h); color: var(--navy); font-size: 16px; text-transform: uppercase; letter-spacing: .08em; }
+    .np-time { font-family: var(--font-h); font-weight: 800; font-size: 22px; color: var(--navy); font-variant-numeric: tabular-nums; }
+    .np-time.late { color: #C62828; }
+    .np-time small { font-size: 13px; color: var(--muted); font-weight: 600; }
+    .np-script p { margin: 0 0 .7em; }
+    .np-script em { color: var(--muted); font-style: normal; font-size: .85em; background: #E7ECF3; padding: 1px 6px; border-radius: 4px; }
+    .np-cues { padding: 16px 20px; overflow-y: auto; background: #fff; border-left: 1px solid var(--line); }
+    .cue { margin: 0 0 12px; font-size: 15px; line-height: 1.45; }
+    .cue b { display: block; font-family: var(--font-h); font-size: 12px; letter-spacing: .1em; text-transform: uppercase; margin-bottom: 2px; }
+    .cue.mente b { color: #1F6FB2; } .cue.cuerpo b { color: var(--green); } .cue.emocion b { color: #C77D00; }
+    .cue.humor b { color: #8E44AD; }
+    .help { font-size: 13px; color: var(--muted); border-top: 1px solid var(--line); padding-top: 10px; margin-top: 6px; }
+    .help kbd { background: #EEF2F7; border: 1px solid var(--line); border-radius: 4px; padding: 0 5px; font-size: 12px; }
+
+    /* ---------- Modo guion (para leer o imprimir): ?modo=guion ---------- */
+    body.guion { overflow: auto; background: #fff; color: var(--ink); }
+    body.guion .deck, body.guion .bar, body.guion .notes-panel { display: none; }
+    .script-view { display: none; max-width: 860px; margin: 0 auto; padding: 32px 20px 60px; }
+    body.guion .script-view { display: block; }
+    .script-view h1 { font-family: var(--font-h); color: var(--navy); font-size: clamp(1.7rem, 4vw, 2.4rem); margin: 0 0 .3em; }
+    .script-view .lead { color: var(--muted); margin: 0 0 1.5em; }
+    .script-view section { border-top: 2px solid var(--line); padding: 20px 0; break-inside: avoid; }
+    .script-view h2 { font-family: var(--font-h); color: var(--navy); font-size: 1.25rem; margin: 0 0 .5em; display: flex; gap: 12px; align-items: baseline; flex-wrap: wrap; }
+    .script-view h2 span { color: var(--green); font-size: .9rem; }
+    .script-view .sv-cues { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 10px 18px;
+      background: var(--bg-alt, #F5F7FA); border-radius: 10px; padding: 12px 14px; margin-top: 10px; }
+    .script-view .tips { background: var(--navy); color: #fff; border-radius: 14px; padding: 20px 22px; margin: 0 0 24px; }
+    .script-view .tips h2 { color: var(--yellow); }
+    .script-view .tips ul { margin: 0; padding-left: 1.1em; line-height: 1.6; }
+    .script-view .tips li { margin-bottom: 4px; }
+    .script-view .actions { display: flex; gap: 10px; flex-wrap: wrap; margin-bottom: 24px; }
+    .script-view .actions a, .script-view .actions button { background: var(--navy); color: #fff; border: 0; border-radius: 10px;
+      padding: 10px 16px; text-decoration: none; cursor: pointer; font-size: 15px; }
+    .script-view .actions .alt { background: #fff; color: var(--navy); border: 1px solid var(--navy); }
+    @media print { .script-view .actions { display: none; } .script-view .tips { color: #000; background: #fff; border: 2px solid #000; } .script-view .tips h2 { color: #000; } }
+
+    @media (max-width: 760px) {
+      .pillars { grid-template-columns: 1fr; gap: 2vh; margin-top: 3vh; }
+      .notes-panel { grid-template-columns: 1fr; }
+      .np-cues { border-left: 0; border-top: 1px solid var(--line); }
+      body.notes { --notes-h: 55vh; } .notes-panel { height: 55vh; }
+      .slide { padding: 6vh 16px; }
+      .bar .hide-sm { display: none; }
+    }
+  </style>
+</head>
+<body>
+
+<main class="deck" id="deck" aria-live="polite">
+
+  <!-- 1. Gancho -->
+  <section class="slide">
+    <p class="kicker">Hans Meneses · Coach de bienestar</p>
+    <p class="big">¿Cuándo fue la última vez que respiraste <span class="hl">sin apuro?</span></p>
+    <p class="hand">…ahora no vale.</p>
+  </section>
+
+  <!-- 2. Dos certezas y una que descoloca -->
+  <section class="slide">
+    <p class="kicker">Tres cosas sobre mí</p>
+    <ol class="truths" id="truths">
+      <li><b>1</b>Durante más de 20 años mi pega fue que la gente volviera sana a su casa.</li>
+      <li><b>2</b>En BASF pasamos más de tres años sin un accidente.</li>
+      <li class="twist"><b>3</b>Y el que no volvió sano a la casa… fui yo.</li>
+    </ol>
+  </section>
+
+  <!-- 3. El quiebre -->
+  <section class="slide">
+    <p class="kicker">El quiebre</p>
+    <p class="big">Durante años cuidé a todos.<br><span class="hl">Menos a mí.</span></p>
+    <p class="sub">Un despido masivo, el quiebre de mi matrimonio y la pregunta incómoda: ¿qué tengo que reconocer y transformar en mí?</p>
+  </section>
+
+  <!-- 4. El proceso -->
+  <section class="slide light">
+    <p class="kicker">Lo que hice</p>
+    <p class="big">Me investigué como investigo <span class="hl">un accidente.</span></p>
+    <p class="sub">Coaching, exploración emocional, respiración consciente, meditación y PNL. Sin atajos: mirar lo incómodo, asumir mi parte y cambiar hábitos.</p>
+  </section>
+
+  <!-- 5. Ejercicio en vivo -->
+  <section class="slide breathe-slide">
+    <p class="kicker">30 segundos, juntos</p>
+    <div class="breath"><div class="breath-circle" id="breathCircle"><span id="breathText">Toca para partir</span></div></div>
+    <p class="sub" style="text-align:center;margin-left:auto;margin-right:auto">Entra en 4 · sostén 4 · suelta en 6</p>
+  </section>
+
+  <!-- 6. Qué hago hoy -->
+  <section class="slide light">
+    <p class="kicker">Qué hago hoy</p>
+    <p class="mid">Acompaño a personas que cuidan a todos a volver a cuidarse.</p>
+    <div class="pillars">
+      <div><h3>Autoconocimiento</h3><p>Mirar tus patrones, tus creencias y tus decisiones, sin juicio.</p></div>
+      <div><h3>Exploración emocional</h3><p>Ponerle nombre a lo que sientes y decidir qué haces con eso.</p></div>
+      <div><h3>Autocuidado</h3><p>Respiración, pausas y hábitos simples que se sostienen en el día a día.</p></div>
+    </div>
+    <p class="sub" style="font-size:clamp(.85rem,1.3vw,1rem)">Es coaching, no terapia: no reemplaza la atención de salud mental profesional. También lo llevo a empresas en charlas de salud mental y autocuidado.</p>
+  </section>
+
+  <!-- 7. La idea -->
+  <section class="slide">
+    <p class="kicker">Lo que aprendí</p>
+    <p class="big">No se parte de cero.<br><span class="hl">Se comienza desde donde estás.</span></p>
+    <p class="hand">El fénix no vuelve a ser el mismo. Renace con más conciencia.</p>
+  </section>
+
+  <!-- 8. Cierre -->
+  <section class="slide">
+    <p class="kicker">Mi invitación</p>
+    <p class="mid">¿Hacemos match?<br><span class="hl">Conversemos.</span></p>
+    <div class="close-row">
+      <div><div class="qr" id="qr" aria-label="Código QR para escribir por WhatsApp"></div><p class="qr-cap">Escríbeme por WhatsApp</p></div>
+      <div><p class="hand" style="margin:0">Hans Meneses</p><p class="sub" style="margin-top:.6vh">Coach de bienestar<br>+56 9 3230 4800 · hans@safetycoach.cl</p></div>
+    </div>
+  </section>
+
+</main>
+
+<nav class="bar" aria-label="Controles">
+  <button id="prev" aria-label="Anterior">←</button>
+  <button id="next" aria-label="Siguiente">→</button>
+  <div class="progress"><i id="prog"></i></div>
+  <span class="count" id="count">1/8</span>
+  <button id="btnNotes">Notas (N)</button>
+  <button id="btnFull" class="hide-sm">Pantalla completa (F)</button>
+  <button id="btnGuion" class="hide-sm">Guion</button>
+</nav>
+
+<aside class="notes-panel" aria-label="Notas del orador">
+  <div class="np-script">
+    <div class="np-head"><h4 id="npTitle"></h4><span class="np-time" id="npTime">0:00 <small>/ 5:00</small></span></div>
+    <div id="npText"></div>
+  </div>
+  <div class="np-cues">
+    <div id="npCues"></div>
+    <p class="help"><kbd>→</kbd> <kbd>espacio</kbd> avanzar · <kbd>←</kbd> volver · <kbd>N</kbd> notas · <kbd>T</kbd> reiniciar reloj · <kbd>F</kbd> pantalla completa. El reloj parte cuando avanzas la primera vez.</p>
+  </div>
+</aside>
+
+<div class="script-view" id="scriptView"></div>
+
+<script src="../assets/js/vendor/qrcode.js"></script>
+<script>
+(function () {
+  // Guion: tiempo de salida de cada diapositiva (segundos desde el inicio) y señales
+  // de mente (qué digo), cuerpo (postura, manos, rostro), emoción (qué siento) y humor.
+  var NOTES = [
+    { t: 'Gancho', end: 25,
+      say: '<em>Antes de hablar: camina al centro, planta los pies, mira a dos personas y quédate en silencio 3 segundos.</em></p><p>«Una pregunta, y respóndanla en silencio: ¿cuándo fue la última vez que respiraron sin apuro?» <em>pausa</em></p><p>«…Y ahora no vale.» <em>sonríe</em> «Guárdenla. Al rato la vamos a contestar juntos.»',
+      mente: 'Abrir con una pregunta que cada uno se contesta por dentro, no con tu currículum.',
+      cuerpo: 'De pie, sin atril, nada en las manos. Haz tú una respiración visible antes de la pregunta.',
+      emocion: 'Calma. Tu ritmo marca el ritmo de la sala: parte lento.',
+      humor: '«…ahora no vale»: la primera sonrisa, para que se relajen.' },
+    { t: 'Dos certezas y una que descoloca', end: 70,
+      say: '«Soy Hans Meneses. Les voy a contar tres cosas de mí.»</p><p>«Uno: durante más de veinte años mi pega fue que la gente volviera sana a su casa. Soy prevencionista de riesgos.» <em>→</em></p><p>«Dos: en BASF pasamos más de tres años sin un accidente. El tablero llegó a cuatro dígitos.» <em>→</em></p><p>«Y tres…» <em>pausa larga</em> «…el que no volvió sano a la casa fui yo.» <em>silencio</em> «Y no, no me caí de una escalera.»',
+      mente: 'Cada → revela una frase. Las dos primeras dan credibilidad; la tercera rompe el patrón y abre la historia.',
+      cuerpo: 'Cuenta con los dedos: 1, 2… y en el 3 baja la mano y da un paso hacia el grupo.',
+      emocion: 'Orgullo sereno en 1 y 2. En el 3, voz más baja y lenta: vulnerabilidad, no drama.',
+      humor: '«No me caí de una escalera» suelta la tensión justo después del golpe.' },
+    { t: 'El quiebre', end: 110,
+      say: '«Durante años cuidé a todos. Menos a mí. Trabajaba, respondía, proveía… y el trabajo se comió los espacios que necesitaban mi presencia.»</p><p>«Vino un despido masivo. Después, el quiebre de mi matrimonio. Fue el derrumbe de mi forma de entender la vida.»</p><p>«Y ahí dejé de preguntarme quién tenía la culpa, y me pregunté qué tenía que reconocer y transformar en mí.»',
+      mente: 'Una sola idea: quien cuida a todos también necesita cuidarse. No cuentes detalles de más.',
+      cuerpo: 'Quieto. Manos abiertas a la altura del ombligo. Mira a una persona por frase.',
+      emocion: 'Honestidad. La voz más lenta lo dice todo; no hace falta dramatizar.',
+      humor: 'Aquí no. Deja que la historia respire.' },
+    { t: 'El proceso', end: 140,
+      say: '«Así que hice lo único que sabía hacer bien: me investigué como investigo un accidente.» <em>sonrisa leve</em></p><p>«Busqué las causas, no los culpables. Coaching, exploración emocional, respiración consciente, meditación, PNL. No fue mágico ni de un día para otro: hubo que mirar lo incómodo, asumir mi parte y cambiar hábitos.»',
+      mente: 'El puente entre tus dos mundos: el método del prevencionista aplicado a la propia vida.',
+      cuerpo: 'Gesto de lupa o de «revisar» con las manos en «me investigué».',
+      emocion: 'Determinación tranquila. Vuelve la energía después del quiebre.',
+      humor: '«Hasta me hice mi propia matriz de riesgos.»' },
+    { t: 'Respira conmigo', end: 185,
+      say: '«¿Se acuerdan de la pregunta del principio? Vamos a contestarla. Treinta segundos, juntos.»</p><p>«Pies en el suelo. Si quieren, cierren los ojos.» <em>toca el círculo y guía en voz alta</em> «Entra el aire en cuatro… sostén… suelta lento en seis.» <em>dos o tres ciclos</em></p><p>«Esa es la última vez que respiraron sin apuro. Y fue hace diez segundos.»',
+      mente: 'Que lo vivan, no que lo escuchen. Es la prueba de lo que haces.',
+      cuerpo: 'Hazlo tú primero y en serio. Hombros abajo, voz suave y lenta, mira a la sala.',
+      emocion: 'Presencia. Si alguien se ríe, sonríe y sigue: es normal.',
+      humor: '«Prometo que nadie se va a quedar dormido… casi nadie.»' },
+    { t: 'Qué hago hoy', end: 230,
+      say: '«Hoy acompaño a personas que cuidan a todos a volver a cuidarse. Tres cosas:»</p><p>«Autoconocimiento: mirar tus patrones y tus decisiones, sin juicio. Exploración emocional: ponerle nombre a lo que sientes y decidir qué haces con eso. Y autocuidado: respiración, pausas y hábitos simples que se sostienen.»</p><p>«Ojo: es coaching, no terapia. Y en las empresas lo llevo a charlas de salud mental y autocuidado para equipos y líderes.»',
+      mente: 'Tres pilares, tres dedos. El detalle va en la conversación después.',
+      cuerpo: 'Abre las manos hacia el grupo en «volver a cuidarse». Cuenta con los dedos.',
+      emocion: 'Calidez y entusiasmo: estás contando lo que te gusta hacer.',
+      humor: '«Cuidar a todos es fácil. Lo difícil es dejarse cuidar.»' },
+    { t: 'Lo que aprendí', end: 255,
+      say: '«Si me tuviera que quedar con una sola cosa, es esta:» <em>pausa</em> «no se parte de cero. Se comienza desde donde estás.»</p><p>«El fénix no vuelve a ser el mismo. Renace con más conciencia.»',
+      mente: 'Tu frase. Dila una vez, lento, y no la expliques.',
+      cuerpo: 'Un paso al frente. Mano al pecho en «desde donde estás».',
+      emocion: 'Convicción serena. Puedes subir la voz un punto y luego bajarla.',
+      humor: '—' },
+    { t: 'Cierre', end: 300,
+      say: '«Si algo de esto les hizo sentido, a ustedes o a alguien que quieren, conversemos. Escanéenme este código, o mejor, acérquense después.»</p><p>«Soy Hans Meneses, coach de bienestar. Gracias.» <em>silencio, sonrisa, no te muevas 3 segundos</em>',
+      mente: 'Una acción concreta: el QR o acercarse. Nada de «cualquier cosa me escriben».',
+      cuerpo: 'Muestra el QR en tu celular a quien esté más cerca. Al final, quieto y mirando.',
+      emocion: 'Gratitud. Termina igual que empezaste: en silencio y presente.',
+      humor: '«Y respiren, que la presentación ya terminó.»' }
+  ];
+
+  var TIPS = [
+    'Somos 10 en una sala: no es un escenario, es una conversación de pie. Acércate; dos o tres pasos hacia el grupo valen más que cualquier diapositiva.',
+    'Mente: una idea por diapositiva. Si se te olvida el texto, di la frase grande de la pantalla y sigue.',
+    'Cuerpo: pies firmes, manos visibles y abiertas, nada en los bolsillos. Mira a una persona por frase, no barras la sala.',
+    'Rostro y emociones: sonrisa al inicio y al final; seriedad en el quiebre; calma en la respiración; calidez en lo que haces hoy. El rostro tiene que coincidir con lo que dices.',
+    'Voz: baja y lenta para lo importante; las pausas son tu mejor recurso. Tres segundos de silencio parecen eternos para ti y perfectos para ellos.',
+    'Humor: dos certezas y una que descoloca. El humor libera la tensión justo después de un golpe; nunca a costa de alguien.',
+    'El ejercicio de respiración es el corazón de la charla: ensáyalo. Si vas justo de tiempo, haz dos ciclos en vez de tres, pero no lo saques.',
+    'Ensaya con cronómetro tres veces en voz alta. Lleva el celular con el QR de WhatsApp abierto por si la pantalla falla.'
+  ];
+
+  var slides = Array.prototype.slice.call(document.querySelectorAll('.slide'));
+  var truths = Array.prototype.slice.call(document.querySelectorAll('#truths li'));
+  var TRUTHS_SLIDE = 1;
+  var i = 0, step = 0, startedAt = null;
+  var $ = function (id) { return document.getElementById(id); };
+
+  function cues(n) {
+    return ['mente', 'cuerpo', 'emocion', 'humor'].map(function (k) {
+      var label = { mente: 'Mente', cuerpo: 'Cuerpo y rostro', emocion: 'Emoción', humor: 'Humor' }[k];
+      return '<p class="cue ' + k + '"><b>' + label + '</b>' + n[k] + '</p>';
+    }).join('');
+  }
+  function fmt(s) { s = Math.max(0, Math.round(s)); return Math.floor(s / 60) + ':' + ('0' + s % 60).slice(-2); }
+
+  function render() {
+    slides.forEach(function (s, k) { s.classList.toggle('on', k === i); });
+    truths.forEach(function (li, k) { li.classList.toggle('shown', k < step); });
+    document.body.classList.toggle('light-on', slides[i].classList.contains('light'));
+    $('count').textContent = (i + 1) + '/' + slides.length;
+    $('prog').style.width = ((i + 1) / slides.length * 100) + '%';
+    var n = NOTES[i];
+    $('npTitle').textContent = (i + 1) + '. ' + n.t + ' · terminar en ' + fmt(n.end);
+    $('npText').innerHTML = '<p>' + n.say + '</p>';
+    $('npCues').innerHTML = cues(n);
+    tick();
+    try { history.replaceState(null, '', location.pathname + location.search + '#' + (i + 1)); } catch (e) {}
+  }
+
+  function next() {
+    if (startedAt === null) startedAt = Date.now();
+    if (i === TRUTHS_SLIDE && step < truths.length) { step++; return render(); }
+    if (i < slides.length - 1) { i++; step = i === TRUTHS_SLIDE ? 0 : step; render(); }
+  }
+  function prev() {
+    if (i === TRUTHS_SLIDE && step > 0) { step--; return render(); }
+    if (i > 0) { i--; if (i === TRUTHS_SLIDE) step = truths.length; render(); }
+  }
+
+  function tick() {
+    var el = $('npTime');
+    var s = startedAt === null ? 0 : (Date.now() - startedAt) / 1000;
+    el.innerHTML = fmt(s) + ' <small>/ 5:00</small>';
+    el.classList.toggle('late', s > NOTES[i].end + 10);
+  }
+  setInterval(tick, 1000);
+
+  function toggleNotes() { document.body.classList.toggle('notes'); }
+  function full() {
+    if (!document.fullscreenElement) { if (document.documentElement.requestFullscreen) document.documentElement.requestFullscreen(); }
+    else if (document.exitFullscreen) document.exitFullscreen();
+  }
+
+  $('next').onclick = next; $('prev').onclick = prev;
+  $('btnNotes').onclick = toggleNotes; $('btnFull').onclick = full;
+  $('btnGuion').onclick = function () { location.href = '?modo=guion'; };
+
+  document.addEventListener('keydown', function (e) {
+    if (e.metaKey || e.ctrlKey || e.altKey) return;
+    var k = e.key;
+    if (k === 'ArrowRight' || k === ' ' || k === 'PageDown' || k === 'Enter') { e.preventDefault(); next(); }
+    else if (k === 'ArrowLeft' || k === 'PageUp' || k === 'Backspace') { e.preventDefault(); prev(); }
+    else if (k === 'n' || k === 'N') toggleNotes();
+    else if (k === 'f' || k === 'F') full();
+    else if (k === 't' || k === 'T') { startedAt = Date.now(); tick(); }
+  });
+
+  // Deslizar en el celular o la tablet.
+  var x0 = null;
+  $('deck').addEventListener('touchstart', function (e) { x0 = e.touches[0].clientX; }, { passive: true });
+  $('deck').addEventListener('touchend', function (e) {
+    if (x0 === null) return;
+    var dx = e.changedTouches[0].clientX - x0; x0 = null;
+    if (Math.abs(dx) > 40) (dx < 0 ? next : prev)();
+  });
+  $('deck').addEventListener('click', function (e) { if (e.target.closest('a, button')) return; next(); });
+
+  // Respiración guiada: 4 entra, 4 sostén, 6 suelta.
+  var breathTimer = null;
+  function breathe() {
+    var c = $('breathCircle'), txt = $('breathText');
+    if (breathTimer) { clearTimeout(breathTimer); breathTimer = null; c.className = 'breath-circle'; txt.textContent = 'Toca para partir'; return; }
+    var phases = [['in', 'Entra… 4', 4000], ['hold', 'Sostén… 4', 4000], ['out', 'Suelta… 6', 6000]], k = 0, cycles = 0;
+    (function run() {
+      if (k === 0 && cycles === 3) { breathTimer = null; c.className = 'breath-circle'; txt.textContent = 'Bienvenidos de vuelta'; return; }
+      var ph = phases[k]; c.className = 'breath-circle ' + ph[0]; txt.textContent = ph[1];
+      k = (k + 1) % 3; if (k === 0) cycles++;
+      breathTimer = setTimeout(run, ph[2]);
+    })();
+  }
+  $('breathCircle').addEventListener('click', function (e) { e.stopPropagation(); breathe(); });
+
+  // QR a WhatsApp.
+  if (typeof window.qrcode === 'function') {
+    var q = window.qrcode(0, 'M'); q.addData('https://wa.me/56932304800'); q.make();
+    $('qr').innerHTML = q.createSvgTag({ cellSize: 4, margin: 0, scalable: true });
+  }
+
+  // Modo guion: todo en una página para leer en el celular o imprimir.
+  var html = '<h1>Presentación de 5 minutos</h1>' +
+    '<p class="lead">Hans Meneses · Coach de bienestar · grupo pequeño, unas 10 personas. Cada bloque dice qué decir y cómo: mente, cuerpo y rostro, emoción y humor.</p>' +
+    '<div class="actions"><a href="./">Ver diapositivas</a><button class="alt" onclick="window.print()">Imprimir guion</button></div>' +
+    '<div class="tips"><h2>Antes de entrar</h2><ul>' + TIPS.map(function (t) { return '<li>' + t + '</li>'; }).join('') + '</ul></div>';
+  var from = 0;
+  NOTES.forEach(function (n, k) {
+    html += '<section><h2>' + (k + 1) + '. ' + n.t + ' <span>' + fmt(from) + ' – ' + fmt(n.end) + '</span></h2><p>' + n.say + '</p><div class="sv-cues">' + cues(n) + '</div></section>';
+    from = n.end;
+  });
+  $('scriptView').innerHTML = html;
+
+  if (/modo=guion/.test(location.search)) document.body.classList.add('guion');
+  var h = parseInt(location.hash.slice(1), 10);
+  if (h >= 1 && h <= slides.length) { i = h - 1; if (i === TRUTHS_SLIDE) step = 0; }
+  render();
+})();
+</script>
+</body>
+</html>
